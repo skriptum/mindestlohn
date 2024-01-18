@@ -1,0 +1,142 @@
+# Populism and Minimum Wage
+
+## Sonneberg
+
+- Germany's first AfD district administrator (Landrat)
+  - Robert Sesselmann
+  - prevails in run-off election against CDU
+  - 52.8% to 47.2%
+  
+Sonneberg also: district with the highest proportion of minimum wage earners in DE
+- 2022 increase in minimum wage to 12 euros
+- 44% of Sonneberg residents benefited from this
+- the highest in Germany
+
+Research Question: What is the connection between minimum wage and populism?
+
+additional about Sonneberg:
+
+- thüringenweit höchste Industriedichte
+- schon damals viele Arbeiter, die erst rot und dann NS gewählt haben (Wiki)
+- Thüringen erste NSDAP Regierungsbeteiligung
+  - [Spiegel](https://www.spiegel.de/geschichte/nsdap-1930-probelauf-der-diktatur-a-e9e83be9-0002-0001-0000-000207602126)
+  - [MDR](https://www.mdr.de/geschichte/ns-zeit/politik-gesellschaft/mustergau-thueringen-gleichschaltung-100.html)
+- auch genannt SPielzeugstadt
+- [Wahlergebnisse hsitorisch](https://www.db-thueringen.de/servlets/MCRFileNodeServlet/dbt_derivate_00023432/wahlenundabstimmungsergebnissse_1920-1995.pdf) S.90 
+  - Stadt mit meisten NSDAP Stimmen 1929
+
+## Literature
+
+- Ncihtwähler
+- Globalisierungsverlierer
+
+Nicht relevant
+
+- Einkommen varieren
+- Alterstruktur wie andere Parteien
+
+
+## Data
+
+Vote Share AfD: [Bundeswahlleiter](https://www.bundeswahlleiter.de/bundestagswahlen/2021/ergebnisse/bund-99.html)
+- calculated for the different Landkreise, not Wahlbezirke
+
+Minimum Wage: [Wirtschaft- und Sozialwissenschaftliches Institut (Hans Böckler Stiftung)](https://www.wsi.de/de/sonderauswertung-43368-mindestlohnanhebung-43374.htm)
+
+based on:
+
+- BA Arbeit
+- Destatis
+- SOEP
+berechnet vom WSI
+
+additional Data
+
+- Regionalstatistik des Bundes und der Länder
+- Regionatlas for Geodata
+
+## Method
+
+Linear Regressio with OLS Estimator
+
+$$
+\text{afd}_k = \beta_0 + \beta_1 \times \text{min}_k + \epsilon
+$$
+
+- $\text{afd}_k$ AfD Vote Share in Landkreis $k$
+- $\text{min}_k$ Share of Minimum Wage Recipients in Landkreis $k$
+- $\beta_0$ Intercept
+- $\beta_1$ Slope
+- $\epsilon$ Error
+
+
+## Results
+
+basic Model
+
+- Estimated Coefficient = 0.7
+- statistically significant
+- R2 = 0.61
+=> 1% increase in MW recipoients => 0.7% increase in AfD share
+
+Model with Eastern German Dummy
+
+- as visible on electoral Maps = eastern Germany more right wing vote share
+- dummy for ost (1 = eastern, 0 = not)
+- coefficient lower = 0.3 
+- but still significant
+- R2 increase = 0.74
+
+additional controls
+
+- not significant in all specificiations
+- do not change R2 much
+- no real impact
+- unemployment rate, 
+- log GPD per Cap 
+- log pop. density
+- foreigners rate
+- age
+
+Test for Wahlergebnis of left poplist party (Die LINKE)
+
+- some way yes
+- but not really significant
+- as described by Piektty = left today not really "abgehängte"
+
+## Theory
+
+MW recipients = workers
+
+- low wage occupation = harder hit by financial crisis
+- instability of job = insecurity
+- wish back good old times with stable jobs pre neoliberalism
+
+also = despise for inequality
+
+- lower end of wage scale (feels like down)
+- see inequality in east / west germany comparison
+- inequality = populism
+
++
+lack of social mobility
+
+- if high share of MW = not many higher paying jobs
+- esp. eastern germans = not many high earning positions
+- if no good future in sight = easier for populists
+
+eastern germany
+
+- hard hit by post-Wende turmoil
+- creation of Niedriglohnsektor = often different from GDR
+- cultural factors as well
+
+## Implications
+
+not stop from higher MW!
+
+but:
+
+- Tarifdichte incerase for higher wages
+- increase social mobility + decrease east west inequality
+
