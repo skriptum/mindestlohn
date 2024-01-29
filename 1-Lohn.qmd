@@ -60,7 +60,7 @@ regional Database on political costs of austerity
     -   higher share for extreme parties
     -   lower vote turnout
     -   1% reduction =\> 3% increase vote
--   austerity driven =\> even more
+-   austerity driven recession =\> even more
     -   lower trust in government
     -   special of just recession
 
@@ -81,8 +81,10 @@ regional Database on political costs of austerity
 ## Data
 
 Vote Share AfD:
-[Bundeswahlleiter](https://www.bundeswahlleiter.de/bundestagswahlen/2021/ergebnisse/bund-99.html) -
-calculated for the different Landkreise, not Wahlbezirke
+[Bundeswahlleiter](https://www.bundeswahlleiter.de/bundestagswahlen/2021/ergebnisse/bund-99.html) 
+
+- calculated for the different Landkreise, not Wahlbezirke
+- Parliament Election on 09/2021
 
 Minimum Wage: [Wirtschaft- und Sozialwissenschaftliches Institut (Hans
 Böckler
@@ -92,7 +94,13 @@ based on:
 
 -   BA Arbeit
 -   Destatis
--   SOEP berechnet vom WSI
+-   SOEP
+
+=> extrapolated by WSI
+
+- "sozialversicherungspflichtig beschäftigte" in district
+- part / full time,  not MiniJob
+- projected for 01/10/2022
 
 additional Data
 
@@ -119,7 +127,9 @@ basic Model
 
 -   Estimated Coefficient = 0.7
 -   statistically significant
--   R2 = 0.61 =\> 1% increase in MW recipoients =\> 0.7% increase in AfD
+-   R2 = 0.61 
+
+=\> 1% increase in MW recipoients =\> 0.7% increase in AfD
     share
 
 Model with Eastern German Dummy
@@ -146,43 +156,53 @@ Test for Wahlergebnis of left poplist party (Die LINKE)
 
 -   some way yes
 -   but not really significant
--   as described by Piektty = left today not really "abgehängte"
+-   as described by Piketty = left today not really "abgehängte"
 
 ## Theory
 
-MW recipients = workers
+MW recipients = workers at lower end of spectrum
 
--   low wage occupation = harder hit by financial crisis
 -   instability of job = insecurity
 -   wish back good old times with stable jobs pre neoliberalism
+-   fear of loss of status
+- d
 
-also = despise for inequality
+despise for inequality
 
 -   lower end of wage scale (feels like down)
-
--   see inequality in east / west germany comparison
-
+-   disappointed by system
+-   see inequality (in east / west germany comparison)
 -   inequality = populism
 
--   lack of social mobility
+lack of social mobility
 
 -   if high share of MW = not many higher paying jobs
-
 -   esp. eastern germans = not many high earning positions
-
--   if no good future in sight = easier for populists
+-   future pessimism = easier for populists
 
 eastern germany
 
 -   hard hit by post-Wende turmoil
--   creation of Niedriglohnsektor = often different from GDR
+-   creation of Niedriglohnsektor due to TreuHand policy
 -   cultural factors as well
+
+inflation 
+
+- hits lower wage workers harder
+- especially rural regions with high share of card dependency
+
+
+labor market hypothesis?
+
+- mostly rejected empirically
+- because rationally no risk of losing job (low unempl. share)
+- but maybe irrational fear
 
 ## Implications
 
 not stop from higher MW!
 
-but:
+Policy
 
--   Tarifdichte incerase for higher wages
+-   Tarifdichte incerase for higher wages 
 -   increase social mobility + decrease east west inequality

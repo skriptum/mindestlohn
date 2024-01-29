@@ -1,13 +1,21 @@
 ---
-format: beamer
-title: "Populism and the Minimum Wage"
+title: "Paycheck Politics:"
 author: "Marten Walk"
+subtitle: "Minimum Wage Dynamics and the Populist Vote"
 bibliography: references.bib
+
+navigation: "horizontal"
+format: 
+  beamer:
+    theme: CambridgeUS
+
+linkcolor: blue
+number-equations: true
+link-citations: true
+link-bibliography: true
 ---
 
-# Slides
-
-## Sonneberg
+# Sonneberg
 
 -   first district ("Landkreis") in Germany to elect commissioner from AfD (52.8%)
 -   AfD = right-wing radical neo-nazi party with distinct populist agenda
@@ -15,20 +23,11 @@ bibliography: references.bib
 
 \
 
-> **Research Question:** Does the political economy of the minimum wage explain the success of the AfD / right-wing populism?
+> **Research Question:** Does receiving Minimum Wage lead to a higher vote share of populist parties?
 
-------------------------------------------------------------------------
 
-## Data
 
--   **Dependent Variable:** AfD vote share in 2021 federal election (Bundeswahlleiter)
--   **Independent Variable:** Share of minimum wage recipients in 2022 (WSI)
-
-![Data mapped](images/maps.png)
-
-------------------------------------------------------------------------
-
-## Literature
+# Literature
 
 What causes the populist vote?
 
@@ -39,24 +38,43 @@ What causes the populist vote?
 | @dippelEffectTradeWorkers2022            | exposure to globalization |
 | @fischerEconomicDeterminantsPopulism2023 | Financial Crisis          |
 
-------------------------------------------------------------------------
 
-## Method
+
+# Data
+
+-   **Dependent Variable:** AfD vote share in 2021 federal election (Bundeswahlleiter)
+-   **Independent Variable:** Share of minimum wage recipients in 2022 (WSI)
+
+![Data mapped](images/maps.png)
+
+
+
+# Method
 
 -   **Model:** Linear Regression
 -   **Estimation:** OLS
 -   **additional Controls**: unemployment rate, GDP per capita, share of foreigners, share of elderly, population density
 
 $$
-\text{AfD Vote Share}_{i} = \beta_0 + \beta_1 \text{MW Recipients}_{i} + \beta_2 \text{Controls}_{i} + \epsilon_{i}
+\text{AfD Vote Share}_{i} = \beta_0 + \beta_1 \text{MW Recipients}_{i} + \beta_k \text{Controls}_{i} + \epsilon_{i}
 $$
 
-------------------------------------------------------------------------
 
-## Results
+# Regression Results
 
-## ![Regression Plot](images/plot_basic.png)
+![Regression Plot](images/plot_basic.png)
 
-## Regression Table
 
-gives us the following table:
+
+# Regression Table
+
+![Effect of MW on AfD Vote Share](images/table.jpg)
+
+
+
+# References
+
+`\tiny`{=latex}
+
+::: {#refs}
+:::
