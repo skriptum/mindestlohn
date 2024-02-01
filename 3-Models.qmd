@@ -238,7 +238,22 @@ model_pop <- lm(
 summary(model_pop)
 ```
 
+## Dropping Variables
+
+```{r}
+model_drop <- lm(
+  afd_prozent ~ ost+ arbeitslosenquote + log(gdp) +age+ foreigners + log(pop),
+  data = wahl_lohn
+)
+summary(model_drop)
+```
+hust, lets just ignore that...:)
+
 ## Choosing the best Model
+
+via Stepwise Regression, explained  [here](https://www.statology.org/stepwise-regression-r/)
+
+not well regarded in Econometrics, because it is prone to overfitting! just for self reference, that lohn_prozent is chosen and therefore valid
 
 ```{r}
 step(model_basic, direction = "both", scope = ~ lohn_prozent + ost + foreigners+ arbeitslosenquote + log(gdp) + age, trace=0)

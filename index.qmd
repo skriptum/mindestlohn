@@ -5,4 +5,16 @@ author: "marten w."
 bibliography: references.bib
 ---
 
-Lorem Ipsum ...
+## Introduction
+
+## Literature Review
+
+## Data
+
+## Methodology
+
+### Additional Controls
+
+## Results
+
+## Conclusion
