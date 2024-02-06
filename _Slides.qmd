@@ -1,8 +1,11 @@
 ---
-title: "Paycheck Politics:"
+title: "Paycheck Politics"
 author: "Marten Walk"
 subtitle: "Minimum Wage Dynamics and the Populist Vote"
 bibliography: references.bib
+nocite: |
+  @puschMindestlohn12Euro2022
+  @diebundeswahlleiterinBundestagswahl2021Endgultiges2021
 
 navigation: "horizontal"
 format: 
@@ -25,29 +28,24 @@ link-bibliography: true
 
 > **Research Question:** Does receiving Minimum Wage lead to a higher vote share of populist parties?
 
-
-
 # Literature
 
 What causes the populist vote?
 
-| Author                                   | Cause                     |
-|------------------------------------------|---------------------------|
-| @gabrielPoliticalCostsAusterity2023      | Austerity                 |
-| @hoevermannUmfragehochAFD2023            | job dissatisfaction       |
-| @dippelEffectTradeWorkers2022            | exposure to globalization |
-| @fischerEconomicDeterminantsPopulism2023 | Financial Crisis          |
-
-
+| Authors                                    | Cause                     |
+|--------------------------------------------|---------------------------|
+| @gabrielPoliticalCostsAusterity2023        | Austerity                 |
+| @hoevermannUmfragehochAFD2023              | job dissatisfaction       |
+| @dippelEffectTradeWorkers2022              | exposure to globalization |
+| @fischerEconomicDeterminantsPopulism2023   | Financial Crisis          |
+| @kurerDisappointedExpectationsDownward2022 | Status Discordance        |
 
 # Data
 
 -   **Dependent Variable:** AfD vote share in 2021 federal election (Bundeswahlleiter)
--   **Independent Variable:** Share of minimum wage recipients in 2022 (WSI)
+-   **Independent Variable:** forecasted Share of workers impacted by the 12€ increase in Minimum Wage (WSI) = Minimum Wage recipients
 
 ![Data mapped](images/maps.png)
-
-
 
 # Method
 
@@ -59,18 +57,13 @@ $$
 \text{AfD Vote Share}_{i} = \beta_0 + \beta_1 \text{MW Recipients}_{i} + \beta_k \text{Controls}_{i} + \epsilon_{i}
 $$
 
-
 # Regression Results
 
 ![Regression Plot](images/plot_basic.png)
 
-
-
 # Regression Table
 
 ![Effect of MW on AfD Vote Share](images/table.jpg)
-
-
 
 # References
 

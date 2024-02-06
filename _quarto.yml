@@ -8,8 +8,12 @@ website:
     location: navbar
     type: overlay
   sidebar:
-    style: "docked"
-    contents: /*.qmd 
+    style: "floating"
+    contents: 
+    - section: Main Text
+      contents: index.qmd
+    - section: Additional
+      contents: "/*.qmd"
   comments: 
     hypothesis:
       theme: clean

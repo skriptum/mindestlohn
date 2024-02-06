@@ -5,14 +5,17 @@ editor:
 bibliography: references.bib
 ---
 
-# Populism and Minimum Wage
+# Notes
 
 ## Sonneberg
 
+Sonneberg: 
 -   Germany's first AfD district administrator (Landrat)
     -   Robert Sesselmann
-    -   prevails in run-off election against CDU
+    -   prevails in run-off election against conservative CDU
     -   52.8% to 47.2%
+    
+shocking to political establishment, international coverage
 
 Sonneberg also: district with the highest proportion of minimum wage
 earners in DE - 2022 increase in minimum wage to 12 euros - 44% of
@@ -160,37 +163,50 @@ Test for Wahlergebnis of left poplist party (Die LINKE)
 
 ## Theory
 
-MW recipients = workers at lower end of spectrum
+Populism = multicausal, not only socioeconomic, but also sociodemographic, cultural, ...
 
--   instability of job = insecurity
+i want to explain where MW fits exisitng research
+
+status disordance [@kurerDisappointedExpectationsDownward2022]
+
+- connected to eastern germany & minimum wage
+- MW = lower status than expected from parents with stable jobs in GDR
+- also generally disappointed by it
+
+MW recipients = workers at lower end of spectrum 
+
+-   instability of job = insecurity [@hoevermannUmfragehochAFD2023]
 -   wish back good old times with stable jobs pre neoliberalism
--   fear of loss of status
-- d
 
-despise for inequality
+despise for inequality [@bartelsTopIncomesGermany2019]
 
 -   lower end of wage scale (feels like down)
 -   disappointed by system
--   see inequality (in east / west germany comparison)
--   inequality = populism
+-   see inequality 
+-   inequality => populism
 
-lack of social mobility
+lack of social mobility [@dodinSocialMobilityGermany2021]
 
 -   if high share of MW = not many higher paying jobs
 -   esp. eastern germans = not many high earning positions
 -   future pessimism = easier for populists
 
-eastern germany
+eastern germany [@snowerCaringHandThat2006]
 
 -   hard hit by post-Wende turmoil
 -   creation of Niedriglohnsektor due to TreuHand policy
 -   cultural factors as well
 
-inflation 
+inflation [@toberHaushaltspezifischeTeuerungsraten2022]
 
-- hits lower wage workers harder
+- hits lower wage workers harder 
 - especially rural regions with high share of card dependency
 
+why only now, not earlier?
+
+- Voice Exit by [@hirschmanExitVoiceLoyalty1972]
+- before, exit (abstention) only option for voters incontempt with situation
+- with rise of AfD = voice 
 
 labor market hypothesis?
 
@@ -198,11 +214,23 @@ labor market hypothesis?
 - because rationally no risk of losing job (low unempl. share)
 - but maybe irrational fear
 
+Afd position on MW
+
+- before 2015 introduction = "jobkiller" by chef petry
+- changed away from this towards a more social-nativist standpoint
+- "Grundsatzprogramm" supports MW concept
+
+### future Research
+
+- characteristics of MW jobs
+- panel data set with more than one point in time
+
 ## Implications
 
 not stop from higher MW!
 
 Policy
 
--   Tarifdichte incerase for higher wages 
+-   union bargaining incerase for higher wages
+  -   european "richtlinie" 80% 
 -   increase social mobility + decrease east west inequality

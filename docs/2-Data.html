@@ -108,7 +108,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-sidebar docked">
+<body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -117,7 +117,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./2-Data.html">Data</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Additional</a></li><li class="breadcrumb-item"><a href="./2-Data.html">Data</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -126,7 +126,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Economic History</a> 
@@ -134,36 +134,58 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Main Text</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./1-Lohn.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Populism and Minimum Wage</span></a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Paycheck Politics</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Additional</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./1-Lohn.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Notes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./2-Data.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Data</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./3-Models.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Regression</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./4-Results.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Results</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./5-Slides.pdf" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Populism and the Minimum Wage</span></a>
-  </div>
-</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -283,19 +305,19 @@ chr (94): © Der Bundeswahlleiter, Wiesbaden 2022, ...2, ...3, ...4, ...5, .....
 <span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">6</span><span class="sc">:</span><span class="fu">nrow</span>(.)) <span class="sc">%&gt;%</span><span class="co">#remove unused rows with metadata and total germany</span></span>
 <span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(kreis))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Warning in mask$eval_all_mutate(quo): NAs durch Umwandlung erzeugt
+<pre><code>Warning in mask$eval_all_mutate(quo): NAs introduced by coercion
 
-Warning in mask$eval_all_mutate(quo): NAs durch Umwandlung erzeugt
+Warning in mask$eval_all_mutate(quo): NAs introduced by coercion
 
-Warning in mask$eval_all_mutate(quo): NAs durch Umwandlung erzeugt
+Warning in mask$eval_all_mutate(quo): NAs introduced by coercion
 
-Warning in mask$eval_all_mutate(quo): NAs durch Umwandlung erzeugt
+Warning in mask$eval_all_mutate(quo): NAs introduced by coercion
 
-Warning in mask$eval_all_mutate(quo): NAs durch Umwandlung erzeugt
+Warning in mask$eval_all_mutate(quo): NAs introduced by coercion
 
-Warning in mask$eval_all_mutate(quo): NAs durch Umwandlung erzeugt
+Warning in mask$eval_all_mutate(quo): NAs introduced by coercion
 
-Warning in mask$eval_all_mutate(quo): NAs durch Umwandlung erzeugt</code></pre>
+Warning in mask$eval_all_mutate(quo): NAs introduced by coercion</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co">#calculater for berlin as whole from east (11100) and west (11200) to 11000</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>wahl <span class="ot">&lt;-</span> wahl <span class="sc">%&gt;%</span></span>
