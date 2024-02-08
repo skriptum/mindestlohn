@@ -1,7 +1,8 @@
-# Results
-
 ## Imports
+
+
 ```{r}
+ 
 library(stargazer)
 library(tidyverse)
 library(patchwork)
@@ -9,19 +10,21 @@ library(plotly)
 ```
 
 ```{r}
+ 
 load("data/models.RData")
 ```
 
 ```{r}
+ 
 wahl_lohn <- readRDS("data/wahl_lohn_mod.rds")
 ```
-
 
 ## Plots
 
 Basic plot with SB
 
 ```{r}
+ 
 plot_basic <- ggplot(aes(x = lohn_prozent, y = afd_prozent, label=name), data = wahl_lohn) +
   geom_point(shape = 1) +
   geom_smooth(method = "lm", se = T) +
@@ -53,6 +56,7 @@ plotly::ggplotly(plot_basic)
 Plot with east germany
 
 ```{r}
+ 
 ggplot(aes(x = lohn_prozent, y = afd_prozent), data = wahl_lohn) +
   geom_point(aes(color = factor(ost))) +
   geom_smooth(method = "lm") +
@@ -68,10 +72,10 @@ ggplot(aes(x = lohn_prozent, y = afd_prozent), data = wahl_lohn) +
   coord_cartesian(xlim = c(0, 0.5), ylim = c(0, 0.35))  #start at 0,0
 ```
 
-
 Plot with scale for arbeitslosenquote
 
 ```{r}
+ 
 ggplot(aes(x = lohn_prozent, y = afd_prozent), data = wahl_lohn) +
   geom_point(aes(color = arbeitslosenquote)) +
   geom_smooth(method = "lm") +
@@ -90,6 +94,7 @@ ggplot(aes(x = lohn_prozent, y = afd_prozent), data = wahl_lohn) +
 Plot for linkspartei
 
 ```{r}
+ 
 ggplot(aes(x = lohn_prozent, y = linke_prozent), data = wahl_lohn) +
   geom_point() +
   geom_smooth(method = "lm") +
@@ -103,12 +108,14 @@ Load GEOJSON Data for Kreise
 Data Source = Regionalatlas Statistikportal
 
 ```{r}
+ 
 spdf <- sf::read_sf("data/kreise.geojson")
 ```
 
 Merge
 
 ```{r}
+ 
 geodata <- spdf %>% 
   left_join(wahl_lohn, by = c("schluessel" = "kreis"))
 ```
@@ -116,6 +123,7 @@ geodata <- spdf %>%
 Afd Stimmen
 
 ```{r}
+ 
 afd_map <- ggplot(geodata) +
   geom_sf(aes(fill = afd_prozent)) +
   scale_fill_viridis_c(name = "AfD in %", option="magma", direction=-1) +
@@ -130,6 +138,7 @@ afd_map <- ggplot(geodata) +
 Mindestlohn
 
 ```{r}
+ 
 lohn_map <- ggplot(geodata) +
   geom_sf(aes(fill = lohn_prozent)) +
   scale_fill_viridis_c(name = "MW %", option="magma", direction=-1) +
@@ -145,27 +154,33 @@ both maps next to each other
 
 ```{r}
 #| cache: true
+ 
 maps <- afd_map + lohn_map
 ggsave("images/maps.png",plot=maps, width = 10, height = 5)
 ```
 
 ```{r}
 #| cache: true
+ 
 subplot(ggplotly(afd_map), ggplotly(lohn_map))
 ```
-
 
 ## Regression Models Table
 
 Summary Statistic of Data
 
 ```{r}
-stargazer(as.data.frame(wahl_lohn), type="text")
+#| label: tbl-summary
+#| output: asis
+ 
+#stargazer(as.data.frame(wahl_lohn), type="text")
+stargazer(as.data.frame(wahl_lohn), type="latex", out="images/summary_table.tex", header = FALSE)
 ```
 
 Compile List of Models to include in Table
 
 ```{r}
+ 
 models <- list(
   model_basic,
   model_ost,
@@ -178,12 +193,15 @@ models <- list(
 ```
 
 Create the Stargazer Table
+
 ```{r}
 #| output: asis
+#| label: tbl-results
+ 
 table <- stargazer(models, 
           #type = "text",
           type = "html",
-          out="data/table.html", #
+          out="images/table.html", #
           title = "Effect of Minimum Wage Recipients on AfD Vote Share",
           dep.var.labels = "AfD Vote Share",
           covariate.labels = c(
@@ -201,9 +219,4 @@ table <- stargazer(models,
 ```
 
 Rewrite this code with table package gt
-
-
-
-
-
 

@@ -86,6 +86,9 @@ div.csl-indent {
 }
 </script>
 <script async="" src="https://hypothes.is/embed.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -191,7 +194,7 @@ div.csl-indent {
   <li><a href="#appendix" id="toc-appendix" class="nav-link" data-scroll-target="#appendix">Appendix</a></li>
   <li><a href="#affidavit-of-authorship" id="toc-affidavit-of-authorship" class="nav-link" data-scroll-target="#affidavit-of-authorship">Affidavit of Authorship</a></li>
   </ul>
-</nav>
+<div class="quarto-alternate-notebooks"><h2>Notebooks</h2><ul><li><a href="4-results.ipynb.html"><i class="bi bi-journal-code"></i>4-results.ipynb</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -235,20 +238,54 @@ div.csl-indent {
 </section>
 <section id="lit" class="level2">
 <h2 class="anchored" data-anchor-id="lit">Literature Review</h2>
-<p>This analysis is related to several strands on existing literature on the economic drivers of populism.</p>
+<p>This analysis is related to several strands of existing literature on the economic drivers of populism.</p>
 </section>
 <section id="data" class="level2">
 <h2 class="anchored" data-anchor-id="data">Data</h2>
-<p>The analysis is based on data compiled by <span class="citation" data-cites="puschMindestlohn12Euro2022">Pusch and Seils (<a href="#ref-puschMindestlohn12Euro2022" role="doc-biblioref">2022</a>)</span> at the Institute of Economic and Social Sciences (WSI). They provide an estimate of the share of workers in a given district who will be affected by the increase in the minimum wage to €12 in October 2022. The data basis for the number of minimum wage earners comes from the German Socio-Economic Panel (SOEP) and is regionalised using data from the German Federal Employment Agency (BA).</p>
+<p>The analysis is based on data compiled by <span class="citation" data-cites="puschMindestlohn12Euro2022">Pusch and Seils (<a href="#ref-puschMindestlohn12Euro2022" role="doc-biblioref">2022</a>)</span> at the Institute of Economic and Social Sciences (WSI). They provide an estimate of the share of workers in a given district who will be affected by the increase in the minimum wage to €12 in October 2022 (henceforth minimum wage workers). The data basis for the number of minimum wage earners comes from the German Socio-Economic Panel (SOEP) and is regionalised using data from the German Federal Employment Agency (BA) and projected to the first of October 2022.</p>
 <p><span class="citation" data-cites="puschMindestlohn12Euro2022">Pusch and Seils (<a href="#ref-puschMindestlohn12Euro2022" role="doc-biblioref">2022</a>)</span> acknowledge some limitations of their results. The underlying SOEP data underestimate the number of marginally employed (mini-jobs), which make up a higher proportion of the workforce in West Germany. The estimate of these groups of people, most of whom receive a minimum wage, is therefore considered to be conservative, especially in Western Germany.</p>
 <p>Alternative for Germany (AfD) results from the federal election on the 26.10.2021 are from the Federal Election Commissioner. Elections in Germany take place in constituencies (Wahlkreise), which are different from the standard counties (Landkreise). Therefore, the data is transformed by the election office, which does not lead to any loss of data.</p>
+<p>Additional data on socio-economic and socio-demographic factors are provided by the regional statistical offices of the Länder. Most of these data are for the year 2022, with the exception of population density estimates, for which more recent data are not yet available.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/maps.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Representation of Minimum Wage and Vote Share Data</figcaption>
 </figure>
 </div>
-<p>Additional data on socio-economic and socio-demographic factors are provided by the regional statistical offices of the Länder. Most of these data are for the year 2022, with the exception of population density estimates, for which more recent data are not yet available.</p>
+<div class="quarto-embed-nb-cell">
+<div id="tbl-summary" class="cell tbl-parent quarto-layout-panel anchored" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="14">
+<div class="panel-caption table-caption">
+<p><strong>?(caption)</strong></p>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output cell-output-stdout quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+<pre><code>
+% Table created by stargazer v.5.2.3 by Marek Hlavac, Social Policy Institute. E-mail: marek.hlavac at gmail.com
+% Date and time: Wed, Feb 07, 2024 - 18:05:41
+\begin{table}[!htbp] \centering 
+  \caption{} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}}lccccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+Statistic &amp; \multicolumn{1}{c}{N} &amp; \multicolumn{1}{c}{Mean} &amp; \multicolumn{1}{c}{St. Dev.} &amp; \multicolumn{1}{c}{Min} &amp; \multicolumn{1}{c}{Max} \\ 
+\hline \\[-1.8ex] 
+afd\_prozent &amp; 400 &amp; 0.113 &amp; 0.058 &amp; 0.029 &amp; 0.321 \\ 
+lohn\_prozent &amp; 400 &amp; 0.194 &amp; 0.064 &amp; 0.079 &amp; 0.440 \\ 
+linke\_prozent &amp; 399 &amp; 0.045 &amp; 0.029 &amp; 0.015 &amp; 0.155 \\ 
+ost &amp; 400 &amp; 0.190 &amp; 0.393 &amp; 0 &amp; 1 \\ 
+arbeitslosenquote &amp; 400 &amp; 0.052 &amp; 0.022 &amp; 0.019 &amp; 0.148 \\ 
+gdp &amp; 400 &amp; 40,329.500 &amp; 16,743.150 &amp; 17,553 &amp; 158,749 \\ 
+age &amp; 400 &amp; 45.277 &amp; 2.008 &amp; 40.700 &amp; 51.000 \\ 
+pop &amp; 400 &amp; 536.540 &amp; 708.669 &amp; 35.300 &amp; 4,788.200 \\ 
+foreigners &amp; 400 &amp; 0.114 &amp; 0.055 &amp; 0.025 &amp; 0.375 \\ 
+\hline \\[-1.8ex] 
+\end{tabular} 
+\end{table} </code></pre>
+</div>
+</div>
+</div>
+<a class="quarto-notebook-link" id="nblink-1" href="4-results.ipynb.html#tbl-summary">Source: 4-results.ipynb</a></div>
 </section>
 <section id="method" class="level2">
 <h2 class="anchored" data-anchor-id="method">Methodology</h2>
