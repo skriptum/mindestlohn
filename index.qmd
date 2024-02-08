@@ -3,22 +3,26 @@ title: "Paycheck Politics"
 subtitle: "Minimum Wage Dynamics and the Populist Vote"
 abstract: "Lorem Ipsum"
 author: "marten w."
+
 toc: true
+lof: true
+lot: true
+
 bibliography: references.bib
 link-citations: true
-# format:
-#   pdf:
-#     documentclass: article
-#     fontsize: "12pt"
-#     linestretch: 1.5
-#     papersize: a4
-#     fontfamily: newtxtext
+format:
+  pdf:
+    documentclass: article
+    fontsize: "12pt"
+    linestretch: 1.5
+    papersize: a4
+    fontfamily: newtxtext
     
-# geometry: 
-#   - top=20mm
-#   - bottom=20mm
-#   - right=30mm
-#   - left=20mm
+geometry: 
+  - top=20mm
+  - bottom=20mm
+  - right=30mm
+  - left=20mm
 ---
 `\pagenumbering{gobble}`{=latex}
 `\pagebreak`{=latex}
@@ -34,33 +38,59 @@ Initially, I will [review the existing literature](#lit) regarding the economic 
 
 ## Literature Review {#lit}
 
-This analysis is related to several strands on existing literature on the economic drivers of populism. 
+This analysis is related to several strands of existing literature on the economic drivers of populism. This research field has expanded significantly in recent years, owing to the rise of populism in the aftermath of the Financial Crisis. An Overview of the literature is provided by @gurievPoliticalEconomyPopulism2022 and @fischerEconomicDeterminantsPopulism2023, who both focus on trade exposure, financial crisis and subsequent austerity, immigration and inequality / social mobility as main economic drivers of populist voting behavior.
+
+There are several different papers focused on showing the regional impacts of different drivers on populist votes. In their study, @gabrielPoliticalCostsAusterity2023 investigate the political costs of austerity measures, utilizing a database of european NUTS 2 regions, including Germany, to analyze the effects of fiscal austerity on voting behavior. They find that a 1% reduction in fiscal austerity corresponds to a 3% increase in populist vote share. Furthermore, the study highlights that austerity-driven recessions exacerbate these effects, leading to decreased trust in government and heightened political polarization, particularly during times of economic hardship. @dippelEffectTradeWorkers2022 focus on the impact of trade exposure on populist voting in german districts. Building an index of trade exposure on the local level, They discover that areas with greater exposure to imports from low wage countries witness heightened vote for populists, especially among low-skilled manufacturing workers. 
+
+
+
+
 
 ## Data {#data}
 
-The analysis is based on data compiled by @puschMindestlohn12Euro2022 at the Institute of Economic and Social Sciences (WSI). They provide an estimate of the share of workers in a given district who will be affected by the increase in the minimum wage to €12 in October 2022. The data basis for the number of minimum wage earners comes from the German Socio-Economic Panel (SOEP) and is regionalised using data from the German Federal Employment Agency (BA).
+The analysis is based on data compiled by @puschMindestlohn12Euro2022 at the Institute of Economic and Social Sciences (WSI). They provide an estimate of the share of workers in a given district who will be affected by the increase in the minimum wage to €12 in October 2022 (henceforth minimum wage workers). The data basis for the number of minimum wage earners comes from the German Socio-Economic Panel (SOEP) and is regionalised using data from the German Federal Employment Agency (BA) and projected to the first of October 2022.
 
 @puschMindestlohn12Euro2022 acknowledge some limitations of their results. The underlying SOEP data underestimate the number of marginally employed (mini-jobs), which make up a higher proportion of the workforce in West Germany. The estimate of these groups of people, most of whom receive a minimum wage, is therefore considered to be conservative, especially in Western Germany.
 
 Alternative for Germany (AfD) results from the federal election on the 26.10.2021 are from the Federal Election Commissioner. Elections in Germany take place in constituencies (Wahlkreise), which are different from the standard counties (Landkreise). Therefore, the data is transformed by the election office, which does not lead to any loss of data.
 
-![Representation of Minimum Wage and Vote Share Data](images/maps.png)
-
 Additional data on socio-economic and socio-demographic factors are provided by the regional statistical offices of the Länder. Most of these data are for the year 2022, with the exception of population density estimates, for which more recent data are not yet available.
 
+![Representation of Minimum Wage and Vote Share Data](images/maps.png)
+ 
 ## Methodology {#method}
 
 In this study, regression analysis serves as the primary methodological approach for investigating the relationship between minimum wage recipiency and support for right-wing populist movements. Regression analysis offers several distinct advantages that align with the goals of the research. Firstly, it provides a systematic framework for assessing the relationship between variables while controlling for potential confounding factors. By including relevant control variables in our regression models we can isolate the effect of minimum wage recipiency on voting behavior, thereby enhancing the internal validity of our findings.
 
-The regression formula is as follows:
-
 $$
 \text{afd}_{i} = \beta_0 + \beta_1 \text{mw}_{i} + \sum_3^k\beta_k \text{controls}_{i,k} + \epsilon_{i}
-$$
+$$ {#eq-1}
 
-where $afd_i$ represents the vote share of the AfD in a given district $i$ and $mw_i$ the share of minimum wage recipients in this district.The variable $controls_{i,k}$ comprise a number of different controls for the given district and $\epsilon_i$ a standard error term.
+The @eq-1 describes the regression formula, where $afd_i$ represents the vote share of the AfD in a given district $i$ and $mw_i$ the share of minimum wage recipients in this district.The variable $controls_{i,k}$ comprise a number of different controls for the given district and $\epsilon_i$ a standard error term.
 
 Drawing from the literature review, the controls include a dummy variable representing East Germany to capture regional differences in political and economic contexts. Additionally, I include the unemployment rate and log GDP per capita as economic indicators, recognizing their significance in shaping individuals' socio-economic outlook and political preferences. Sociodemographic factors are also accounted for, with variables such as average age, population density (logged), and the proportion of foreigners in the population. These sociodemographic controls are crucial for capturing nuances in local demographics and social dynamics, which may impact voting behavior independently of minimum wage recipiency.
+
+```{=latex}
+\begin{table}[!htbp] \centering 
+  \caption{Summary Table of all Variables} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}}lccccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+Statistic & \multicolumn{1}{c}{N} & \multicolumn{1}{c}{Mean} & \multicolumn{1}{c}{St. Dev.} & \multicolumn{1}{c}{Min} & \multicolumn{1}{c}{Max} \\ 
+\hline \\[-1.8ex] 
+AfD Results & 400 & 0.113 & 0.058 & 0.029 & 0.321 \\ 
+MW recipiency & 400 & 0.194 & 0.064 & 0.079 & 0.440 \\ 
+LINKE results & 399 & 0.045 & 0.029 & 0.015 & 0.155 \\ 
+Unempl. Rate & 400 & 0.052 & 0.022 & 0.019 & 0.148 \\ 
+GDP p.C. & 400 & 40,329.500 & 16,743.150 & 17,553 & 158,749 \\ 
+Avg. Age & 400 & 45.277 & 2.008 & 40.700 & 51.000 \\ 
+Pop. Density & 400 & 536.540 & 708.669 & 35.300 & 4,788.200 \\ 
+Foreigners & 400 & 0.114 & 0.055 & 0.025 & 0.375 \\ 
+\hline \\[-1.8ex] 
+\end{tabular} 
+\end{table} 
+```
 
 ## Results {#results}
 
