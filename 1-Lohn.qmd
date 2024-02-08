@@ -9,12 +9,10 @@ bibliography: references.bib
 
 ## Sonneberg
 
-Sonneberg: 
--   Germany's first AfD district administrator (Landrat)
-    -   Robert Sesselmann
-    -   prevails in run-off election against conservative CDU
-    -   52.8% to 47.2%
-    
+Sonneberg: - Germany's first AfD district administrator (Landrat) -
+Robert Sesselmann - prevails in run-off election against conservative
+CDU - 52.8% to 47.2%
+
 shocking to political establishment, international coverage
 
 Sonneberg also: district with the highest proportion of minimum wage
@@ -40,9 +38,9 @@ additional about Sonneberg:
 
 ## Literature
 
-@fischerEconomicDeterminantsPopulism2023 (DIW)
+### Overview Papers Economic Drivers
 
-Literature Review:
+@fischerEconomicDeterminantsPopulism2023 (DIW)
 
 -   trade exposure (globalization)
 -   financial crises
@@ -55,6 +53,26 @@ Literature Review:
     -   perception of unfairness
     -   low intergenerail mobility
 
+another overview by @gurievPoliticalEconomyPopulism2022
+
+-   trade
+    -   exposure to low wage industrial competition
+    -   especially in rural regions (cities could protect from impacts
+        with service industry)
+-   economic crisis
+    -   austerity
+    -   redistribution
+-   cultural backlash
+-   immigration
+    -   shock immigration of 2015 syrian refugee crisis
+    -   higher perception than reality
+-   also emigration (esp. eastern europe)
+    -   good ground for populist vote of the remaining
+
+### Economic Drivers
+
+Literature on economic drivers presented above, but on german / european district level
+
 @gabrielPoliticalCostsAusterity2023
 
 regional Database on political costs of austerity
@@ -66,6 +84,22 @@ regional Database on political costs of austerity
 -   austerity driven recession =\> even more
     -   lower trust in government
     -   special of just recession
+
+@dippelEffectTradeWorkers2022 : Trade in Germany Populist
+
+-   case study germany Effect of Trade on Workers and Votes
+-   low skilled manufacturing workers = votes responsive to trade
+    exposure
+-   level of Landkreise in Germany
+-   have interesting dataset on trade exposure in the counties
+
+@alesinaIntergenerationalMobilityPreferences2018
+
+-   lower intergenerational mobility
+-   higher rpreference for redistributional policy
+-   differences in perception
+
+### Sociodemographic Driver Populism
 
 @pickelWahlAfDFrustration2019: Sozialstrukturelle Analyse
 
@@ -81,13 +115,36 @@ regional Database on political costs of austerity
 -   uncontempt with current wage
 -   lower share of workers council (Betriebsrat)
 
+### Cultural Drivers
+
+- not only economic explanations, also cultural / identity politics
+- activated by economic shocks
+
+@cantoniPersistenceActivationRightwing2019
+
+- municipalities with nazi history 1933 = stonger support today
+- AfD = party platofrm with low social stigma
+
+### Literature on Minimum Wage and Politics
+
+@zavodnyPoliticalEconomyMinimum2020a
+
+-   political economy of minimum wages
+-   focuses mostly on height of MW in different countries
+    -   influencing factors on it
+
+focus more general on labor market policies in general and support for populist vote @bergmanLabourMarketPolicies2022
+
+- loss of status as driver
+
+
 ## Data
 
 Vote Share AfD:
-[Bundeswahlleiter](https://www.bundeswahlleiter.de/bundestagswahlen/2021/ergebnisse/bund-99.html) 
+[Bundeswahlleiter](https://www.bundeswahlleiter.de/bundestagswahlen/2021/ergebnisse/bund-99.html)
 
-- calculated for the different Landkreise, not Wahlbezirke
-- Parliament Election on 09/2021
+-   calculated for the different Landkreise, not Wahlbezirke
+-   Parliament Election on 09/2021
 
 Minimum Wage: [Wirtschaft- und Sozialwissenschaftliches Institut (Hans
 Böckler
@@ -99,11 +156,11 @@ based on:
 -   Destatis
 -   SOEP
 
-=> extrapolated by WSI
+=\> extrapolated by WSI
 
-- "sozialversicherungspflichtig beschäftigte" in district
-- part / full time,  not MiniJob
-- projected for 01/10/2022
+-   "sozialversicherungspflichtig beschäftigte" in district
+-   part / full time, not MiniJob
+-   projected for 01/10/2022
 
 additional Data
 
@@ -130,10 +187,9 @@ basic Model
 
 -   Estimated Coefficient = 0.7
 -   statistically significant
--   R2 = 0.61 
+-   R2 = 0.61
 
-=\> 1% increase in MW recipoients =\> 0.7% increase in AfD
-    share
+=\> 1% increase in MW recipoients =\> 0.7% increase in AfD share
 
 Model with Eastern German Dummy
 
@@ -163,17 +219,18 @@ Test for Wahlergebnis of left poplist party (Die LINKE)
 
 ## Theory
 
-Populism = multicausal, not only socioeconomic, but also sociodemographic, cultural, ...
+Populism = multicausal, not only socioeconomic, but also
+sociodemographic, cultural, ...
 
 i want to explain where MW fits exisitng research
 
 status disordance [@kurerDisappointedExpectationsDownward2022]
 
-- connected to eastern germany & minimum wage
-- MW = lower status than expected from parents with stable jobs in GDR
-- also generally disappointed by it
+-   connected to eastern germany & minimum wage
+-   MW = lower status than expected from parents with stable jobs in GDR
+-   also generally disappointed by it
 
-MW recipients = workers at lower end of spectrum 
+MW recipients = workers at lower end of spectrum
 
 -   instability of job = insecurity [@hoevermannUmfragehochAFD2023]
 -   wish back good old times with stable jobs pre neoliberalism
@@ -182,10 +239,11 @@ despise for inequality [@bartelsTopIncomesGermany2019]
 
 -   lower end of wage scale (feels like down)
 -   disappointed by system
--   see inequality 
--   inequality => populism
+-   see inequality
+-   inequality =\> populism
 
-lack of social mobility [@dodinSocialMobilityGermany2021]
+lack of social mobility [@dodinSocialMobilityGermany2021] adn
+[@alesinaIntergenerationalMobilityPreferences2018]
 
 -   if high share of MW = not many higher paying jobs
 -   esp. eastern germans = not many high earning positions
@@ -199,31 +257,32 @@ eastern germany [@snowerCaringHandThat2006]
 
 inflation [@toberHaushaltspezifischeTeuerungsraten2022]
 
-- hits lower wage workers harder 
-- especially rural regions with high share of card dependency
+-   hits lower wage workers harder
+-   especially rural regions with high share of card dependency
 
 why only now, not earlier?
 
-- Voice Exit by [@hirschmanExitVoiceLoyalty1972]
-- before, exit (abstention) only option for voters incontempt with situation
-- with rise of AfD = voice 
+-   Voice Exit by [@hirschmanExitVoiceLoyalty1972]
+-   before, exit (abstention) only option for voters incontempt with
+    situation
+-   with rise of AfD = voice
 
 labor market hypothesis?
 
-- mostly rejected empirically
-- because rationally no risk of losing job (low unempl. share)
-- but maybe irrational fear
+-   mostly rejected empirically
+-   because rationally no risk of losing job (low unempl. share)
+-   but maybe irrational fear
 
 Afd position on MW
 
-- before 2015 introduction = "jobkiller" by chef petry
-- changed away from this towards a more social-nativist standpoint
-- "Grundsatzprogramm" supports MW concept
+-   before 2015 introduction = "jobkiller" by chef petry
+-   changed away from this towards a more social-nativist standpoint
+-   "Grundsatzprogramm" supports MW concept
 
 ### future Research
 
-- characteristics of MW jobs
-- panel data set with more than one point in time
+-   characteristics of MW jobs
+-   panel data set with more than one point in time
 
 ## Implications
 
@@ -232,5 +291,5 @@ not stop from higher MW!
 Policy
 
 -   union bargaining incerase for higher wages
-  -   european "richtlinie" 80% 
+-   european "richtlinie" 80%
 -   increase social mobility + decrease east west inequality
