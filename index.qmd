@@ -17,6 +17,7 @@ format:
     linestretch: 1.5
     papersize: a4
     fontfamily: newtxtext
+    number-sections: false
     
 geometry: 
   - top=20mm
@@ -32,15 +33,17 @@ geometry:
 
 Nestled in the heart of Thuringia, the German district of Sonneberg made headlines with a historic moment—it became the first constituency to elect a district administrator from the right wing Alternative for Germany (AfD) party. In an unexpected turn, Robert Sesselmann of the AfD won a closely contested run-off election against the conservative Christian Democratic Union (CDU), securing 52.8% of the votes. The results not only marked a seismic shift in local politics but sent shockwaves through the established political order [@schuetzeFirstGermanyFar2023].
 
-Intriguingly, Sonneberg also holds the distinction of having the highest percentage of minimum wage workers in Germany—44%. This paper aims to explore the connection between minimum wage recipiency and the support for right-wing populist movements, using Sonneberg as a focal point. Employing data from the WSI and the German Federal Election Officer in an Ordinary Least Squares (OLS) regression, the analysis reveals a significant correlation between these variables, even when accounting for other relevant controls.
+Intriguingly, Sonneberg also holds the distinction of having the highest percentage of minimum wage workers in Germany—44%. This paper aims to explore the connection between minimum wage recipiency and the support for right-wing populist movements, using Sonneberg as a focal point. Employing data from the WSI and the German Federal Election Officer in an Ordinary Least Squares (OLS) regression, the findings reveals a significant correlation between these variables, even when accounting for other relevant controls.
 
-Initially, I will [review the existing literature](#lit) regarding the economic determinants of populism in both economic and political research. Following this is a concise overview of [the data](#data) utilized and the [regression methodology](#method) employed in the subsequent section. Subsequently, the [results](#results) will be presented, followed by an interpretation of these findings and their contextualization within existing research.
+Initially, I will [review the existing literature](#lit) regarding the economic determinants of populism in both economic and political research. Following this is a concise overview of [the data](#data) utilized and the [regression methodology](#method) employed in the subsequent section. Subsequently, the [results](#results) will be presented, followed by a [discussion](#discussion) of these findings and their contextualization within existing research.
 
 ## Literature Review {#lit}
 
-This analysis is related to several strands of existing literature on the economic drivers of populism. This research field has expanded significantly in recent years, owing to the rise of populism in the aftermath of the Financial Crisis. An Overview of the literature is provided by @gurievPoliticalEconomyPopulism2022 and @fischerEconomicDeterminantsPopulism2023, who both focus on trade exposure, financial crisis and subsequent austerity, immigration and inequality / social mobility as main economic drivers of populist voting behavior.
+This analysis is related to several strands of existing literature on the economic drivers of populism. The research field has expanded significantly in recent years, owing to the rise of populism in the aftermath of the Financial Crisis. An Overview of the literature is provided by @gurievPoliticalEconomyPopulism2022 and @fischerEconomicDeterminantsPopulism2023, who both focus on trade exposure, financial crisis and subsequent austerity, immigration and inequality / social mobility as main economic drivers of populist voting behavior.
 
-There are several different papers focused on showing the regional impacts of different drivers on populist votes. In their study, @gabrielPoliticalCostsAusterity2023 investigate the political costs of austerity measures, utilizing a database of european NUTS 2 regions, including Germany, to analyze the effects of fiscal austerity on voting behavior. They find that a 1% reduction in fiscal austerity corresponds to a 3% increase in populist vote share. Furthermore, the study highlights that austerity-driven recessions exacerbate these effects, leading to decreased trust in government and heightened political polarization, particularly during times of economic hardship. @dippelEffectTradeWorkers2022 focus on the impact of trade exposure on populist voting in german districts. Building an index of trade exposure on the local level, They discover that areas with greater exposure to imports from low wage countries witness heightened vote for populists, especially among low-skilled manufacturing workers. 
+There are several different papers focused on showing the regional impacts of different drivers on populist votes. In their study, @gabrielPoliticalCostsAusterity2023 investigate the political costs of austerity measures, utilizing a database of european NUTS 2 regions, including Germany, to analyze the effects of fiscal austerity on voting behavior. They find that a 1% reduction in fiscal austerity corresponds to a 3% increase in populist vote share. Furthermore, the study highlights that austerity-driven recessions exacerbate these effects, leading to decreased trust in government and heightened political polarization, particularly during times of economic hardship. @dippelEffectTradeWorkers2022 focus on the impact of trade exposure on populist voting in german districts. Building an index of trade exposure on the local level, they show that areas with greater exposure to imports from low wage countries witness heightened vote for populists, especially among low-skilled manufacturing workers. 
+
+Other research highlights the different socio-economic backgrounds of AfD voters that could explain the party's rise. Using data from the German Longitudinal Election Study, @pickelWahlAfDFrustration2019 focuses on the reasons for the high mobilisation of previous non-voters and finds cultural as well as economic reasons. In particular, working-class men and lower-status civil servants vote for the AfD, but in recent elections the party's base has broadened and a simple explanation is no longer possible. @hoevermannUmfragehochAFD2023 investigates the working conditions of AfD voters and showes that they were dissatisfied with their working conditions with above-average frequency, have lower esteem of their work and are more likely to rate their labour market prospects as poor if they lose their job. Additionally they often report a lack of dignity and recognition - whether due to inadequate pay or a lack of appreciation from superiors.
 
 
 
@@ -94,6 +97,10 @@ Foreigners & 400 & 0.114 & 0.055 & 0.025 & 0.375 \\
 
 ## Results {#results}
 
+![Visualization of Regression Results](images/plot_basic.png){#fig-2}
+
+## Discussion {#discussion}
+
 ## Conclusion
 
 
@@ -107,4 +114,4 @@ Foreigners & 400 & 0.114 & 0.055 & 0.025 & 0.375 \\
 
 ## Appendix {-}
 
-## Affidavit of Authorship {-}
+## Affidavit {-}

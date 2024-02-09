@@ -125,6 +125,12 @@ regional Database on political costs of austerity
 - municipalities with nazi history 1933 = stonger support today
 - AfD = party platofrm with low social stigma
 
+@kurerDisappointedExpectationsDownward2022 Status Discrodance
+
+- calculated expected status based on parents occupation
+- and difference to achieved status in reality
+- especially men and eastern german high discordanca
+
 ### Literature on Minimum Wage and Politics
 
 @zavodnyPoliticalEconomyMinimum2020a
@@ -217,12 +223,92 @@ Test for Wahlergebnis of left poplist party (Die LINKE)
 -   but not really significant
 -   as described by Piketty = left today not really "abgehängte"
 
-## Theory
+## Discussion
 
 Populism = multicausal, not only socioeconomic, but also
 sociodemographic, cultural, ...
 
-i want to explain where MW fits exisitng research
+main theory: 
+
+Minimum Wage is one of the channels translating abstract phenonema to populist vote
+
+- financial crisis
+    - shwon by @nauIncomePrecarityFinancial2019
+    - crisis hits low income and middle income
+    - creates income precarity
+    - higher risk for insecuritry for all groups
+- austerity
+    - especially in euro-crisis @buschEuroCrisisAusterity
+    - destruction of collective bargaining etc.
+    - creates low wage sector 
+- trade exposure
+    - as shown by @utarWorkersFloodgatesLowWage2018
+    - manufacturing workers => instable low wage service jobs
+
+lead to: Minimum Wage / Low Wage sector
+
+- lack of mobility
+- status discordance
+- general disappointment (inequality etc)
+
+=> populist voting
+
+why minimum wage, not general low wage sector
+
+- of course, MW kind of proxy for low wage sector
+- but is additional psychological (very far end of wage scale)
+- nobody below you (except unemployed)
+- far away from high pay jobs of "winners" 
+
+
+why eastern germany also factor?
+
+- post wende turmoil additional pressure (Treuhand)
+- cultural
+- Steffen Mau sociological survey
+- labor market different from West (policy failure)
+
+
+why vote for AfD, not Linke?
+
+- shown by @berghExplainingRisePopulism2022, that unemployment = left, insecure job = right
+- Linke = more for privileged voters (piketty)
+- AfD more effective, much attention on them in public discourse
+
+
+why now, not earlier?
+
+- party changed attitude towards MW
+    - earlier: jobkiller
+    - now: important social policy (Grundsatzprogramm)
+- social acceptance of Afd: Exit (Abstention) --> Voice
+    - following @hirschmanExitVoiceLoyalty1972
+- also: Inflation now hits very hard (2020f)
+    - @toberHaushaltspezifischeTeuerungsraten2022
+    - especially low wage in rural regions
+
+
+endogeneity: Afd -> MW?
+
+- not in power anywhere except Sonneberg and small districts
+    - MW rise was before    
+    - not long in power
+- no change in economic structure there
+
+
+
+Visualization of Theory:
+```{mermaid}
+graph LR
+
+A(Financial Crisis) & B(Austerity) & C(Trade exposure) --> MW((Mininum Wage))
+
+A & B & C -.-> O(... other Channels)
+
+MW --> D(lack of mobility) & E(Status Discordance) & F(Disappointment)
+--> AfD((Populist voting))
+O -.-> AfD
+```
 
 status disordance [@kurerDisappointedExpectationsDownward2022]
 
@@ -260,24 +346,6 @@ inflation [@toberHaushaltspezifischeTeuerungsraten2022]
 -   hits lower wage workers harder
 -   especially rural regions with high share of card dependency
 
-why only now, not earlier?
-
--   Voice Exit by [@hirschmanExitVoiceLoyalty1972]
--   before, exit (abstention) only option for voters incontempt with
-    situation
--   with rise of AfD = voice
-
-labor market hypothesis?
-
--   mostly rejected empirically
--   because rationally no risk of losing job (low unempl. share)
--   but maybe irrational fear
-
-Afd position on MW
-
--   before 2015 introduction = "jobkiller" by chef petry
--   changed away from this towards a more social-nativist standpoint
--   "Grundsatzprogramm" supports MW concept
 
 ### future Research
 

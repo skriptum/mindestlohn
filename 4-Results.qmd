@@ -29,13 +29,12 @@ plot_basic <- ggplot(aes(x = lohn_prozent, y = afd_prozent, label=name), data = 
   geom_point(shape = 1) +
   geom_smooth(method = "lm", se = T) +
   labs(
-    x = "Anteil Mindestlohnbezieher",
-    y = "AfD Stimmen in %",
-    title = "AfD Stimmen und Mindestlohnbezieher",
-    subtitle = "Kreisebene",
-    caption = "Daten: WSI, Bundeswahlleiter"
+    x = "Minimum Wage Share",
+    y = "AfD Vote Share",
+    subtitle = "District Level",
+    caption = "Data: WSI, Bundeswahlleiter"
   ) +
-  theme_minimal() #+ #scientific theme
+  theme_bw() #+ #scientific theme
   #coord_cartesian(xlim = c(0, 0.5), ylim = c(0, 0.35)) + #start at 0,0
   # for Sonneberg (16072)
   # geom_point(
@@ -50,7 +49,8 @@ plot_basic <- ggplot(aes(x = lohn_prozent, y = afd_prozent, label=name), data = 
   #   color = "red"
   # )
 ggsave("images/plot_basic.png", plot_basic, width = 10, height = 7)
-plotly::ggplotly(plot_basic)
+#plotly::ggplotly(plot_basic)
+plot_basic
 ```
 
 Plot with east germany
