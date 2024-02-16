@@ -2,7 +2,6 @@
 
 
 ```{r}
- 
 library(stargazer)
 library(tidyverse)
 library(patchwork)
@@ -10,12 +9,10 @@ library(plotly)
 ```
 
 ```{r}
- 
 load("data/models.RData")
 ```
 
 ```{r}
- 
 wahl_lohn <- readRDS("data/wahl_lohn_mod.rds")
 ```
 
@@ -24,7 +21,6 @@ wahl_lohn <- readRDS("data/wahl_lohn_mod.rds")
 Basic plot with SB
 
 ```{r}
- 
 plot_basic <- ggplot(aes(x = lohn_prozent, y = afd_prozent, label=name), data = wahl_lohn) +
   geom_point(shape = 1) +
   geom_smooth(method = "lm", se = T) +
@@ -173,21 +169,19 @@ Summary Statistic of Data
 #| label: tbl-summary
 #| output: asis
  
-#stargazer(as.data.frame(wahl_lohn), type="text")
-stargazer(as.data.frame(wahl_lohn), type="latex", out="images/summary_table.tex", header = FALSE)
+stargazer(as.data.frame(wahl_lohn), type="text")
+#stargazer(as.data.frame(wahl_lohn), type="latex", out="images/summary_table.tex", header = FALSE)
 ```
 
 Compile List of Models to include in Table
 
 ```{r}
- 
 models <- list(
   model_basic,
   model_ost,
   model_arbeit,
   model_gdp,
   model_age,
-  model_foreign,
   model_pop
 )
 ```
@@ -199,9 +193,9 @@ Create the Stargazer Table
 #| label: tbl-results
  
 table <- stargazer(models, 
-          #type = "text",
-          type = "html",
-          out="images/table.html", #
+          type = "text",
+          #type = "latex",
+          #out="images/table.tex", #
           title = "Effect of Minimum Wage Recipients on AfD Vote Share",
           dep.var.labels = "AfD Vote Share",
           covariate.labels = c(
@@ -210,10 +204,9 @@ table <- stargazer(models,
             "Unemployment Rate", 
             "Log GDP p. C.", 
             "Avg. Age", 
-            "Log Pop. Density", 
-            "Foreigners"
+            "Log Pop. Density"
             ),
-          df = T,
+          df = F,
           omit.stat = c("rsq", "f")
           )
 ```

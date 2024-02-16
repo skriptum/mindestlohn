@@ -5,7 +5,7 @@ library(wiesbaden)
 library(tidyverse)
 ```
 
-Wiesbaden package to access data from the Genesis database from Statistisches Bundesamt (located in Wiesbaden). 
+Wiesbaden package to access data from the Genesis database from Statistisches Bundesamt (located in Wiesbaden).
 
 The Credentials to access the API are saved already, test login follows here.
 
@@ -23,12 +23,11 @@ $$
 \text{afd}_k = \beta_0 + \beta_1 \times \text{min}_k + \epsilon
 $$
 
-- $\text{afd}_k$ AfD Vote Share in Landkreis $k$
-- $\text{min}_k$ Share of Minimum Wage Receivers in Landkreis $k$
-- $\beta_0$ Intercept
-- $\beta_1$ Slope
-- $\epsilon$ Error
-
+-   $\text{afd}_k$ AfD Vote Share in Landkreis $k$
+-   $\text{min}_k$ Share of Minimum Wage Receivers in Landkreis $k$
+-   $\beta_0$ Intercept
+-   $\beta_1$ Slope
+-   $\epsilon$ Error
 
 ```{r}
 model_basic <- lm(
@@ -59,7 +58,6 @@ model_ost <- lm(
   )
 summary(model_ost)
 ```
-
 
 ## Unemployment Rate
 
@@ -99,8 +97,6 @@ model_arbeit <- lm(
   )
 summary(model_arbeit)
 ```
-
-
 
 ## GDP per Capita
 
@@ -175,6 +171,7 @@ age_data <- data %>%
 ```
 
 Merge
+
 ```{r}
 wahl_lohn <- wahl_lohn %>%
   left_join(age_data, by = "kreis")
@@ -188,10 +185,9 @@ model_age <- lm(
 summary(model_age)
 ```
 
-## Population Density 
+## Population Density
 
 Regionalstatistik [99910](https://www.regionalstatistik.de/genesis//online?operation=table&code=AI002-1-5&bypass=true&levelindex=0&levelid=1704894307140#abreadcrumb)
-
 
 ```{r}
 d <- retrieve_datalist(tableseries="99910*", genesis=c(db="regio"))
@@ -217,26 +213,34 @@ pop_data <- data %>%
 ```
 
 Merge
+
 ```{r}
 wahl_lohn <- wahl_lohn %>%
   left_join(pop_data, by = "kreis")
 ```
 
+<!-- somehow changes the model... 
+
 ```{r}
 model_foreign <- lm(
-    afd_prozent ~ lohn_prozent + ost+ arbeitslosenquote + log(gdp)+ age + foreigners, 
+    afd_prozent ~ lohn_prozent + ost+ arbeitslosenquote + log(gdp)+ age , 
     data = wahl_lohn
   )
 summary(model_foreign)
 ```
+-->
+
 
 ```{r}
 model_pop <- lm(
-    afd_prozent ~ lohn_prozent + ost+ arbeitslosenquote + log(gdp) +age+ foreigners + log(pop), 
+    afd_prozent ~ lohn_prozent + ost+ arbeitslosenquote + log(gdp) +age + log(pop), 
     data = wahl_lohn
   )
 summary(model_pop)
 ```
+
+
+<!--
 
 ## Dropping Variables
 
@@ -247,31 +251,46 @@ model_drop <- lm(
 )
 summary(model_drop)
 ```
+
 hust, lets just ignore that...:)
+
+-->
+
 
 ## Choosing the best Model
 
-via Stepwise Regression, explained  [here](https://www.statology.org/stepwise-regression-r/)
+via Stepwise Regression, explained [here](https://www.statology.org/stepwise-regression-r/)
 
 not well regarded in Econometrics, because it is prone to overfitting! just for self reference, that lohn_prozent is chosen and therefore valid
 
 ```{r}
 step(model_basic, direction = "both", scope = ~ lohn_prozent + ost + foreigners+ arbeitslosenquote + log(gdp) + age, trace=0)
 ```
-Seems, best model is:
-"afd_prozent ~ lohn_prozent + ost + age + arbeitslosenquote + foreigners"
 
-## Interlude: Linke 
+Seems, best model is: "afd_prozent \~ lohn_prozent + ost + age + arbeitslosenquote + foreigners"
+
+## Interlude: Linke
 
 ```{r}
 model_linke <- lm(
-    linke_prozent ~ lohn_prozent, 
+    linke_prozent ~ lohn_prozent
     data = wahl_lohn
   )
-summary(model_linke)
+
+model_linke_2 <- lm(
+    linke_prozent ~ lohn_prozent + ost,
+    data = wahl_lohn
+  )
+
+model_linke_3 <- lm(
+    linke_prozent ~ lohn_prozent + ost + log(gdp),
+    data = wahl_lohn
+  )
+
+summary(model_linke_3)
 ```
 
-=> not significant in all variants, low R2 in basic variant
+=\> not significant in all variants, low R2 in basic variant
 
 ## Save Data
 
@@ -284,7 +303,6 @@ save(
   model_gdp, 
   model_age,
   model_pop, 
-  model_foreign, 
   file = "data/models.RData")
 ```
 

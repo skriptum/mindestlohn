@@ -125,11 +125,19 @@ regional Database on political costs of austerity
 - municipalities with nazi history 1933 = stonger support today
 - AfD = party platofrm with low social stigma
 
+
+### position & status
+
 @kurerDisappointedExpectationsDownward2022 Status Discrodance
 
 - calculated expected status based on parents occupation
 - and difference to achieved status in reality
-- especially men and eastern german high discordanca
+- especially men and eastern german high discordance
+
+also @brianburgoonPositionalDeprivationSupport2019
+
+- positional deprivation = income growth relative to other influences vote 
+- slow = retreat from mainstream parties = feeling of losing out
 
 ### Literature on Minimum Wage and Politics
 
@@ -228,30 +236,69 @@ Test for Wahlergebnis of left poplist party (Die LINKE)
 Populism = multicausal, not only socioeconomic, but also
 sociodemographic, cultural, ...
 
-main theory: 
 
-Minimum Wage is one of the channels translating abstract phenonema to populist vote
+### my argument:
+
+Minimum Wage is one of the channels translating abstract phenonema to populist vote:
+
+phenomena  / factors (from literature):
+
+- financial crisis
+- austeritiy
+- trade exposure
+
+lead to: Minimum Wage / Low Wage sector
+
+equals:
+- lack of mobility
+- status discordance
+- general disappointment (inequality etc)
+
+=> leads to populist voting
+
+### factors: 
 
 - financial crisis
     - shwon by @nauIncomePrecarityFinancial2019
     - crisis hits low income and middle income
     - creates income precarity
     - higher risk for insecuritry for all groups
+
 - austerity
     - especially in euro-crisis @buschEuroCrisisAusterity
     - destruction of collective bargaining etc.
     - creates low wage sector 
+
 - trade exposure
     - as shown by @utarWorkersFloodgatesLowWage2018
     - manufacturing workers => instable low wage service jobs
 
-lead to: Minimum Wage / Low Wage sector
+### channels
 
 - lack of mobility
-- status discordance
-- general disappointment (inequality etc)
+    - @dodinSocialMobilityGermany2021] adn
+[@alesinaIntergenerationalMobilityPreferences2018]
+    - if high share of MW = not many higher paying jobs
+    - esp. eastern germans = not many high earning positions
+    - future pessimism = easier for populists
 
-=> populist voting
+- status discordancy @kurerDisappointedExpectationsDownward2022
+    - MW = lowest status possible (except unemployed)
+    - comparison to parent generation with higher status
+        - either because east german = more middle class, compressed wage scale
+        - pre financial crisis times = more job stability etc.
+
+- positional deprivation @brianburgoonPositionalDeprivationSupport2019
+    - rising share of top 10% @bartelsTopIncomesGermany2019
+    - but not fast rising MW (except for 12 increase, but not much more)
+    - lower end of wage scale (feels like down)
+    - disappointed by system
+    - see inequality
+    - inequality =\> populism
+
+- additional: instability of job, fear of losing joba nd being unemplyoed ling
+
+### Controls
 
 why minimum wage, not general low wage sector
 
@@ -259,14 +306,6 @@ why minimum wage, not general low wage sector
 - but is additional psychological (very far end of wage scale)
 - nobody below you (except unemployed)
 - far away from high pay jobs of "winners" 
-
-
-why eastern germany also factor?
-
-- post wende turmoil additional pressure (Treuhand)
-- cultural
-- Steffen Mau sociological survey
-- labor market different from West (policy failure)
 
 
 why vote for AfD, not Linke?
@@ -296,55 +335,39 @@ endogeneity: Afd -> MW?
 - no change in economic structure there
 
 
+labor market hypothesis?
+
+- rejected (unemployment share not relevant)
+- but may still have a place as irrational fear
 
 Visualization of Theory:
 ```{mermaid}
+%%{init: {'theme': "neutral"}}%%
 graph LR
 
-A(Financial Crisis) & B(Austerity) & C(Trade exposure) --> MW((Mininum Wage))
+A([Financial Crisis]) & B([Austerity]) & C([Trade exposure]) --> MW((Mininum Wage))
 
-A & B & C -.-> O(... other Channels)
+A & B & C -.- O[... other Channels]
 
-MW --> D(lack of mobility) & E(Status Discordance) & F(Disappointment)
+MW --- D[Lack of mobility] & E[Status Discordance] & F[Positional Deprivation]
 --> AfD((Populist voting))
 O -.-> AfD
 ```
 
-status disordance [@kurerDisappointedExpectationsDownward2022]
 
--   connected to eastern germany & minimum wage
--   MW = lower status than expected from parents with stable jobs in GDR
--   also generally disappointed by it
+### other channels:
 
-MW recipients = workers at lower end of spectrum
+eastern germany
 
--   instability of job = insecurity [@hoevermannUmfragehochAFD2023]
--   wish back good old times with stable jobs pre neoliberalism
-
-despise for inequality [@bartelsTopIncomesGermany2019]
-
--   lower end of wage scale (feels like down)
--   disappointed by system
--   see inequality
--   inequality =\> populism
-
-lack of social mobility [@dodinSocialMobilityGermany2021] adn
-[@alesinaIntergenerationalMobilityPreferences2018]
-
--   if high share of MW = not many higher paying jobs
--   esp. eastern germans = not many high earning positions
--   future pessimism = easier for populists
-
-eastern germany [@snowerCaringHandThat2006]
-
--   hard hit by post-Wende turmoil
+-   hard hit by post-Wende turmoil, [@snowerCaringHandThat2006]
 -   creation of Niedriglohnsektor due to TreuHand policy
--   cultural factors as well
+-   cultural factors as well 
+-   @mauLuettenKleinLeben2019 vast sociological study (shows difference)
 
 inflation [@toberHaushaltspezifischeTeuerungsraten2022]
 
 -   hits lower wage workers harder
--   especially rural regions with high share of card dependency
+-   especially rural regions with high share of car dependency
 
 
 ### future Research
@@ -352,7 +375,9 @@ inflation [@toberHaushaltspezifischeTeuerungsraten2022]
 -   characteristics of MW jobs
 -   panel data set with more than one point in time
 
-## Implications
+## Narrative Case Example: Sonneberg
+
+## Conclusion
 
 not stop from higher MW!
 
