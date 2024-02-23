@@ -2,11 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.433">
+<meta name="generator" content="quarto-1.4.550">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="marten w.">
+<meta name="author" content="Marten W.">
 
 <title>Economic History - Paycheck Politics</title>
 <style>
@@ -25,6 +25,7 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -65,7 +66,12 @@ div.csl-indent {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -74,6 +80,7 @@ div.csl-indent {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -86,35 +93,64 @@ div.csl-indent {
 }
 </script>
 <script async="" src="https://hypothes.is/embed.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
-<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+<script>
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    document.body.classList.add('hypothesis-enabled');
+  });
+</script>
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Main Text</a></li><li class="breadcrumb-item"><a href="./index.html">Paycheck Politics</a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Main Text</a></li><li class="breadcrumb-item"><a href="./index.html">Paycheck Politics</a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
     </div>
   </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Economic History</a> 
@@ -168,7 +204,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./4-Results.html" class="sidebar-item-text sidebar-link">
+  <a href="./4-results.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Results</span></a>
   </div>
 </li>
@@ -177,7 +213,7 @@ div.csl-indent {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -189,17 +225,18 @@ div.csl-indent {
   <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
   <li><a href="#method" id="toc-method" class="nav-link" data-scroll-target="#method">Methodology</a></li>
   <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
+  <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion">Discussion</a></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   <li><a href="#appendix" id="toc-appendix" class="nav-link" data-scroll-target="#appendix">Appendix</a></li>
-  <li><a href="#affidavit-of-authorship" id="toc-affidavit-of-authorship" class="nav-link" data-scroll-target="#affidavit-of-authorship">Affidavit of Authorship</a></li>
+  <li><a href="#affidavit" id="toc-affidavit" class="nav-link" data-scroll-target="#affidavit">Affidavit</a></li>
   </ul>
-<div class="quarto-alternate-notebooks"><h2>Notebooks</h2><ul><li><a href="4-results.ipynb.html"><i class="bi bi-journal-code"></i>4-results.ipynb</a></li></ul></div></nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="index.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Main Text</a></li><li class="breadcrumb-item"><a href="./index.html">Paycheck Politics</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Paycheck Politics</h1>
 <p class="subtitle lead">Minimum Wage Dynamics and the Populist Vote</p>
@@ -212,7 +249,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>marten w. </p>
+             <p>Marten W. </p>
           </div>
   </div>
     
@@ -222,104 +259,225 @@ div.csl-indent {
   
 <div>
   <div class="abstract">
-    <div class="abstract-title">Abstract</div>
-    Lorem Ipsum
+    <div class="block-title">Abstract</div>
+    <p>Sonneberg was the first district in Germany to elect a commissioner from the right-wing populist AfD – it was also the district with the highest share of minimum wage receivers in Germany. Using Data from the WSI and election results from the federal election in 2021, I research the relationship between minimum wage recipiency and voting for the populist right. The results show a statistically significant correlation between these variables, which adds to the existing research on the economic drivers of populism.</p>
   </div>
 </div>
 
+
 </header>
 
+
 <p> </p>
-<section id="introduction" class="level2">
+<section id="introduction" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>Nestled in the heart of Thuringia, the German district of Sonneberg made headlines with a historic moment—it became the first constituency to elect a district administrator from the right wing Alternative for Germany (AfD) party. In an unexpected turn, Robert Sesselmann of the AfD won a closely contested run-off election against the conservative Christian Democratic Union (CDU), securing 52.8% of the votes. The results not only marked a seismic shift in local politics but sent shockwaves through the established political order <span class="citation" data-cites="schuetzeFirstGermanyFar2023">(<a href="#ref-schuetzeFirstGermanyFar2023" role="doc-biblioref">Schuetze 2023</a>)</span>.</p>
-<p>Intriguingly, Sonneberg also holds the distinction of having the highest percentage of minimum wage workers in Germany—44%. This paper aims to explore the connection between minimum wage recipiency and the support for right-wing populist movements, using Sonneberg as a focal point. Employing data from the WSI and the German Federal Election Officer in an Ordinary Least Squares (OLS) regression, the analysis reveals a significant correlation between these variables, even when accounting for other relevant controls.</p>
-<p>Initially, I will <a href="#lit">review the existing literature</a> regarding the economic determinants of populism in both economic and political research. Following this is a concise overview of <a href="#data">the data</a> utilized and the <a href="#method">regression methodology</a> employed in the subsequent section. Subsequently, the <a href="#results">results</a> will be presented, followed by an interpretation of these findings and their contextualization within existing research.</p>
+<p>Nestled in the heart of Thuringia, the German district of Sonneberg made headlines with a historic moment – it became the first constituency to elect a district administrator from the right wing Alternative for Germany (AfD) party. In an unexpected turn, Robert Sesselmann of the AfD won a closely contested run-off election against the conservative Christian Democratic Union (CDU), securing 52.8% of the votes. The results not only marked a seismic shift in local politics but sent shockwaves through the established political order <span class="citation" data-cites="schuetzeFirstGermanyFar2023">(<a href="#ref-schuetzeFirstGermanyFar2023" role="doc-biblioref">Schuetze 2023</a>)</span>.</p>
+<div class="no-row-height column-margin column-container"><div id="ref-schuetzeFirstGermanyFar2023" class="csl-entry" role="listitem">
+Schuetze, Christopher F. 2023. <span>“In a <span>First</span>, <span>Germany</span>’s <span>Far Right AfD Party Will Take Control</span> of a <span>District</span>.”</span> <em>The New York Times</em>, June. <a href="https://www.nytimes.com/2023/06/26/world/europe/germany-afd-far-right.html">https://www.nytimes.com/2023/06/26/world/europe/germany-afd-far-right.html</a>.
+</div></div><p>Intriguingly, Sonneberg also holds the distinction of having the highest percentage of minimum wage workers in Germany – 44%. This paper aims to explore the connection between minimum wage recipiency and the support for right-wing populist movements, using Sonneberg as a focal point. Employing data from the WSI and the German Federal Election Officer in an Ordinary Least Squares (OLS) regression, the findings reveals a significant correlation between these variables, even when accounting for other relevant controls.</p>
+<p>Initially, I will <a href="#lit">review the existing literature</a> regarding the economic determinants of populism in both economic and political research. Following this is a concise overview of <a href="#data">the data</a> utilized and the <a href="#method">regression methodology</a> employed in the subsequent section. Subsequently, the <a href="#results">results</a> will be presented, followed by a <a href="#discussion">discussion</a> of these findings and their contextualization within existing research.</p>
 </section>
-<section id="lit" class="level2">
+<section id="lit" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="lit">Literature Review</h2>
-<p>This analysis is related to several strands of existing literature on the economic drivers of populism.</p>
+<p>This analysis is related to several strands of existing literature on the economic drivers of populism. The research field has expanded significantly in recent years, owing to the rise of populism in the aftermath of the Financial Crisis. An Overview of the literature is provided by <span class="citation" data-cites="gurievPoliticalEconomyPopulism2022">Guriev and Papaioannou (<a href="#ref-gurievPoliticalEconomyPopulism2022" role="doc-biblioref">2022</a>)</span> and <span class="citation" data-cites="fischerEconomicDeterminantsPopulism2023">Fischer and Meister (<a href="#ref-fischerEconomicDeterminantsPopulism2023" role="doc-biblioref">2023</a>)</span>, who both focus on trade exposure, financial crisis and subsequent austerity, immigration and inequality / social mobility as main economic drivers of populist voting behavior.</p>
+<div class="no-row-height column-margin column-container"><div id="ref-gurievPoliticalEconomyPopulism2022" class="csl-entry" role="listitem">
+Guriev, Sergei, and Elias Papaioannou. 2022. <span>“The <span>Political Economy</span> of <span>Populism</span>.”</span> <em>Journal of Economic Literature</em> 60 (3): 753–832. <a href="https://doi.org/10.1257/jel.20201595">https://doi.org/10.1257/jel.20201595</a>.
+</div><div id="ref-fischerEconomicDeterminantsPopulism2023" class="csl-entry" role="listitem">
+Fischer, Carl Leonard, and Lorenz Meister. 2023. <span>“<span>Economic Determinants of Populism</span>.”</span> {Text}. <span>Berlin</span>: <span>DIW Berlin</span>. <a href="https://www.diw.de/de/diw_01.c.879785.de/publikationen/roundup/2023_0145/economic_determinants_of_populism.html">https://www.diw.de/de/diw_01.c.879785.de/publikationen/roundup/2023_0145/economic_determinants_of_populism.html</a>.
+</div><div id="ref-gabrielPoliticalCostsAusterity2023" class="csl-entry" role="listitem">
+Gabriel, Ricardo Duque, Mathias Klein, and Ana Sofia Pessoa. 2023. <span>“The <span>Political Costs</span> of <span>Austerity</span>.”</span> <em>The Review of Economics and Statistics</em>, September, 1–45. <a href="https://doi.org/10.1162/rest_a_01373">https://doi.org/10.1162/rest_a_01373</a>.
+</div><div id="ref-dippelEffectTradeWorkers2022" class="csl-entry" role="listitem">
+Dippel, Christian, Robert Gold, Stephan Heblich, and Rodrigo Pinto. 2022. <span>“The <span>Effect</span> of <span>Trade</span> on <span>Workers</span> and <span>Voters</span>.”</span> <em>The Economic Journal</em> 132 (641): 199–217. <a href="https://doi.org/10.1093/ej/ueab041">https://doi.org/10.1093/ej/ueab041</a>.
+</div></div><p>There are several different papers focused on showing the regional impacts of different drivers on populist votes. In their study, <span class="citation" data-cites="gabrielPoliticalCostsAusterity2023">Gabriel, Klein, and Pessoa (<a href="#ref-gabrielPoliticalCostsAusterity2023" role="doc-biblioref">2023</a>)</span> investigate the political costs of austerity measures, utilizing a database of european NUTS 2 regions, including Germany, to analyze the effects of fiscal austerity on voting behavior. They find that a 1% reduction in fiscal austerity corresponds to a 3% increase in populist vote share. Furthermore, the study highlights that austerity-driven recessions exacerbate these effects, leading to decreased trust in government and heightened political polarization, particularly during times of economic hardship. <span class="citation" data-cites="dippelEffectTradeWorkers2022">Dippel et al. (<a href="#ref-dippelEffectTradeWorkers2022" role="doc-biblioref">2022</a>)</span> focus on the impact of trade exposure on populist voting in german districts. Building an index of trade exposure on the local level, they show that areas with greater exposure to imports from low wage countries witness heightened vote for populists, especially among low-skilled manufacturing workers.</p>
+<p>Other research highlights the different socio-economic backgrounds of AfD voters that could explain the party’s rise. Using data from the German Longitudinal Election Study, <span class="citation" data-cites="pickelWahlAfDFrustration2019">Pickel (<a href="#ref-pickelWahlAfDFrustration2019" role="doc-biblioref">2019</a>)</span> focuses on the reasons for the high mobilisation of previous non-voters and finds cultural as well as economic reasons. In particular, working-class men and lower-status civil servants vote for the AfD, but in recent elections the party’s base has broadened and a simple explanation is no longer possible. <span class="citation" data-cites="hoevermannUmfragehochAFD2023">Hövermann (<a href="#ref-hoevermannUmfragehochAFD2023" role="doc-biblioref">2023</a>)</span> investigates the working conditions of AfD voters and showes that they were dissatisfied with their working conditions with above-average frequency, have lower esteem of their work and are more likely to rate their labour market prospects as poor if they lose their job. Additionally they often report a lack of dignity and recognition – whether due to inadequate pay or a lack of appreciation from superiors.</p>
+<div class="no-row-height column-margin column-container"><div id="ref-pickelWahlAfDFrustration2019" class="csl-entry" role="listitem">
+Pickel, Susanne. 2019. <span>“<span>Die Wahl der AfD. Frustration, Deprivation, Angst oder Wertekonflikt?</span>”</span> In <em><span>Die Bundestagswahl 2017: Analysen der Wahl-, Parteien-, Kommunikations- und Regierungsforschung</span></em>, edited by Karl-Rudolf Korte and Jan Schoofs, 145–75. <span>Wiesbaden</span>: <span>Springer Fachmedien</span>. <a href="https://doi.org/10.1007/978-3-658-25050-8_7">https://doi.org/10.1007/978-3-658-25050-8_7</a>.
+</div><div id="ref-hoevermannUmfragehochAFD2023" class="csl-entry" role="listitem">
+Hövermann, Andreas. 2023. <span>“<span>Das Umfragehoch der AFD</span>.”</span> <span>Wirtschafts- und Sozialwissenschaftliche Institut (WSI)</span>. <a href="https://www.wsi.de/fpdf/HBS-008748/p_wsi_report_92_2023.pdf">https://www.wsi.de/fpdf/HBS-008748/p_wsi_report_92_2023.pdf</a>.
+</div></div><p>A newer strand of research focuses on the relative individual position and status of populist voters, exemplified by <span class="citation" data-cites="kurerDisappointedExpectationsDownward2022">Kurer and Staalduinen (<a href="#ref-kurerDisappointedExpectationsDownward2022" role="doc-biblioref">2022</a>)</span>. They examine the concept of status discordance, calculating expected status based on parents’occupation in the past and comparing it to achieved status in reality. They find that men and individuals in eastern Germany experience particularly high levels of status discordance, which may contribute to feelings of dissatisfaction and disillusionment. Similarly, <span class="citation" data-cites="brianburgoonPositionalDeprivationSupport2019">Brian Burgoon et al. (<a href="#ref-brianburgoonPositionalDeprivationSupport2019" role="doc-biblioref">2019</a>)</span> explores the notion of positional deprivation, wherein slower income growth relative to others influences voting behavior. This sense of being left behind economically may lead individuals to retreat from mainstream parties, fostering support for populist alternatives as a response to perceived loss and marginalization. These studies highlight the importance of considering individuals’ perceived social and economic standing in understanding the appeal of populist movements.</p>
+<p>Cultural factors also play a role in the formation of populist parties, as shown by <span class="citation" data-cites="cantoniPersistenceActivationRightwing2019">Cantoni, Hagemeister, and Westcott (<a href="#ref-cantoniPersistenceActivationRightwing2019" role="doc-biblioref">2019</a>)</span>. The authors show that municipalities with strong support for the Nazi Party (NSDAP) in 1933 also had a higher vote for the AfD in the 2017 election. One explanation for this is the cultural persistence of values across generations, which could influence voting decisions today. In this argument, the AfD represents a party with little social stigma to express the xenophobic and nationalist values of voters.</p>
+<div class="no-row-height column-margin column-container"><div id="ref-cantoniPersistenceActivationRightwing2019" class="csl-entry" role="listitem">
+Cantoni, Davide, Felix Hagemeister, and Mark Westcott. 2019. <span>“Persistence and Activation of Right-Wing Political Ideology.”</span> <a href="https://epub.ub.uni-muenchen.de/60795/1/Cantoni_Hagemeister_Persistence_and_Activation_of_Right-Wing_Political_Ideology.pdf">https://epub.ub.uni-muenchen.de/60795/1/Cantoni_Hagemeister_Persistence_and_Activation_of_Right-Wing_Political_Ideology.pdf</a>.
+</div><div id="ref-zavodnyPoliticalEconomyMinimum2020a" class="csl-entry" role="listitem">
+Zavodny, Madeline. 2020. <span>“Political <span>Economy</span> of <span>Minimum Wages</span>.”</span> In <em>Handbook of <span>Labor</span>, <span>Human Resources</span> and <span>Population Economics</span></em>, edited by Klaus F. Zimmermann, 1–14. <span>Cham</span>: <span>Springer International Publishing</span>. <a href="https://doi.org/10.1007/978-3-319-57365-6_155-1">https://doi.org/10.1007/978-3-319-57365-6_155-1</a>.
+</div><div id="ref-bergmanLabourMarketPolicies2022" class="csl-entry" role="listitem">
+Bergman, Matthew E. 2022. <span>“Labour Market Policies and Support for Populist Radical Right Parties: The Role of Nostalgic Producerism, Occupational Risk, and Feedback Effects.”</span> <em>European Political Science Review</em> 14 (4): 520–43. <a href="https://doi.org/10.1017/S175577392200025X">https://doi.org/10.1017/S175577392200025X</a>.
+</div><div id="ref-halikiopoulouRisksCostsLabour2016" class="csl-entry" role="listitem">
+Halikiopoulou, Daphne, and Tim Vlandas. 2016. <span>“Risks, <span>Costs</span> and <span>Labour Markets</span>: <span>Explaining Cross-National Patterns</span> of <span>Far Right Party Success</span> in <span>European Parliament Elections</span>.”</span> <em>JCMS: Journal of Common Market Studies</em> 54 (3): 636–55. <a href="https://doi.org/10.1111/jcms.12310">https://doi.org/10.1111/jcms.12310</a>.
+</div></div><p>The literature on Minimum Wage and Politics is not yet completely developed. Most of the literature on the political economy of Minimum Wages focuses more on the height of it, e.g. <span class="citation" data-cites="zavodnyPoliticalEconomyMinimum2020a">Zavodny (<a href="#ref-zavodnyPoliticalEconomyMinimum2020a" role="doc-biblioref">2020</a>)</span>, and not the political support side of it. A more general research focus lies on labor market policies and their impact in mediating vote for right wing populist parties. <span class="citation" data-cites="bergmanLabourMarketPolicies2022">Bergman (<a href="#ref-bergmanLabourMarketPolicies2022" role="doc-biblioref">2022</a>)</span> finds that some types of policies, especially high employment protection legislation, leads voters to support right wing parties that argue for the continuation of these sometimes wasteful policies. <span class="citation" data-cites="halikiopoulouRisksCostsLabour2016">Halikiopoulou and Vlandas (<a href="#ref-halikiopoulouRisksCostsLabour2016" role="doc-biblioref">2016</a>)</span> focus on the impact of unemployment benefits on populist vote and differentiated results based on unemployment benefit height, explainging the lagged rise of populist in some Western European States.</p>
+<p>After this introduction into the existing literature, the remainder of the Paper will present the data and methods used for the analyisis and discuss the results in context of the existing research.</p>
 </section>
-<section id="data" class="level2">
+<section id="data" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="data">Data</h2>
 <p>The analysis is based on data compiled by <span class="citation" data-cites="puschMindestlohn12Euro2022">Pusch and Seils (<a href="#ref-puschMindestlohn12Euro2022" role="doc-biblioref">2022</a>)</span> at the Institute of Economic and Social Sciences (WSI). They provide an estimate of the share of workers in a given district who will be affected by the increase in the minimum wage to €12 in October 2022 (henceforth minimum wage workers). The data basis for the number of minimum wage earners comes from the German Socio-Economic Panel (SOEP) and is regionalised using data from the German Federal Employment Agency (BA) and projected to the first of October 2022.</p>
-<p><span class="citation" data-cites="puschMindestlohn12Euro2022">Pusch and Seils (<a href="#ref-puschMindestlohn12Euro2022" role="doc-biblioref">2022</a>)</span> acknowledge some limitations of their results. The underlying SOEP data underestimate the number of marginally employed (mini-jobs), which make up a higher proportion of the workforce in West Germany. The estimate of these groups of people, most of whom receive a minimum wage, is therefore considered to be conservative, especially in Western Germany.</p>
-<p>Alternative for Germany (AfD) results from the federal election on the 26.10.2021 are from the Federal Election Commissioner. Elections in Germany take place in constituencies (Wahlkreise), which are different from the standard counties (Landkreise). Therefore, the data is transformed by the election office, which does not lead to any loss of data.</p>
+<div class="no-row-height column-margin column-container"><div id="ref-puschMindestlohn12Euro2022" class="csl-entry" role="listitem">
+Pusch, Toralf, and Eric Seils. 2022. <span>“<span>Mindestlohn 12 Euro - Auswirkungen in den Kreisen</span>.”</span> <span>D<span>ü</span>sseldorf</span>: <span>Wirtschafts- und Sozialwissenschaftliche Institut (WSI)</span>. <a href="https://hdl.handle.net/10419/265130">https://hdl.handle.net/10419/265130</a>.
+</div></div><p><span class="citation" data-cites="puschMindestlohn12Euro2022">Pusch and Seils (<a href="#ref-puschMindestlohn12Euro2022" role="doc-biblioref">2022</a>)</span> acknowledge some limitations of their results. The underlying SOEP data underestimate the number of marginally employed (mini-jobs), which make up a higher proportion of the workforce in West Germany. The estimate of these groups of people, most of whom receive a minimum wage, is therefore considered to be conservative, especially in Western Germany.</p>
+<p>Alternative for Germany (AfD) results from the federal election on the 26.10.2021 are from the Federal Election Commissioner. Elections in Germany take place in constituencies (Wahlkreise), which are different from the standard counties (Landkreise). Therefore, the data is transformed by the election office, which does not lead to any losses.</p>
 <p>Additional data on socio-economic and socio-demographic factors are provided by the regional statistical offices of the Länder. Most of these data are for the year 2022, with the exception of population density estimates, for which more recent data are not yet available.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/maps.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Representation of Minimum Wage and Vote Share Data</figcaption>
+<figcaption>Representation of Minimum Wage and Vote Share Data</figcaption>
 </figure>
 </div>
-<div class="quarto-embed-nb-cell">
-<div id="tbl-summary" class="cell tbl-parent quarto-layout-panel anchored" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="14">
-<div class="panel-caption table-caption">
-<p><strong>?(caption)</strong></p>
-</div>
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="cell-output cell-output-stdout quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
-<pre><code>
-% Table created by stargazer v.5.2.3 by Marek Hlavac, Social Policy Institute. E-mail: marek.hlavac at gmail.com
-% Date and time: Wed, Feb 07, 2024 - 18:05:41
-\begin{table}[!htbp] \centering 
-  \caption{} 
-  \label{} 
-\begin{tabular}{@{\extracolsep{5pt}}lccccc} 
-\\[-1.8ex]\hline 
-\hline \\[-1.8ex] 
-Statistic &amp; \multicolumn{1}{c}{N} &amp; \multicolumn{1}{c}{Mean} &amp; \multicolumn{1}{c}{St. Dev.} &amp; \multicolumn{1}{c}{Min} &amp; \multicolumn{1}{c}{Max} \\ 
-\hline \\[-1.8ex] 
-afd\_prozent &amp; 400 &amp; 0.113 &amp; 0.058 &amp; 0.029 &amp; 0.321 \\ 
-lohn\_prozent &amp; 400 &amp; 0.194 &amp; 0.064 &amp; 0.079 &amp; 0.440 \\ 
-linke\_prozent &amp; 399 &amp; 0.045 &amp; 0.029 &amp; 0.015 &amp; 0.155 \\ 
-ost &amp; 400 &amp; 0.190 &amp; 0.393 &amp; 0 &amp; 1 \\ 
-arbeitslosenquote &amp; 400 &amp; 0.052 &amp; 0.022 &amp; 0.019 &amp; 0.148 \\ 
-gdp &amp; 400 &amp; 40,329.500 &amp; 16,743.150 &amp; 17,553 &amp; 158,749 \\ 
-age &amp; 400 &amp; 45.277 &amp; 2.008 &amp; 40.700 &amp; 51.000 \\ 
-pop &amp; 400 &amp; 536.540 &amp; 708.669 &amp; 35.300 &amp; 4,788.200 \\ 
-foreigners &amp; 400 &amp; 0.114 &amp; 0.055 &amp; 0.025 &amp; 0.375 \\ 
-\hline \\[-1.8ex] 
-\end{tabular} 
-\end{table} </code></pre>
-</div>
-</div>
-</div>
-<a class="quarto-notebook-link" id="nblink-1" href="4-results.ipynb.html#tbl-summary">Source: 4-results.ipynb</a></div>
 </section>
 <section id="method" class="level2">
 <h2 class="anchored" data-anchor-id="method">Methodology</h2>
-<p>In this study, regression analysis serves as the primary methodological approach for investigating the relationship between minimum wage recipiency and support for right-wing populist movements. Regression analysis offers several distinct advantages that align with the goals of the research. Firstly, it provides a systematic framework for assessing the relationship between variables while controlling for potential confounding factors. By including relevant control variables in our regression models we can isolate the effect of minimum wage recipiency on voting behavior, thereby enhancing the internal validity of our findings.</p>
-<p>The regression formula is as follows:</p>
-<p><span class="math display">\[
-\text{afd}_{i} = \beta_0 + \beta_1 \text{mw}_{i} + \sum_3^k\beta_k \text{controls}_{i,k} + \epsilon_{i}
-\]</span></p>
-<p>where <span class="math inline">\(afd_i\)</span> represents the vote share of the AfD in a given district <span class="math inline">\(i\)</span> and <span class="math inline">\(mw_i\)</span> the share of minimum wage recipients in this district.The variable <span class="math inline">\(controls_{i,k}\)</span> comprise a number of different controls for the given district and <span class="math inline">\(\epsilon_i\)</span> a standard error term.</p>
+<p>In this study, regression analysis serves as the primary methodological approach for investigating the relationship between minimum wage recipiency and support for right-wing populist movements. Regression analysis offers several distinct advantages that align with the goals of the research. Firstly, it provides a systematic framework for assessing the relationship between variables while controlling for potential confounding factors. By including relevant control variables in the regression models I can isolate the effect of minimum wage recipiency on voting behavior, thereby enhancing the internal validity of my findings.</p>
+<p><span id="eq-1"><span class="math display">\[
+\text{afd}_{i} = \beta_0 + \beta_1 \text{mw}_{i} + \sum_2^k\beta_k \text{controls}_{i,k} + \epsilon_{i}
+\tag{1}\]</span></span></p>
+<p>The <a href="#eq-1" class="quarto-xref">Equation&nbsp;1</a> describes the regression formula, where <span class="math inline">\(afd_i\)</span> represents the vote share of the AfD in a given district <span class="math inline">\(i\)</span> and <span class="math inline">\(mw_i\)</span> the share of minimum wage recipients in this district.The variable <span class="math inline">\(controls_{i,k}\)</span> comprise a number of different controls for the given district and <span class="math inline">\(\epsilon_i\)</span> a standard error term.</p>
 <p>Drawing from the literature review, the controls include a dummy variable representing East Germany to capture regional differences in political and economic contexts. Additionally, I include the unemployment rate and log GDP per capita as economic indicators, recognizing their significance in shaping individuals’ socio-economic outlook and political preferences. Sociodemographic factors are also accounted for, with variables such as average age, population density (logged), and the proportion of foreigners in the population. These sociodemographic controls are crucial for capturing nuances in local demographics and social dynamics, which may impact voting behavior independently of minimum wage recipiency.</p>
+<div id="tbl-summary" class="quarto-float anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Summary Statistics
+</figcaption>
+<div aria-describedby="tbl-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<!-- edited the tex table (remove table env and change names of columns) -->
+<!--
+
+
+```{=html}
+{{ include images/summary_table.html }}
+```
+
+
+change include shortcode back into functioning code with adding of <...>
+-->
+</div>
+</figure>
+</div>
 </section>
 <section id="results" class="level2">
 <h2 class="anchored" data-anchor-id="results">Results</h2>
+<p>In this section, I present the results of the regression analysis examining the relationship between minimum wage recipients and the vote share of the Alternative für Deutschland (AfD). Through rigorous econometric modeling, the influence of minimum wage policies and various socio-economic factors on AfD’s electoral performance is explored.</p>
+<div id="fig-2" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-pos="H">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/plot_basic.png" class="img-fluid figure-img" data-fig-pos="H">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Visualization of Regression Results
+</figcaption>
+</figure>
+</div>
+<p><a href="#fig-2" class="quarto-xref">Figure&nbsp;1</a> illustrates the relationship, where each point on the scatter plot represents an electoral district with its position determined by the respective values of minimum wage share and AfD vote share. The x-axis represents the minimum wage share, while the y-axis represents the AfD vote share. Additionally, a linear regression line is superimposed on the scatter plot, providing a visual representation of the overall trend in the data. The shaded area around the regression line denotes the standard error of the estimate.</p>
+<p>The figure depicts a clear positive correlation between the variables across electoral districts. This suggests that areas with higher proportions of minimum wage earners tend to exhibit greater support for the AfD.</p>
+<p>Building upon the visual depiction of the correlation between minimum wage recipients and AfD vote share illustrated in the preceding figure, the subsequent <a href="#tbl-results" class="quarto-xref">Table&nbsp;2</a> delves into a more granular analysis of this relationship. Through a series of regression models, I explore the nuanced interplay between minimum wage rates and various socio-economic factors in influencing political preferences at the district level. Each regression model introduces additional control variables, allowing for a comprehensive examination of the impact of economic, demographic, and regional characteristics on AfD’s electoral performance.</p>
+<div id="tbl-results" class="quarto-float anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-results-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2: Regression Results
+</figcaption>
+<div aria-describedby="tbl-results-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<!-- removed the table environemnt -->
+<!--
+
+
+```{=html}
+{{ include images/table.html }}
+```
+
+
+change into function include by adding <...>
+-->
+</div>
+</figure>
+</div>
+<p>In the regression analysis, I observe consistent patterns across various models. Model 1, focusing solely on the Minimum Wage Rate, reveals a significant and positive association (β = 0.714, p &lt; 0.01) between an increase in the minimum wage rate and a higher AfD vote share, indicating that areas with a greater proportion of minimum wage recipients tend to exhibit stronger support for the AfD. A 1% increase in the share of people receiving minimum wage increases the AfD results by 0.714%.</p>
+<p>Expanding the analysis in Model 2 to include a Dummy for Eastern Germany alongside the Minimum Wage Rate reaffirms the robustness of the relationship observed in Model 1. Both variables retain their significance, altough the estimate for the minimum wage coefficient drops, suggesting that regional disparities do not substantially alter the association, but have an impact. Moreover, the slight increase in the Adjusted <span class="math inline">\(R^2\)</span> value indicates improved model fit, reflecting the added explanatory power of the East Germany indicator in capturing variation in AfD support across electoral districts.</p>
+<p>In subsequent models (Models 3-6), the inclusion of additional control variables such as the Unemployment Rate, Log GDP per Capita, Average Age, and Log Population Density provides further insights into the socio-economic context influencing AfD vote share. Notably, while some of these variables exhibit significant associations with AfD support, the Minimum Wage Rate consistently retains its significance across all models. This persistence highlights the independent impact of minimum wage policies on shaping political preferences, independent of other economic and demographic factors.</p>
+<p>Additionally, the vote results of the party DIE LINKE, a left populist german party, are tested against the minimum wage share. The results show that there is a similar relationship, with the <span class="math inline">\(R^2\)</span> value lower than in the AfD regression. However, the coefficient estimates are not statistically significant in all model definitions, suggesting that the relationship between minimum wage recipiency and left-populist vote share is less definitive.</p>
+<p>Overall, the results underscore the complex interplay between socio-economic factors and political preferences in contemporary German politics. The significant and consistent association between minimum wage recipients and AfD vote share across various models supports my approach. In the subsequent Section, I discuss these results and situate them in the existing research.</p>
 </section>
-<section id="conclusion" class="level2">
+<section id="discussion" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="discussion">Discussion</h2>
+<p>To explain the rise of the AfD, it is crucial to acknowledge its intricate and multifaceted nature, where no singular apporach can explain its ascendance. Populism, by its very essence, defies simple categorization or explanation, drawing upon a complex interplay of economic, social and political factors. Indeed, the allure of populism stems from its ability to tap into a diverse array of grievances and disappointments, reflecting the multitude of realities of its voter base.</p>
+<p>Nonetheless, economic factors do play an outsized role in explaining the rise of populism, exemplified by the diverse quantitative literature in the economic sciences. Following my results, minimum wage seems to play a role in explaining it and I posit that minimum wage recipiency is one of the channels translating the abstract factors presented in the literature into the individual votes for right wing populists.</p>
+<p>Fundamentally, the argument contends that a complex interplay of economic phenomena, including the financial crisis, austerity measures, and trade exposure, manifests in tangible outcomes within the labor market, particularly in the form of minimum wage and low-wage sectors. These economic circumstances contribute to a lack of upward mobility, exacerbate status discordance, and foster a pervasive sense of disillusionment among segments of the population. The stagnation or decline in real wages, coupled with rising living costs and limited opportunities for social advancement, amplifies feelings of economic insecurity and disempowerment. As individuals experience firsthand the challenges of making ends meet, their trust in traditional political institutions wanes, creating fertile ground for populist sentiment.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/theory.jpg" class="img-fluid figure-img"></p>
+<figcaption>Factors leading to populist vote</figcaption>
+</figure>
+</div>
+<p>Drawing from the insights provided by <span class="citation" data-cites="nauIncomePrecarityFinancial2019">Nau and Soener (<a href="#ref-nauIncomePrecarityFinancial2019" role="doc-biblioref">2019</a>)</span>, the financial crisis emerges as a pivotal factor contributing to the formation of income precarity among the working class in the US. These effects reach far into middle class families, which have a higher risk of income loss due to the 2008 crisis. The macro-leven instability translates itself into micro-level income losses, which reach groups not touched by this risk before.</p>
+<div class="no-row-height column-margin column-container"><div id="ref-nauIncomePrecarityFinancial2019" class="csl-entry" role="listitem">
+Nau, Michael, and Matthew Soener. 2019. <span>“Income Precarity and the Financial Crisis.”</span> <em>Socio-Economic Review</em> 17 (3): 523–44. <a href="https://doi.org/10.1093/ser/mwx020">https://doi.org/10.1093/ser/mwx020</a>.
+</div><div id="ref-cunninghamTrendsCollectiveBargaining2020" class="csl-entry" role="listitem">
+Cunningham, Ian, and Philip James. 2020. <span>“Trends in <span>Collective Bargaining</span>, <span>Wage Stagnation</span> and <span>Income Inequality</span> Under <span>Austerity</span>.”</span> In <em>Working in the <span>Context</span> of <span>Austerity</span></em>, 71–96. <span>Bristol University Press</span>. <a href="https://bristoluniversitypressdigital.com/edcollchap/book/9781529208689/ch004.xml">https://bristoluniversitypressdigital.com/edcollchap/book/9781529208689/ch004.xml</a>.
+</div><div id="ref-buschEuroCrisisAusterity2013" class="csl-entry" role="listitem">
+Busch, Klaus, Christoph Hermann, Karl Hinrichs, and Thorsten Schulten. 2013. <span>“Euro <span>Crisis</span>, <span>Austerity Policy</span> and the <span>European Social Model</span>.”</span> <span>Friedrich Ebert Stiftung</span>. <a href="https://library.fes.de/opus4/frontdoor/index/index/year/2017/docId/11896">https://library.fes.de/opus4/frontdoor/index/index/year/2017/docId/11896</a>.
+</div></div><p>Austerity, especially the post crisis austerity in Europe, also had an imopact on the low wage sector. As shown by <span class="citation" data-cites="cunninghamTrendsCollectiveBargaining2020">Cunningham and James (<a href="#ref-cunninghamTrendsCollectiveBargaining2020" role="doc-biblioref">2020</a>)</span> and <span class="citation" data-cites="buschEuroCrisisAusterity2013">Busch et al. (<a href="#ref-buschEuroCrisisAusterity2013" role="doc-biblioref">2013</a>)</span>, policies implemented in austere times had averse effects on the wage growth, especially due to the obstruction of collective bargaining. This had the effect of inflating the low wage sector and increasing inequality.</p>
+<p>These effects complement the existing effect of exposure to international trade with low income countries. <span class="citation" data-cites="utarWorkersFloodgatesLowWage2018">Utar (<a href="#ref-utarWorkersFloodgatesLowWage2018" role="doc-biblioref">2018</a>)</span> explores the impact of these imports in high-wage Denmark and finds significant negative effects on earnings and employment trajectories. A large share of affected manufacturing workers move into the service sector, which is associated with job insecurity and lower wages and many cant recuperate lost income.</p>
+<div class="no-row-height column-margin column-container"><div id="ref-utarWorkersFloodgatesLowWage2018" class="csl-entry" role="listitem">
+Utar, Hale. 2018. <span>“Workers Beneath the <span>Floodgates</span>: <span>Low-Wage Import Competition</span> and <span>Workers</span>’ <span>Adjustment</span>.”</span> <em>The Review of Economics and Statistics</em> 100 (4): 631–47. <a href="https://doi.org/10.1162/rest_a_00727">https://doi.org/10.1162/rest_a_00727</a>.
+</div><div id="ref-bosslerHoehererMindestlohnBetrifft2022" class="csl-entry" role="listitem">
+Bossler, Mario, Erik Börschlein, Nicole Gürtzgen, and Christian Teichert. 2022. <span>“<span>H<span>ö</span>herer Mindestlohn betrifft mehr als jedes f<span>ü</span>nfte Besch<span>ä</span>ftigungsverh<span>ä</span>ltnis</span>.”</span> <span>Bonn</span>: <span>IAB</span>. <a href="https://www.iab-forum.de/hoeherer-mindestlohn-betrifft-mehr-als-jedes-fuenfte-beschaeftigungsverhaeltnis/">https://www.iab-forum.de/hoeherer-mindestlohn-betrifft-mehr-als-jedes-fuenfte-beschaeftigungsverhaeltnis/</a>.
+</div></div><p>In Germany, the described effects of an increase in the service sector and the low-wage sector in general take place mostly at the lower barrier, the minimum wage. As documented by <span class="citation" data-cites="bosslerHoehererMindestlohnBetrifft2022">Bossler et al. (<a href="#ref-bosslerHoehererMindestlohnBetrifft2022" role="doc-biblioref">2022</a>)</span>, in the service sector a large share of workers benefited from the minimum wage increase, especially in the hotel and restaurant sector (more than 50%).</p>
+<p>In summary, macro-level factors have expanded the low-wage sector and heightened income precarity among working-class individuals. The fallout from the 2008 financial crisis, coupled with austerity policies inhibiting wage growth and collective bargaining, has exacerbated income disparities and inflated the low-wage sector. Additionally, international trade has adversely affected earnings and employment trajectories, particularly for manufacturing workers transitioning into the service sector, where job insecurity and minimum wages persist.</p>
+<p>The impact on workers, who are also voters, at an individual level is manifold. One possible effect is a status discordancy, following the explanation by <span class="citation" data-cites="kurerDisappointedExpectationsDownward2022">Kurer and Staalduinen (<a href="#ref-kurerDisappointedExpectationsDownward2022" role="doc-biblioref">2022</a>)</span>, who shows that difference between expected status and realized leads to political dissatisfaction. Minimum wage earners find themselves occupying the lowest rung of the socio-economic ladder, except for the unemployed, which exacerbates feelings of status discordance. This phenomenon may be more acute in regions such as East Germany, where a compressed wage scale and historical factors contribute to heightened perceptions of status disparity. As individuals grapple with these discrepancies between their aspirations and reality, their discontent can translate into political attitudes and behavior, influencing voting patterns and support for populist movements.</p>
+<div class="no-row-height column-margin column-container"><div id="ref-kurerDisappointedExpectationsDownward2022" class="csl-entry" role="listitem">
+Kurer, Thomas, and Briitta Van Staalduinen. 2022. <span>“Disappointed <span>Expectations</span>: <span>Downward Mobility</span> and <span>Electoral Change</span>.”</span> <em>American Political Science Review</em> 116 (4): 1340–56. <a href="https://doi.org/10.1017/S0003055422000077">https://doi.org/10.1017/S0003055422000077</a>.
+</div><div id="ref-brianburgoonPositionalDeprivationSupport2019" class="csl-entry" role="listitem">
+Brian Burgoon, Brian Burgoon, Sam van Noort, S. van Noort, Sam van Noort, Matthijs Rooduijn, Matthijs Rooduijn, Geoffrey R. D. Underhill, and Geoffrey R. D. Underhill. 2019. <span>“Positional <span>Deprivation</span> and <span>Support</span> for <span>Radical Right</span> and <span>Radical Left Parties</span>.”</span> <em>Economic Policy</em> 34 (97): 49–93. <a href="https://doi.org/10.1093/epolic/eiy017">https://doi.org/10.1093/epolic/eiy017</a>.
+</div><div id="ref-bartelsTopIncomesGermany2019" class="csl-entry" role="listitem">
+Bartels, Charlotte. 2019. <span>“Top <span>Incomes</span> in <span>Germany</span>, 1871<span></span>2014.”</span> <em>The Journal of Economic History</em> 79 (3): 669–707. <a href="https://doi.org/10.1017/S0022050719000378">https://doi.org/10.1017/S0022050719000378</a>.
+</div></div><p>Furthermore, the concept of positional deprivation by <span class="citation" data-cites="brianburgoonPositionalDeprivationSupport2019">Brian Burgoon et al. (<a href="#ref-brianburgoonPositionalDeprivationSupport2019" role="doc-biblioref">2019</a>)</span>, where growth in income in the lower end of the distribution is outpaced by higher incomes growth, can explain part of the populist appeal to minimum wage earners. As shown by <span class="citation" data-cites="bartelsTopIncomesGermany2019">Bartels (<a href="#ref-bartelsTopIncomesGermany2019" role="doc-biblioref">2019</a>)</span>, the income concentration at the top onf the income distribution is rising considerably and is today one of the highest in Europe. Following the concept of positional deprivation, minimum wage earners are situated at the lower end of the income distribution and their income outpaced by the top earners in society, creating a feeling of unfairness, which leads to a vote for populist parties.</p>
+<p>Adding to these perceptions of unfairness is the lack of social mobility in Germany, highlighted by <span class="citation" data-cites="dodinSocialMobilityGermany2021">Dodin et al. (<a href="#ref-dodinSocialMobilityGermany2021" role="doc-biblioref">2021</a>)</span>. The authors find based on census data that a 10% increase in the parents income rank leads to a 5.2% increase in the A-Level (Abitur). Minimum Wage receivers, who reside in the lower half of the income ranks, therefore have less reasons to believe that their offspring will escape their situation and will voice their disappointment with the current system at the voting booth.</p>
+<div class="no-row-height column-margin column-container"><div id="ref-dodinSocialMobilityGermany2021" class="csl-entry" role="listitem">
+Dodin, Majed, Sebastian Findeisen, Lukas Henkel, Dominik Sachs, and Paul Schuele. 2021. <span>“Social <span>Mobility</span> in <span>Germany</span>.”</span> {{SSRN Scholarly Paper}}. <span>Rochester, NY</span>. <a href="https://doi.org/10.2139/ssrn.3892624">https://doi.org/10.2139/ssrn.3892624</a>.
+</div></div><p>Summarizing, the theory posits that the financial crisis, austerity measures, and trade exposure serve as catalysts for the emergence of the minimum wage sector (MW). This sector, in turn, acts as a conduit for various socio-economic challenges, including a lack of mobility, status discordance, and positional deprivation. These interconnected channels heighten feelings of economic insecurity and disillusionment among affected individuals, ultimately shaping their political attitudes and behaviors. Specifically, the theory suggests that these socio-economic pressures contribute to increased support for populist movements, as represented by the AfD.</p>
+<p>The question arises as to why support for the AfD has risen so sharply in the most recent elections and opinion polls, and not at an earlier stage with the vast amount of minimum wage earners. This could be due to the recent adoption of minimum wage policies by the AfD in its “Grundsatzprogramm” <span class="citation" data-cites="alternativefuerdeutschlandGrundsatzprogramm2024">(<a href="#ref-alternativefuerdeutschlandGrundsatzprogramm2024" role="doc-biblioref">Alternative für Deutschland 2024</a>)</span> and marks a notable departure from its earlier stance that viewed such regulations as detrimental to employment.</p>
+<div class="no-row-height column-margin column-container"><div id="ref-alternativefuerdeutschlandGrundsatzprogramm2024" class="csl-entry" role="listitem">
+Alternative für Deutschland. 2024. <span>“<span>Grundsatzprogramm</span>.”</span> <em>Alternative f<span>ü</span>r Deutschland</em>. <a href="https://www.afd.de/grundsatzprogramm/">https://www.afd.de/grundsatzprogramm/</a>.
+</div><div id="ref-toberHaushaltspezifischeTeuerungsraten2022" class="csl-entry" role="listitem">
+Tober, Silke. 2022. <span>“<span>Haushaltspezifische Teuerungsraten</span>.”</span> <em>IMK Policy Brief</em>, no. 114 (January).
+</div></div><p>Moreover, the current economic context, characterized by a significant inflationary surge, added to the hardships for minimum wage earners. As highlighted by <span class="citation" data-cites="toberHaushaltspezifischeTeuerungsraten2022">Tober (<a href="#ref-toberHaushaltspezifischeTeuerungsraten2022" role="doc-biblioref">2022</a>)</span>, especially low income groups in rural contexts are hard-hit by rising prices, mainly due to rising food and fuel prices.</p>
+<p>Combined with a higher social acceptance of the AfD and its positions in society, this could explain more of the recent rise. Following the concept of Exit and Voice by <span class="citation" data-cites="hirschmanExitVoiceLoyalty1972">Hirschman (<a href="#ref-hirschmanExitVoiceLoyalty1972" role="doc-biblioref">1972</a>)</span>, where before disappointment with politics was followed by vote abstention (Exit), now it is transformed into votes for the populist right (Voice).</p>
+<div class="no-row-height column-margin column-container"><div id="ref-hirschmanExitVoiceLoyalty1972" class="csl-entry" role="listitem">
+Hirschman, Albert O. 1972. <em>Exit, <span>Voice</span>, and <span>Loyalty</span>: <span>Responses</span> to <span>Decline</span> in <span>Firms</span>, <span>Organizations</span>, and <span>States</span></em>. <span>Harvard University Press</span>.
+</div><div id="ref-berghExplainingRisePopulism2022" class="csl-entry" role="listitem">
+Bergh, Andreas, and Anders Kärnä. 2022. <span>“Explaining the Rise of Populism in <span>European</span> Democracies 1980<span></span>2018: <span>The</span> Role of Labor Market Institutions and Inequality.”</span> <em>Social Science Quarterly</em> 103 (7): 1719–31. <a href="https://doi.org/10.1111/ssqu.13227">https://doi.org/10.1111/ssqu.13227</a>.
+</div><div id="ref-pikettyBrahminLeftVs" class="csl-entry" role="listitem">
+Piketty, Thomas. n.d. <span>“Brahmin <span>Left</span> Vs <span>Merchant Right</span>: <span>Rising Inequality</span> and the <span>Changing Structure</span> of <span>Political Conflict</span>.”</span>
+</div></div><p>Another question that arises is why minimum wage workers vote right rather than left, the traditional political base of low-income groups. Part of this is explained by <span class="citation" data-cites="berghExplainingRisePopulism2022">Bergh and Kärnä (<a href="#ref-berghExplainingRisePopulism2022" role="doc-biblioref">2022</a>)</span>, who show that only unemployment is correlated with voting left, and precarious jobs with voting right. This could be due to the changing nature of left-wing parties in Western democracies, which are gradually becoming home to more educated voters and losing their traditional electoral base. As <span class="citation" data-cites="pikettyBrahminLeftVs">Piketty (<a href="#ref-pikettyBrahminLeftVs" role="doc-biblioref">n.d.</a>)</span> argues, this rise of the “globalist (high income, high education)” left explains the rise of populism and inequality in Europe and beyond.</p>
+<p>Concerns regarding endogeneity, specifically the notion that the AfD’s rise may have influenced increases in the low wage sector, can be effectively addressed. The AfD’s limited political presence, confined primarily to Sonneberg and a few small districts, undermines the suggestion of a causal relationship between the party’s ascent and subsequent minimum wage sector expansion. Moreover, increases occurred before the AfD assumed power in these regions, suggesting that other factors drove these adjustments. Additionally, the relatively brief duration of the AfD’s tenure in power and the lack of significant changes in economic structure further challenge the idea of endogeneity between AfD governance and minimum wage changes.</p>
+<p>The relevance of the statistically significant dummy for eastern Germany can be explained by cultural as well as economic factors. The incoherent integration of the East German labour market after reunification <span class="citation" data-cites="snowerCaringHandThat2006">(<a href="#ref-snowerCaringHandThat2006" role="doc-biblioref">Snower and Merkl 2006</a>)</span> prolonged economic hardship in this region and affected the level of trust in the political system. There are still differences between the different parts of Germany, whether political, economic or cultural, as <span class="citation" data-cites="mauLuettenKleinLeben2019">Mau (<a href="#ref-mauLuettenKleinLeben2019" role="doc-biblioref">2019</a>)</span> extensive sociological study of the transformation highlights.</p>
+<div class="no-row-height column-margin column-container"><div id="ref-snowerCaringHandThat2006" class="csl-entry" role="listitem">
+Snower, Dennis J., and Christian Merkl. 2006. <span>“The <span>Caring Hand</span> That <span>Cripples</span>: <span>The East German Labor Market</span> After <span>Reunification</span>.”</span> <em>American Economic Review</em> 96 (2): 375–82. <a href="https://doi.org/10.1257/000282806777212314">https://doi.org/10.1257/000282806777212314</a>.
+</div><div id="ref-mauLuettenKleinLeben2019" class="csl-entry" role="listitem">
+Mau, Steffen. 2019. <em><span>L<span>ü</span>tten Klein: Leben in der ostdeutschen Transformationsgesellschaft</span></em>. <span>Suhrkamp Verlag</span>.
+</div></div><p>In conclusion, the results fit the existing research on the economic drivers of populism and could enhance our knowledge of the translation of abstract crisis into individual decisions of populist voting. The differentiated results based on the inclusion of different controls can be explained by the distinct characteristics of the current economic and political situation.</p>
+<p>In summary, the results of this study align with existing research on the economic drivers of populism and contribute to our understanding of how abstract crises manifest in individual decisions to support populist movements. By delving into the intricate interplay between economic factors and political behavior, this research provides valuable insights into the mechanisms through which socio-economic challenges influence voting patterns. The results suggest that minimum wage recipiency leads to a higher vote share for the populist right in Germany. Thus, this study not only confirms existing theories but also enriches the comprehension of the multifaceted dynamics driving populist voting behavior.</p>
+</section>
+<section id="conclusion" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>Sonneberg will not be the last district to elect the AfD as an district administrator, other constituencies will follow. The Saale Orla Kreis (40% minimum wage recipients) only recently elected the CDU candidate with a narrow majority of 52% against the AfD candidate thanks to immense democratic mobilisation in the context of nationwide demonstrations <span class="citation" data-cites="voellingerSaaleOrlaKreisCDUKandidatGewinnt2024">(<a href="#ref-voellingerSaaleOrlaKreisCDUKandidatGewinnt2024" role="doc-biblioref">Völlinger 2024</a>)</span>.</p>
+<div class="no-row-height column-margin column-container"><div id="ref-voellingerSaaleOrlaKreisCDUKandidatGewinnt2024" class="csl-entry" role="listitem">
+Völlinger, Veronika. 2024. <span>“<span>Saale-Orla-Kreis: CDU-Kandidat gewinnt Stichwahl gegen AfD um Landratsposten</span>.”</span> <em>Die Zeit</em>, January. <a href="https://www.zeit.de/politik/deutschland/2024-01/saale-orla-kreis-landrat-stichwahl-cdu-afd-christian-herrgott">https://www.zeit.de/politik/deutschland/2024-01/saale-orla-kreis-landrat-stichwahl-cdu-afd-christian-herrgott</a>.
+</div></div><p>Looking ahead, future research should extend this analysis to more European countries and more points in time in order to consolidate the findings. It should also focus more on the characteristics of minimum wage jobs, an area that is currently underrepresented in labour economics. Another avenue for the future could be to directly analyse the political affiliation and voting behaviour of minimum wage earners, for example using SOEP panel data or the WSI Survey of Income and Expenditure.</p>
+<p>In conclusion, while the analysis reveals a correlation between minimum wage labor share and AfD vote share, policymakers should interpret these findings judiciously. Instead of dissuading minimum wage increases based solely on this correlation, emphasis should be placed on enhancing collective bargaining mechanisms. Strengthening union bargaining for higher wages not only promotes fairer wage distribution but also fosters greater social mobility and reduces regional inequalities between East and West Germany. Therefore, policymakers should prioritize collective bargaining as a comprehensive approach to address socio-economic grievances and mitigate the appeal of populist ideologies.</p>
 <p></p>
 </section>
 <section id="references" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="references">References</h2>
-<div id="refs" class="references csl-bib-body hanging-indent" role="list">
-<div id="ref-puschMindestlohn12Euro2022" class="csl-entry" role="listitem">
-Pusch, Toralf, and Eric Seils. 2022. <span>“<span>Mindestlohn 12 Euro - Auswirkungen in den Kreisen</span>.”</span> <span>D<span>ü</span>sseldorf</span>: <span>Wirtschafts- und Sozialwissenschaftliche Institut (WSI)</span>. <a href="https://www.wsi.de/de/faust-detail.htm%3Fsync_id=HBS-008420">https://www.wsi.de/de/faust-detail.htm%3Fsync_id=HBS-008420</a>.
-</div>
-<div id="ref-schuetzeFirstGermanyFar2023" class="csl-entry" role="listitem">
-Schuetze, Christopher F. 2023. <span>“In a <span>First</span>, <span>Germany</span>’s <span>Far Right AfD Party Will Take Control</span> of a <span>District</span>.”</span> <em>The New York Times</em>, June. <a href="https://www.nytimes.com/2023/06/26/world/europe/germany-afd-far-right.html">https://www.nytimes.com/2023/06/26/world/europe/germany-afd-far-right.html</a>.
-</div>
-</div>
+
+<p></p>
 </section>
 <section id="appendix" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="appendix">Appendix</h2>
+<p>An online Appendix with Code and Results is available at <a href="https://skriptum.github.io/mindestlohn/">GitHub</a></p>
 </section>
-<section id="affidavit-of-authorship" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="affidavit-of-authorship">Affidavit of Authorship</h2>
+<section id="affidavit" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="affidavit">Affidavit</h2>
+<p>I hereby declare that I have prepared the present final thesis paper independently, without unauthorized outside assistance, in compliance with the general principles of good scientific practice, and without using any sources and aids other than those specified. All passages that were taken verbatim or correspondingly from the sources used are marked as such. I assure that the final thesis paper has not yet been submitted and/or published in the same or a similar form as an examination in this or any other course of study.</p>
+<p><br>
+&nbsp; &nbsp;</p>
+<p>Place, Date, signature author</p>
 
 
 </section>
@@ -404,10 +562,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -417,8 +574,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -431,6 +597,125 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -474,6 +759,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -499,6 +785,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -559,6 +871,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+
 
 
 

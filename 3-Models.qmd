@@ -273,7 +273,7 @@ Seems, best model is: "afd_prozent \~ lohn_prozent + ost + age + arbeitslosenquo
 
 ```{r}
 model_linke <- lm(
-    linke_prozent ~ lohn_prozent
+    linke_prozent ~ lohn_prozent,
     data = wahl_lohn
   )
 

@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.433">
+<meta name="generator" content="quarto-1.4.550">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Economic History – lohn</title>
+<title>Economic History</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,6 +24,7 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -64,7 +65,12 @@ div.csl-indent {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -73,6 +79,7 @@ div.csl-indent {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -85,9 +92,44 @@ div.csl-indent {
 }
 </script>
 <script async="" src="https://hypothes.is/embed.js"></script>
+<script>
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    document.body.classList.add('hypothesis-enabled');
+  });
+</script>
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -98,19 +140,19 @@ div.csl-indent {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Additional</a></li><li class="breadcrumb-item"><a href="./1-Lohn.html">Notes</a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Additional</a></li><li class="breadcrumb-item"><a href="./1-Lohn.html">Notes</a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
     </div>
   </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Economic History</a> 
@@ -164,7 +206,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./4-Results.html" class="sidebar-item-text sidebar-link">
+  <a href="./4-results.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Results</span></a>
   </div>
 </li>
@@ -173,7 +215,7 @@ div.csl-indent {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -188,16 +230,26 @@ div.csl-indent {
   <li><a href="#overview-papers-economic-drivers" id="toc-overview-papers-economic-drivers" class="nav-link" data-scroll-target="#overview-papers-economic-drivers">Overview Papers Economic Drivers</a></li>
   <li><a href="#economic-drivers" id="toc-economic-drivers" class="nav-link" data-scroll-target="#economic-drivers">Economic Drivers</a></li>
   <li><a href="#sociodemographic-driver-populism" id="toc-sociodemographic-driver-populism" class="nav-link" data-scroll-target="#sociodemographic-driver-populism">Sociodemographic Driver Populism</a></li>
+  <li><a href="#cultural-drivers" id="toc-cultural-drivers" class="nav-link" data-scroll-target="#cultural-drivers">Cultural Drivers</a></li>
+  <li><a href="#position-status" id="toc-position-status" class="nav-link" data-scroll-target="#position-status">position &amp; status</a></li>
   <li><a href="#literature-on-minimum-wage-and-politics" id="toc-literature-on-minimum-wage-and-politics" class="nav-link" data-scroll-target="#literature-on-minimum-wage-and-politics">Literature on Minimum Wage and Politics</a></li>
   </ul></li>
   <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
   <li><a href="#method" id="toc-method" class="nav-link" data-scroll-target="#method">Method</a></li>
   <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
-  <li><a href="#theory" id="toc-theory" class="nav-link" data-scroll-target="#theory">Theory</a>
+  <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion">Discussion</a>
+  <ul class="collapse">
+  <li><a href="#my-argument" id="toc-my-argument" class="nav-link" data-scroll-target="#my-argument">my argument:</a></li>
+  <li><a href="#factors" id="toc-factors" class="nav-link" data-scroll-target="#factors">factors:</a></li>
+  <li><a href="#channels" id="toc-channels" class="nav-link" data-scroll-target="#channels">channels</a></li>
+  <li><a href="#controls" id="toc-controls" class="nav-link" data-scroll-target="#controls">Controls</a></li>
+  <li><a href="#other-channels" id="toc-other-channels" class="nav-link" data-scroll-target="#other-channels">other channels:</a></li>
+  </ul></li>
+  <li><a href="#narrative-case-example-sonneberg" id="toc-narrative-case-example-sonneberg" class="nav-link" data-scroll-target="#narrative-case-example-sonneberg">Narrative Case Example: Sonneberg</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a>
   <ul class="collapse">
   <li><a href="#future-research" id="toc-future-research" class="nav-link" data-scroll-target="#future-research">future Research</a></li>
   </ul></li>
-  <li><a href="#implications" id="toc-implications" class="nav-link" data-scroll-target="#implications">Implications</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -207,8 +259,10 @@ div.csl-indent {
 
 
 
+
 <section id="notes" class="level1">
 <h1>Notes</h1>
+<p>Scratch Notes for the Seminar Paper</p>
 <section id="sonneberg" class="level2">
 <h2 class="anchored" data-anchor-id="sonneberg">Sonneberg</h2>
 <p>Sonneberg: - Germany’s first AfD district administrator (Landrat) - Robert Sesselmann - prevails in run-off election against conservative CDU - 52.8% to 47.2%</p>
@@ -280,6 +334,7 @@ div.csl-indent {
 </section>
 <section id="economic-drivers" class="level3">
 <h3 class="anchored" data-anchor-id="economic-drivers">Economic Drivers</h3>
+<p>Literature on economic drivers presented above, but on german / european district level</p>
 <p><span class="citation" data-cites="gabrielPoliticalCostsAusterity2023">Gabriel, Klein, and Pessoa (<a href="#ref-gabrielPoliticalCostsAusterity2023" role="doc-biblioref">2023</a>)</span></p>
 <p>regional Database on political costs of austerity</p>
 <ul>
@@ -328,9 +383,34 @@ div.csl-indent {
 <li>lower share of workers council (Betriebsrat)</li>
 </ul>
 </section>
+<section id="cultural-drivers" class="level3">
+<h3 class="anchored" data-anchor-id="cultural-drivers">Cultural Drivers</h3>
+<ul>
+<li>not only economic explanations, also cultural / identity politics</li>
+<li>activated by economic shocks</li>
+</ul>
+<p><span class="citation" data-cites="cantoniPersistenceActivationRightwing2019">Cantoni, Hagemeister, and Westcott (<a href="#ref-cantoniPersistenceActivationRightwing2019" role="doc-biblioref">2019</a>)</span></p>
+<ul>
+<li>municipalities with nazi history 1933 = stonger support today</li>
+<li>AfD = party platofrm with low social stigma</li>
+</ul>
+</section>
+<section id="position-status" class="level3">
+<h3 class="anchored" data-anchor-id="position-status">position &amp; status</h3>
+<p><span class="citation" data-cites="kurerDisappointedExpectationsDownward2022">Kurer and Staalduinen (<a href="#ref-kurerDisappointedExpectationsDownward2022" role="doc-biblioref">2022</a>)</span> Status Discrodance</p>
+<ul>
+<li>calculated expected status based on parents occupation</li>
+<li>and difference to achieved status in reality</li>
+<li>especially men and eastern german high discordance</li>
+</ul>
+<p>also <span class="citation" data-cites="brianburgoonPositionalDeprivationSupport2019">Brian Burgoon et al. (<a href="#ref-brianburgoonPositionalDeprivationSupport2019" role="doc-biblioref">2019</a>)</span></p>
+<ul>
+<li>positional deprivation = income growth relative to other influences vote</li>
+<li>slow = retreat from mainstream parties = feeling of losing out</li>
+</ul>
+</section>
 <section id="literature-on-minimum-wage-and-politics" class="level3">
 <h3 class="anchored" data-anchor-id="literature-on-minimum-wage-and-politics">Literature on Minimum Wage and Politics</h3>
-<p>not that much yet</p>
 <p><span class="citation" data-cites="zavodnyPoliticalEconomyMinimum2020a">Zavodny (<a href="#ref-zavodnyPoliticalEconomyMinimum2020a" role="doc-biblioref">2020</a>)</span></p>
 <ul>
 <li>political economy of minimum wages</li>
@@ -338,7 +418,10 @@ div.csl-indent {
 <ul>
 <li>influencing factors on it</li>
 </ul></li>
-<li></li>
+</ul>
+<p>focus more general on labor market policies in general and support for populist vote <span class="citation" data-cites="bergmanLabourMarketPolicies2022">Bergman (<a href="#ref-bergmanLabourMarketPolicies2022" role="doc-biblioref">2022</a>)</span></p>
+<ul>
+<li>loss of status as driver</li>
 </ul>
 </section>
 </section>
@@ -417,62 +500,173 @@ div.csl-indent {
 <li>as described by Piketty = left today not really “abgehängte”</li>
 </ul>
 </section>
-<section id="theory" class="level2">
-<h2 class="anchored" data-anchor-id="theory">Theory</h2>
+<section id="discussion" class="level2">
+<h2 class="anchored" data-anchor-id="discussion">Discussion</h2>
 <p>Populism = multicausal, not only socioeconomic, but also sociodemographic, cultural, …</p>
-<p>i want to explain where MW fits exisitng research</p>
-<p>status disordance <span class="citation" data-cites="kurerDisappointedExpectationsDownward2022">(<a href="#ref-kurerDisappointedExpectationsDownward2022" role="doc-biblioref">Kurer and Staalduinen 2022</a>)</span></p>
+<section id="my-argument" class="level3">
+<h3 class="anchored" data-anchor-id="my-argument">my argument:</h3>
+<p>Minimum Wage is one of the channels translating abstract phenonema to populist vote:</p>
+<p>phenomena / factors (from literature):</p>
 <ul>
-<li>connected to eastern germany &amp; minimum wage</li>
-<li>MW = lower status than expected from parents with stable jobs in GDR</li>
-<li>also generally disappointed by it</li>
+<li>financial crisis</li>
+<li>austeritiy</li>
+<li>trade exposure</li>
 </ul>
-<p>MW recipients = workers at lower end of spectrum</p>
+<p>lead to: Minimum Wage / Low Wage sector</p>
+<p>equals: - lack of mobility - status discordance - general disappointment (inequality etc)</p>
+<p>=&gt; leads to populist voting</p>
+</section>
+<section id="factors" class="level3">
+<h3 class="anchored" data-anchor-id="factors">factors:</h3>
 <ul>
-<li>instability of job = insecurity <span class="citation" data-cites="hoevermannUmfragehochAFD2023">(<a href="#ref-hoevermannUmfragehochAFD2023" role="doc-biblioref">Hövermann 2023</a>)</span></li>
-<li>wish back good old times with stable jobs pre neoliberalism</li>
+<li>financial crisis
+<ul>
+<li>shwon by <span class="citation" data-cites="nauIncomePrecarityFinancial2019">Nau and Soener (<a href="#ref-nauIncomePrecarityFinancial2019" role="doc-biblioref">2019</a>)</span></li>
+<li>crisis hits low income and middle income</li>
+<li>creates income precarity</li>
+<li>higher risk for insecuritry for all groups</li>
+</ul></li>
+<li>austerity
+<ul>
+<li>especially in euro-crisis <span class="citation" data-cites="buschEuroCrisisAusterity">(<a href="#ref-buschEuroCrisisAusterity" role="doc-biblioref"><strong>buschEuroCrisisAusterity?</strong></a>)</span></li>
+<li>destruction of collective bargaining etc.</li>
+<li>creates low wage sector</li>
+</ul></li>
+<li>trade exposure
+<ul>
+<li>as shown by <span class="citation" data-cites="utarWorkersFloodgatesLowWage2018">Utar (<a href="#ref-utarWorkersFloodgatesLowWage2018" role="doc-biblioref">2018</a>)</span></li>
+<li>manufacturing workers =&gt; instable low wage service jobs</li>
+</ul></li>
 </ul>
-<p>despise for inequality <span class="citation" data-cites="bartelsTopIncomesGermany2019">(<a href="#ref-bartelsTopIncomesGermany2019" role="doc-biblioref">Bartels 2019</a>)</span></p>
+</section>
+<section id="channels" class="level3">
+<h3 class="anchored" data-anchor-id="channels">channels</h3>
 <ul>
+<li>lack of mobility
+<ul>
+<li><span class="citation" data-cites="dodinSocialMobilityGermany2021">Dodin et al. (<a href="#ref-dodinSocialMobilityGermany2021" role="doc-biblioref">2021</a>)</span>] adn <span class="citation" data-cites="alesinaIntergenerationalMobilityPreferences2018">(<a href="#ref-alesinaIntergenerationalMobilityPreferences2018" role="doc-biblioref">Alesina, Stantcheva, and Teso 2018</a>)</span></li>
+<li>if high share of MW = not many higher paying jobs</li>
+<li>esp.&nbsp;eastern germans = not many high earning positions</li>
+<li>future pessimism = easier for populists</li>
+</ul></li>
+<li>status discordancy <span class="citation" data-cites="kurerDisappointedExpectationsDownward2022">Kurer and Staalduinen (<a href="#ref-kurerDisappointedExpectationsDownward2022" role="doc-biblioref">2022</a>)</span>
+<ul>
+<li>MW = lowest status possible (except unemployed)</li>
+<li>comparison to parent generation with higher status
+<ul>
+<li>either because east german = more middle class, compressed wage scale</li>
+<li>pre financial crisis times = more job stability etc.</li>
+</ul></li>
+</ul></li>
+<li>positional deprivation <span class="citation" data-cites="brianburgoonPositionalDeprivationSupport2019">Brian Burgoon et al. (<a href="#ref-brianburgoonPositionalDeprivationSupport2019" role="doc-biblioref">2019</a>)</span>
+<ul>
+<li>rising share of top 10% <span class="citation" data-cites="bartelsTopIncomesGermany2019">Bartels (<a href="#ref-bartelsTopIncomesGermany2019" role="doc-biblioref">2019</a>)</span></li>
+<li>but not fast rising MW (except for 12 increase, but not much more)</li>
 <li>lower end of wage scale (feels like down)</li>
 <li>disappointed by system</li>
 <li>see inequality</li>
 <li>inequality =&gt; populism</li>
+<li>! in <span class="citation" data-cites="brian">(<a href="#ref-brian" role="doc-biblioref"><strong>brian?</strong></a>)</span>, top income is good for left, while lower decie growth is good for right…</li>
+</ul></li>
+<li>additional: instability of job, fear of losing joba nd being unemplyoed ling</li>
 </ul>
-<p>lack of social mobility <span class="citation" data-cites="dodinSocialMobilityGermany2021">(<a href="#ref-dodinSocialMobilityGermany2021" role="doc-biblioref">Dodin et al. 2021</a>)</span> adn <span class="citation" data-cites="alesinaIntergenerationalMobilityPreferences2018">(<a href="#ref-alesinaIntergenerationalMobilityPreferences2018" role="doc-biblioref">Alesina, Stantcheva, and Teso 2018</a>)</span></p>
+</section>
+<section id="controls" class="level3">
+<h3 class="anchored" data-anchor-id="controls">Controls</h3>
+<p>why minimum wage, not general low wage sector</p>
 <ul>
-<li>if high share of MW = not many higher paying jobs</li>
-<li>esp.&nbsp;eastern germans = not many high earning positions</li>
-<li>future pessimism = easier for populists</li>
+<li>of course, MW kind of proxy for low wage sector</li>
+<li>but is additional psychological (very far end of wage scale)</li>
+<li>nobody below you (except unemployed)</li>
+<li>far away from high pay jobs of “winners”</li>
 </ul>
-<p>eastern germany <span class="citation" data-cites="snowerCaringHandThat2006">(<a href="#ref-snowerCaringHandThat2006" role="doc-biblioref">Snower and Merkl 2006</a>)</span></p>
+<p>why vote for AfD, not Linke?</p>
 <ul>
-<li>hard hit by post-Wende turmoil</li>
+<li>shown by <span class="citation" data-cites="berghExplainingRisePopulism2022">Bergh and Kärnä (<a href="#ref-berghExplainingRisePopulism2022" role="doc-biblioref">2022</a>)</span>, that unemployment = left, insecure job = right</li>
+<li>Linke = more for privileged voters (piketty)</li>
+<li>AfD more effective, much attention on them in public discourse</li>
+</ul>
+<p>why now, not earlier?</p>
+<ul>
+<li>party changed attitude towards MW
+<ul>
+<li>earlier: jobkiller</li>
+<li>now: important social policy (Grundsatzprogramm)</li>
+</ul></li>
+<li>social acceptance of Afd: Exit (Abstention) –&gt; Voice
+<ul>
+<li>following <span class="citation" data-cites="hirschmanExitVoiceLoyalty1972">Hirschman (<a href="#ref-hirschmanExitVoiceLoyalty1972" role="doc-biblioref">1972</a>)</span></li>
+</ul></li>
+<li>also: Inflation now hits very hard (2020f)
+<ul>
+<li><span class="citation" data-cites="toberHaushaltspezifischeTeuerungsraten2022">Tober (<a href="#ref-toberHaushaltspezifischeTeuerungsraten2022" role="doc-biblioref">2022</a>)</span></li>
+<li>especially low wage in rural regions</li>
+</ul></li>
+</ul>
+<p>endogeneity: Afd -&gt; MW?</p>
+<ul>
+<li>not in power anywhere except Sonneberg and small districts
+<ul>
+<li>MW rise was before<br>
+</li>
+<li>not long in power</li>
+</ul></li>
+<li>no change in economic structure there</li>
+</ul>
+<p>labor market hypothesis?</p>
+<ul>
+<li>rejected (unemployment share not relevant)</li>
+<li>but may still have a place as irrational fear</li>
+</ul>
+<p>Visualization of Theory:</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">%%{init: {'theme': "neutral"}}%%
+graph LR
+
+A([Financial Crisis]) &amp; B([Austerity]) &amp; C([Trade exposure]) --&gt; MW((Mininum Wage))
+
+A &amp; B &amp; C -.- O[... other Channels]
+
+MW --- D[Lack of mobility] &amp; E[Status Discordance] &amp; F[Positional Deprivation]
+--&gt; AfD((Populist voting))
+O -.-&gt; AfD
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="other-channels" class="level3">
+<h3 class="anchored" data-anchor-id="other-channels">other channels:</h3>
+<p>eastern germany</p>
+<ul>
+<li>hard hit by post-Wende turmoil, <span class="citation" data-cites="snowerCaringHandThat2006">(<a href="#ref-snowerCaringHandThat2006" role="doc-biblioref">Snower and Merkl 2006</a>)</span></li>
 <li>creation of Niedriglohnsektor due to TreuHand policy</li>
 <li>cultural factors as well</li>
+<li><span class="citation" data-cites="mauLuettenKleinLeben2019">Mau (<a href="#ref-mauLuettenKleinLeben2019" role="doc-biblioref">2019</a>)</span> vast sociological study (shows difference)</li>
 </ul>
 <p>inflation <span class="citation" data-cites="toberHaushaltspezifischeTeuerungsraten2022">(<a href="#ref-toberHaushaltspezifischeTeuerungsraten2022" role="doc-biblioref">Tober 2022</a>)</span></p>
 <ul>
 <li>hits lower wage workers harder</li>
-<li>especially rural regions with high share of card dependency</li>
+<li>especially rural regions with high share of car dependency</li>
 </ul>
-<p>why only now, not earlier?</p>
+</section>
+</section>
+<section id="narrative-case-example-sonneberg" class="level2">
+<h2 class="anchored" data-anchor-id="narrative-case-example-sonneberg">Narrative Case Example: Sonneberg</h2>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>not stop from higher MW!</p>
+<p>Policy</p>
 <ul>
-<li>Voice Exit by <span class="citation" data-cites="hirschmanExitVoiceLoyalty1972">(<a href="#ref-hirschmanExitVoiceLoyalty1972" role="doc-biblioref">Hirschman 1972</a>)</span></li>
-<li>before, exit (abstention) only option for voters incontempt with situation</li>
-<li>with rise of AfD = voice</li>
-</ul>
-<p>labor market hypothesis?</p>
-<ul>
-<li>mostly rejected empirically</li>
-<li>because rationally no risk of losing job (low unempl. share)</li>
-<li>but maybe irrational fear</li>
-</ul>
-<p>Afd position on MW</p>
-<ul>
-<li>before 2015 introduction = “jobkiller” by chef petry</li>
-<li>changed away from this towards a more social-nativist standpoint</li>
-<li>“Grundsatzprogramm” supports MW concept</li>
+<li>union bargaining incerase for higher wages</li>
+<li>increase social mobility + decrease east west inequality</li>
 </ul>
 <section id="future-research" class="level3">
 <h3 class="anchored" data-anchor-id="future-research">future Research</h3>
@@ -480,29 +674,31 @@ div.csl-indent {
 <li>characteristics of MW jobs</li>
 <li>panel data set with more than one point in time</li>
 </ul>
-</section>
-</section>
-<section id="implications" class="level2">
-<h2 class="anchored" data-anchor-id="implications">Implications</h2>
-<p>not stop from higher MW!</p>
-<p>Policy</p>
-<ul>
-<li>union bargaining incerase for higher wages</li>
-<li>european “richtlinie” 80%</li>
-<li>increase social mobility + decrease east west inequality</li>
-</ul>
 
 
 
 </section>
 </section>
+</section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-alesinaIntergenerationalMobilityPreferences2018" class="csl-entry" role="listitem">
 Alesina, Alberto, Stefanie Stantcheva, and Edoardo Teso. 2018. <span>“Intergenerational <span>Mobility</span> and <span>Preferences</span> for <span>Redistribution</span>.”</span> <em>American Economic Review</em> 108 (2): 521–54. <a href="https://doi.org/10.1257/aer.20162015">https://doi.org/10.1257/aer.20162015</a>.
 </div>
 <div id="ref-bartelsTopIncomesGermany2019" class="csl-entry" role="listitem">
 Bartels, Charlotte. 2019. <span>“Top <span>Incomes</span> in <span>Germany</span>, 1871<span></span>2014.”</span> <em>The Journal of Economic History</em> 79 (3): 669–707. <a href="https://doi.org/10.1017/S0022050719000378">https://doi.org/10.1017/S0022050719000378</a>.
+</div>
+<div id="ref-berghExplainingRisePopulism2022" class="csl-entry" role="listitem">
+Bergh, Andreas, and Anders Kärnä. 2022. <span>“Explaining the Rise of Populism in <span>European</span> Democracies 1980<span></span>2018: <span>The</span> Role of Labor Market Institutions and Inequality.”</span> <em>Social Science Quarterly</em> 103 (7): 1719–31. <a href="https://doi.org/10.1111/ssqu.13227">https://doi.org/10.1111/ssqu.13227</a>.
+</div>
+<div id="ref-bergmanLabourMarketPolicies2022" class="csl-entry" role="listitem">
+Bergman, Matthew E. 2022. <span>“Labour Market Policies and Support for Populist Radical Right Parties: The Role of Nostalgic Producerism, Occupational Risk, and Feedback Effects.”</span> <em>European Political Science Review</em> 14 (4): 520–43. <a href="https://doi.org/10.1017/S175577392200025X">https://doi.org/10.1017/S175577392200025X</a>.
+</div>
+<div id="ref-brianburgoonPositionalDeprivationSupport2019" class="csl-entry" role="listitem">
+Brian Burgoon, Brian Burgoon, Sam van Noort, S. van Noort, Sam van Noort, Matthijs Rooduijn, Matthijs Rooduijn, Geoffrey R. D. Underhill, and Geoffrey R. D. Underhill. 2019. <span>“Positional <span>Deprivation</span> and <span>Support</span> for <span>Radical Right</span> and <span>Radical Left Parties</span>.”</span> <em>Economic Policy</em> 34 (97): 49–93. <a href="https://doi.org/10.1093/epolic/eiy017">https://doi.org/10.1093/epolic/eiy017</a>.
+</div>
+<div id="ref-cantoniPersistenceActivationRightwing2019" class="csl-entry" role="listitem">
+Cantoni, Davide, Felix Hagemeister, and Mark Westcott. 2019. <span>“Persistence and Activation of Right-Wing Political Ideology.”</span> <a href="https://epub.ub.uni-muenchen.de/60795/1/Cantoni_Hagemeister_Persistence_and_Activation_of_Right-Wing_Political_Ideology.pdf">https://epub.ub.uni-muenchen.de/60795/1/Cantoni_Hagemeister_Persistence_and_Activation_of_Right-Wing_Political_Ideology.pdf</a>.
 </div>
 <div id="ref-dippelEffectTradeWorkers2022" class="csl-entry" role="listitem">
 Dippel, Christian, Robert Gold, Stephan Heblich, and Rodrigo Pinto. 2022. <span>“The <span>Effect</span> of <span>Trade</span> on <span>Workers</span> and <span>Voters</span>.”</span> <em>The Economic Journal</em> 132 (641): 199–217. <a href="https://doi.org/10.1093/ej/ueab041">https://doi.org/10.1093/ej/ueab041</a>.
@@ -523,10 +719,16 @@ Guriev, Sergei, and Elias Papaioannou. 2022. <span>“The <span>Political Econom
 Hirschman, Albert O. 1972. <em>Exit, <span>Voice</span>, and <span>Loyalty</span>: <span>Responses</span> to <span>Decline</span> in <span>Firms</span>, <span>Organizations</span>, and <span>States</span></em>. <span>Harvard University Press</span>.
 </div>
 <div id="ref-hoevermannUmfragehochAFD2023" class="csl-entry" role="listitem">
-Hövermann, Andreas. 2023. <span>“<span>Das Umfragehoch der AFD</span>.”</span> <span>Wirtschafts- und Sozialwissenschaftliche Institut (WSI)</span>. <a href="https://www.wsi.de/de/faust-detail.htm%3Fsync_id=HBS-008748">https://www.wsi.de/de/faust-detail.htm%3Fsync_id=HBS-008748</a>.
+Hövermann, Andreas. 2023. <span>“<span>Das Umfragehoch der AFD</span>.”</span> <span>Wirtschafts- und Sozialwissenschaftliche Institut (WSI)</span>. <a href="https://www.wsi.de/fpdf/HBS-008748/p_wsi_report_92_2023.pdf">https://www.wsi.de/fpdf/HBS-008748/p_wsi_report_92_2023.pdf</a>.
 </div>
 <div id="ref-kurerDisappointedExpectationsDownward2022" class="csl-entry" role="listitem">
 Kurer, Thomas, and Briitta Van Staalduinen. 2022. <span>“Disappointed <span>Expectations</span>: <span>Downward Mobility</span> and <span>Electoral Change</span>.”</span> <em>American Political Science Review</em> 116 (4): 1340–56. <a href="https://doi.org/10.1017/S0003055422000077">https://doi.org/10.1017/S0003055422000077</a>.
+</div>
+<div id="ref-mauLuettenKleinLeben2019" class="csl-entry" role="listitem">
+Mau, Steffen. 2019. <em><span>L<span>ü</span>tten Klein: Leben in der ostdeutschen Transformationsgesellschaft</span></em>. <span>Suhrkamp Verlag</span>.
+</div>
+<div id="ref-nauIncomePrecarityFinancial2019" class="csl-entry" role="listitem">
+Nau, Michael, and Matthew Soener. 2019. <span>“Income Precarity and the Financial Crisis.”</span> <em>Socio-Economic Review</em> 17 (3): 523–44. <a href="https://doi.org/10.1093/ser/mwx020">https://doi.org/10.1093/ser/mwx020</a>.
 </div>
 <div id="ref-pickelWahlAfDFrustration2019" class="csl-entry" role="listitem">
 Pickel, Susanne. 2019. <span>“<span>Die Wahl der AfD. Frustration, Deprivation, Angst oder Wertekonflikt?</span>”</span> In <em><span>Die Bundestagswahl 2017: Analysen der Wahl-, Parteien-, Kommunikations- und Regierungsforschung</span></em>, edited by Karl-Rudolf Korte and Jan Schoofs, 145–75. <span>Wiesbaden</span>: <span>Springer Fachmedien</span>. <a href="https://doi.org/10.1007/978-3-658-25050-8_7">https://doi.org/10.1007/978-3-658-25050-8_7</a>.
@@ -536,6 +738,9 @@ Snower, Dennis J., and Christian Merkl. 2006. <span>“The <span>Caring Hand</sp
 </div>
 <div id="ref-toberHaushaltspezifischeTeuerungsraten2022" class="csl-entry" role="listitem">
 Tober, Silke. 2022. <span>“<span>Haushaltspezifische Teuerungsraten</span>.”</span> <em>IMK Policy Brief</em>, no. 114 (January).
+</div>
+<div id="ref-utarWorkersFloodgatesLowWage2018" class="csl-entry" role="listitem">
+Utar, Hale. 2018. <span>“Workers Beneath the <span>Floodgates</span>: <span>Low-Wage Import Competition</span> and <span>Workers</span>’ <span>Adjustment</span>.”</span> <em>The Review of Economics and Statistics</em> 100 (4): 631–47. <a href="https://doi.org/10.1162/rest_a_00727">https://doi.org/10.1162/rest_a_00727</a>.
 </div>
 <div id="ref-zavodnyPoliticalEconomyMinimum2020a" class="csl-entry" role="listitem">
 Zavodny, Madeline. 2020. <span>“Political <span>Economy</span> of <span>Minimum Wages</span>.”</span> In <em>Handbook of <span>Labor</span>, <span>Human Resources</span> and <span>Population Economics</span></em>, edited by Klaus F. Zimmermann, 1–14. <span>Cham</span>: <span>Springer International Publishing</span>. <a href="https://doi.org/10.1007/978-3-319-57365-6_155-1">https://doi.org/10.1007/978-3-319-57365-6_155-1</a>.
@@ -620,10 +825,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -633,8 +837,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -647,6 +860,125 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -690,6 +1022,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -715,6 +1048,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -775,6 +1134,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+
 
 
 

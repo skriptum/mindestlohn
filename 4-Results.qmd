@@ -1,7 +1,10 @@
+# Results
+
 ## Imports
 
 
 ```{r}
+#| output: false
 library(stargazer)
 library(tidyverse)
 library(patchwork)
@@ -30,7 +33,7 @@ plot_basic <- ggplot(aes(x = lohn_prozent, y = afd_prozent, label=name), data = 
     subtitle = "District Level",
     caption = "Data: WSI, Bundeswahlleiter"
   ) +
-  theme_bw() #+ #scientific theme
+  theme_gray() #+ #scientific theme
   #coord_cartesian(xlim = c(0, 0.5), ylim = c(0, 0.35)) + #start at 0,0
   # for Sonneberg (16072)
   # geom_point(
@@ -166,12 +169,18 @@ subplot(ggplotly(afd_map), ggplotly(lohn_map))
 Summary Statistic of Data
 
 ```{r}
-#| label: tbl-summary
 #| output: asis
  
-stargazer(as.data.frame(wahl_lohn), type="text")
-#stargazer(as.data.frame(wahl_lohn), type="latex", out="images/summary_table.tex", header = FALSE)
+stargazer(as.data.frame(wahl_lohn %>% subset(select = -foreigners)), type="html")
 ```
+
+output to latex / html for inclusion in report
+```{r}
+#| output: false
+stargazer(as.data.frame(wahl_lohn %>% subset(select = -foreigners)), type="latex", out="images/summary_table.tex", header = FALSE)
+stargazer(as.data.frame(wahl_lohn %>% subset(select = -foreigners)), type="html", out="images/summary_table.html", header = FALSE)
+```
+
 
 Compile List of Models to include in Table
 
@@ -193,9 +202,48 @@ Create the Stargazer Table
 #| label: tbl-results
  
 table <- stargazer(models, 
-          type = "text",
-          #type = "latex",
-          #out="images/table.tex", #
+          type = "html", #change to text for coding
+          title = "Effect of Minimum Wage Recipients on AfD Vote Share",
+          dep.var.labels = "AfD Vote Share",
+          covariate.labels = c(
+            "Minimum Wage Rate", 
+            "East Germany",
+            "Unemployment Rate", 
+            "Log GDP p. C.", 
+            "Avg. Age", 
+            "Log Pop. Density"
+            ),
+          df = F,
+          omit.stat = c("rsq", "f")
+          )
+```
+
+output it to latex / html for inclusion in Report
+```{r}
+#| output: false
+
+stargazer(models, 
+          type = "latex",
+          out= "images/table.tex",
+          header = FALSE,
+          title = "Effect of Minimum Wage Recipients on AfD Vote Share",
+          dep.var.labels = "AfD Vote Share",
+          covariate.labels = c(
+            "Minimum Wage Rate", 
+            "East Germany",
+            "Unemployment Rate", 
+            "Log GDP p. C.", 
+            "Avg. Age", 
+            "Log Pop. Density"
+            ),
+          df = F,
+          omit.stat = c("rsq", "f")
+          )
+
+stargazer(models, 
+          type = "html",
+          out= "images/table.html",
+          header = FALSE,
           title = "Effect of Minimum Wage Recipients on AfD Vote Share",
           dep.var.labels = "AfD Vote Share",
           covariate.labels = c(

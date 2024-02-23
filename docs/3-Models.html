@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.433">
+<meta name="generator" content="quarto-1.4.550">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Economic History – models</title>
+<title>Economic History</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,7 +22,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -79,7 +79,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -88,6 +93,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -100,12 +106,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 </script>
 <script async="" src="https://hypothes.is/embed.js"></script>
-
+<script>
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    document.body.classList.add('hypothesis-enabled');
+  });
+</script>
 <link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
 <script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -116,19 +153,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Additional</a></li><li class="breadcrumb-item"><a href="./3-Models.html">Regression</a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Additional</a></li><li class="breadcrumb-item"><a href="./3-Models.html">Regression</a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
     </div>
   </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Economic History</a> 
@@ -182,7 +219,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./4-Results.html" class="sidebar-item-text sidebar-link">
+  <a href="./4-results.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Results</span></a>
   </div>
 </li>
@@ -191,7 +228,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -206,7 +243,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#gdp-per-capita" id="toc-gdp-per-capita" class="nav-link" data-scroll-target="#gdp-per-capita">GDP per Capita</a></li>
   <li><a href="#avg.-age" id="toc-avg.-age" class="nav-link" data-scroll-target="#avg.-age">Avg. Age</a></li>
   <li><a href="#population-density" id="toc-population-density" class="nav-link" data-scroll-target="#population-density">Population Density</a></li>
-  <li><a href="#dropping-variables" id="toc-dropping-variables" class="nav-link" data-scroll-target="#dropping-variables">Dropping Variables</a></li>
   <li><a href="#choosing-the-best-model" id="toc-choosing-the-best-model" class="nav-link" data-scroll-target="#choosing-the-best-model">Choosing the best Model</a></li>
   <li><a href="#interlude-linke" id="toc-interlude-linke" class="nav-link" data-scroll-target="#interlude-linke">Interlude: Linke</a></li>
   <li><a href="#save-data" id="toc-save-data" class="nav-link" data-scroll-target="#save-data">Save Data</a></li>
@@ -216,6 +252,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
+
 
 
 
@@ -341,7 +378,6 @@ F-statistic: 547.2 on 2 and 397 DF,  p-value: &lt; 2.2e-16</code></pre>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">retrieve_datalist</span>(<span class="at">tableseries=</span><span class="st">"13211*"</span>, <span class="at">genesis=</span><span class="fu">c</span>(<span class="at">db=</span><span class="st">"regio"</span>))</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">subset</span>(d, <span class="fu">grepl</span>(<span class="st">"Kreise"</span>, description)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-
 <div data-pagedtable="false">
   <script data-pagedtable-source="" type="application/json">
 {"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["tablename"],"name":[1],"type":["chr"],"align":["left"]},{"label":["description"],"name":[2],"type":["chr"],"align":["left"]}],"data":[{"1":"13211KJ001","2":"Arbeitslose, Kreise und kreisfreie Städte, Arbeitslose nach ausgewählten Personengruppen, Jahr","_rn_":"13"},{"1":"13211KJ002","2":"Arbeitslose, Arbeitslosenquote bez. auf alle Erwerbspers., Arbeitslosenquote bez.auf alle abhäng. Erwerbsp., Kreise und kreisfreie Städte, Jahr","_rn_":"14"},{"1":"13211KJ003","2":"Arbeitslose, Kreise und kreisfreie Städte, Arbeitslose nach ausgewählten Personengruppen, Jahr","_rn_":"15"},{"1":"13211KJ004","2":"Arbeitslose, Arbeitslosenquote bez. auf alle Erwerbspers., Arbeitslosenquote bez. auf abhäng. Erwerbsp., Kreise und kreisfreie Städte, Jahr","_rn_":"16"},{"1":"13211KJ005","2":"Arbeitslose, Kreise und kreisfreie Städte, Arbeitslose nach ausgewählten Personengruppen, Jahr","_rn_":"17"},{"1":"13211KJ006","2":"Arbeitslose, Arbeitslosenquote bez. auf alle Erwerbspers., Arbeitslosenquote bez. auf abhäng. Erwerbsp., Kreise und kreisfreie Städte, Jahr","_rn_":"18"},{"1":"13211KJ007","2":"Arbeitslosenquote bez. auf abhäng. Erwerbsp., Kreise und kreisfreie Städte, Arbeitslosenquote nach ausgewählten Personengruppe, Jahr","_rn_":"19"},{"1":"13211KJ008","2":"Arbeitslose, Kreise und kreisfreie Städte, Arbeitslose nach ausgewählten Personengruppen, Jahr","_rn_":"20"},{"1":"13211KJ009","2":"Arbeitslose, Arbeitslosenquote bez. abh. zivile Erwerbspers., Arbeitslosenquote bez. auf alle zivile Erwerbsp., Kreise und kreisfreie Städte, Jahr","_rn_":"21"},{"1":"13211KJ010","2":"Arbeitslosenquote bez. auf alle zivile Erwerbsp., Kreise und kreisfreie Städte, Arbeitslosenquote nach Schwerpunkten, Jahr","_rn_":"22"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
@@ -404,7 +440,6 @@ F-statistic: 383.2 on 3 and 396 DF,  p-value: &lt; 2.2e-16</code></pre>
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">retrieve_datalist</span>(<span class="at">tableseries=</span><span class="st">"82111*"</span>, <span class="at">genesis=</span><span class="fu">c</span>(<span class="at">db=</span><span class="st">"regio"</span>))</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">subset</span>(d, <span class="fu">grepl</span>(<span class="st">"Kreise"</span>, description)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-
 <div data-pagedtable="false">
   <script data-pagedtable-source="" type="application/json">
 {"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["tablename"],"name":[1],"type":["chr"],"align":["left"]},{"label":["description"],"name":[2],"type":["chr"],"align":["left"]}],"data":[{"1":"82111KJ008","2":"Bruttoinlandsprodukt, Bruttoinlandsprodukt je Erwerbstätigen, Bruttoinlandsprodukt je Einwohner, Kreise und kreisfreie Städte, Jahr","_rn_":"3"},{"1":"82111KJ009","2":"BWS zu Herstellungspreisen in jeweiligen Preisen, Kreise und kreisfreie Städte, WZ 2008-Abschnitte und Zusammenfassungen, Jahr","_rn_":"4"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
@@ -429,7 +464,6 @@ F-statistic: 383.2 on 3 and 396 DF,  p-value: &lt; 2.2e-16</code></pre>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(kreis) <span class="sc">%&gt;%</span></span>
 <span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(kreis)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-
 <div data-pagedtable="false">
   <script data-pagedtable-source="" type="application/json">
 {"columns":[{"label":["kreis"],"name":[1],"type":["chr"],"align":["left"]}],"data":[{"1":"16056"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
@@ -482,7 +516,6 @@ F-statistic: 286.8 on 4 and 395 DF,  p-value: &lt; 2.2e-16</code></pre>
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">retrieve_datalist</span>(<span class="at">tableseries=</span><span class="st">"12411*"</span>, <span class="at">genesis=</span><span class="fu">c</span>(<span class="at">db=</span><span class="st">"regio"</span>))</span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="fu">subset</span>(d, <span class="fu">grepl</span>(<span class="st">"Kreise"</span>, description)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-
 <div data-pagedtable="false">
   <script data-pagedtable-source="" type="application/json">
 {"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["tablename"],"name":[1],"type":["chr"],"align":["left"]},{"label":["description"],"name":[2],"type":["chr"],"align":["left"]}],"data":[{"1":"12411KJ001","2":"Bevölkerungsstand, Kreise und kreisfreie Städte, Geschlecht, Nationalität, Altersgruppen (unter 3 bis 75 u. m.), Stichtag","_rn_":"35"},{"1":"12411KJ002","2":"Durchschnittliche Jahresbevölkerung, Kreise und kreisfreie Städte, Geschlecht, Jahr","_rn_":"36"},{"1":"12411KJ003","2":"Bevölkerungsstand, Kreise und kreisfreie Städte, Geschlecht, Altersgruppen (unter 3 bis 75 u. m.), Stichtag","_rn_":"37"},{"1":"12411KJ004","2":"Bevölkerungsstand, Kreise und kreisfreie Städte, Altersgruppen (unter 3 bis 75 u. m.), Stichtag","_rn_":"38"},{"1":"12411KJ005","2":"Bevölkerungsstand, Kreise und kreisfreie Städte, Geschlecht, Altersjahre (unter 1 bis 75, Altersgruppen), Stichtag","_rn_":"39"},{"1":"12411KJ006","2":"Bevölkerungsstand, Kreise und kreisfreie Städte, Altersjahre (unter 1 bis 75, Altersgruppen), Stichtag","_rn_":"40"},{"1":"12411KJ007","2":"Bevölkerungsstand, Kreise und kreisfreie Städte, Nationalität, Altersgruppen (unter 3 bis 75 u. m.), Stichtag","_rn_":"41"},{"1":"12411KJ008","2":"Bevölkerungsstand, Kreise und kreisfreie Städte, Geschlecht, Nationalität, Stichtag","_rn_":"42"},{"1":"12411KJ009","2":"Bevölkerungsstand, Kreise und kreisfreie Städte, Geschlecht, Stichtag","_rn_":"43"},{"1":"12411KJ010","2":"Bevölkerungsstand, Kreise und kreisfreie Städte, Nationalität, Stichtag","_rn_":"44"},{"1":"12411KJ011","2":"Bevölkerungsstand, Kreise und kreisfreie Städte, Stichtag","_rn_":"45"},{"1":"12411KJ012","2":"Durchschnittliche Jahresbevölkerung, Kreise und kreisfreie Städte, Jahr","_rn_":"46"},{"1":"12411KJ013","2":"Bevölkerungsstand, Kreise und kreisfreie Städte, Geschlecht, Altersjahre (unter 1 bis 90, Altersgruppen), Stichtag","_rn_":"47"},{"1":"12411KJ014","2":"Bevölkerungsstand, Kreise und kreisfreie Städte, Altersjahre (unter 1 bis 90, Altersgruppen), Stichtag","_rn_":"48"},{"1":"12411KJ015","2":"Bevölkerungsstand, Kreise und kreisfreie Städte, Geschlecht, Nationalität, Altersgruppen (unter 3, 5er-Schritte, 90 und mehr), Stichtag","_rn_":"49"},{"1":"12411KJ016","2":"Bevölkerungsstand, Kreise und kreisfreie Städte, Geschlecht, Altersgruppen (unter 3, 5er-Schritte, 90 und mehr), Stichtag","_rn_":"50"},{"1":"12411KJ017","2":"Bevölkerungsstand, Kreise und kreisfreie Städte, Nationalität, Altersgruppen (unter 3, 5er-Schritte, 90 und mehr), Stichtag","_rn_":"51"},{"1":"12411KJ018","2":"Bevölkerungsstand, Kreise und kreisfreie Städte, Altersgruppen (unter 3, 5er-Schritte, 90 und mehr), Stichtag","_rn_":"52"},{"1":"12411KJ019","2":"Durchschnittsalter der Bevölkerung, Kreise und kreisfreie Städte, Stichtag","_rn_":"53"},{"1":"12411KJ020","2":"Durchschnittsalter der Bevölkerung, Kreise und kreisfreie Städte, Geschlecht, Stichtag","_rn_":"54"},{"1":"12411KJ021","2":"Altenquotient, Jugendquotient, Kreise und kreisfreie Städte, Stichtag","_rn_":"55"},{"1":"12411KJ022","2":"Altenquotient, Jugendquotient, Kreise und kreisfreie Städte, Geschlecht, Stichtag","_rn_":"56"},{"1":"12411KJ023","2":"Bevölkerungsstand 30.06., Kreise und kreisfreie Städte, Stichtag","_rn_":"57"},{"1":"12411KJ024","2":"Bevölkerungsstand 30.06., Kreise und kreisfreie Städte, Geschlecht, Stichtag","_rn_":"58"},{"1":"12411KJ025","2":"Bevölkerungsstand, Kreise und kreisfreie Städte, Altersgruppen (unter 5, 5-10, 10-15,... bis 95 Jahre und älter), Stichtag","_rn_":"59"},{"1":"12411KJ026","2":"Bevölkerungsstand, Kreise und kreisfreie Städte, Geschlecht, Altersgruppen (unter 5, 5-10, 10-15,... bis 95 Jahre und älter), Stichtag","_rn_":"60"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
@@ -548,7 +581,6 @@ F-statistic:   254 on 5 and 394 DF,  p-value: &lt; 2.2e-16</code></pre>
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">retrieve_datalist</span>(<span class="at">tableseries=</span><span class="st">"99910*"</span>, <span class="at">genesis=</span><span class="fu">c</span>(<span class="at">db=</span><span class="st">"regio"</span>))</span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="fu">subset</span>(d, <span class="fu">grepl</span>(<span class="st">"Bevölkerung"</span>, description)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-
 <div data-pagedtable="false">
   <script data-pagedtable-source="" type="application/json">
 {"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["tablename"],"name":[1],"type":["chr"],"align":["left"]},{"label":["description"],"name":[2],"type":["chr"],"align":["left"]}],"data":[{"1":"99910BJA02","2":"Bevölkerungsdichte (EW je qkm), Bevölkerungsentwicklung im Jahr je 10.000 EW, Anteil der ausländischen Bevölkerung an der Gesamtbevölkerung, Lebendgeborene je 10.000 EW, Gestorbene je 10.000 EW, Geburten-/Gestorbenenüberschuss je 10.000 EW, Wanderungssaldo je 10.000 EW, Deutschland, Jahr","_rn_":"2"},{"1":"99910BJB02","2":"Bevölkerung 0 bis 17 Jahre, Bevölkerung 18 bis 24 Jahre, Bevölkerung 25 bis 44 Jahre, Bevölkerung 45 bis 64 Jahre, Bevölkerung 65 Jahre und älter, Deutschland, Jahr","_rn_":"26"},{"1":"99910BJE02","2":"Durchschnittsalter der Bevölkerung, Durchschnittsalter der Mutter bei der Geburt des 1. Kindes, Einbürgerungsquote, Deutschland, Jahr","_rn_":"46"},{"1":"99910GJA02","2":"Bevölkerungsdichte (EW je qkm), Bevölkerungsentwicklung im Jahr je 10.000 EW, Anteil der ausländischen Bevölkerung an der Gesamtbevölkerung, Lebendgeborene je 10.000 EW, Gestorbene je 10.000 EW, Geburten-/Gestorbenenüberschuss je 10.000 EW, Wanderungssaldo je 10.000 EW, Gemeinden, Jahr","_rn_":"48"},{"1":"99910GJB02","2":"Bevölkerung 0 bis 17 Jahre, Bevölkerung 18 bis 24 Jahre, Bevölkerung 25 bis 44 Jahre, Bevölkerung 45 bis 64 Jahre, Bevölkerung 65 Jahre und älter, Gemeinden, Jahr","_rn_":"53"},{"1":"99910GJE02","2":"Durchschnittsalter der Bevölkerung, Durchschnittsalter der Mutter bei der Geburt des 1. Kindes, Einbürgerungsquote, Gemeinden, Jahr","_rn_":"59"},{"1":"99910KJA02","2":"Bevölkerungsdichte (EW je qkm), Bevölkerungsentwicklung im Jahr je 10.000 EW, Anteil der ausländischen Bevölkerung an der Gesamtbevölkerung, Lebendgeborene je 10.000 EW, Gestorbene je 10.000 EW, Geburten-/Gestorbenenüberschuss je 10.000 EW, Wanderungssaldo je 10.000 EW, Kreise und kreisfreie Städte, Jahr","_rn_":"61"},{"1":"99910KJB02","2":"Bevölkerung 0 bis 17 Jahre, Bevölkerung 18 bis 24 Jahre, Bevölkerung 25 bis 44 Jahre, Bevölkerung 45 bis 64 Jahre, Bevölkerung 65 Jahre und älter, Kreise und kreisfreie Städte, Jahr","_rn_":"84"},{"1":"99910KJE02","2":"Durchschnittsalter der Bevölkerung, Durchschnittsalter der Mutter bei der Geburt des 1. Kindes, Einbürgerungsquote, Kreise und kreisfreie Städte, Jahr","_rn_":"104"},{"1":"99910LJA02","2":"Bevölkerungsdichte (EW je qkm), Bevölkerungsentwicklung im Jahr je 10.000 EW, Anteil der ausländischen Bevölkerung an der Gesamtbevölkerung, Lebendgeborene je 10.000 EW, Gestorbene je 10.000 EW, Geburten-/Gestorbenenüberschuss je 10.000 EW, Wanderungssaldo je 10.000 EW, Bundesländer, Jahr","_rn_":"106"},{"1":"99910LJB02","2":"Bevölkerung 0 bis 17 Jahre, Bevölkerung 18 bis 24 Jahre, Bevölkerung 25 bis 44 Jahre, Bevölkerung 45 bis 64 Jahre, Bevölkerung 65 Jahre und älter, Bundesländer, Jahr","_rn_":"130"},{"1":"99910LJE02","2":"Durchschnittsalter der Bevölkerung, Durchschnittsalter der Mutter bei der Geburt des 1. Kindes, Einbürgerungsquote, Bundesländer, Jahr","_rn_":"150"},{"1":"99910RJA02","2":"Bevölkerungsdichte (EW je qkm), Bevölkerungsentwicklung im Jahr je 10.000 EW, Anteil der ausländischen Bevölkerung an der Gesamtbevölkerung, Lebendgeborene je 10.000 EW, Gestorbene je 10.000 EW, Geburten-/Gestorbenenüberschuss je 10.000 EW, Wanderungssaldo je 10.000 EW, Regierungsbezirke / Statistische Regionen, Jahr","_rn_":"152"},{"1":"99910RJB02","2":"Bevölkerung 0 bis 17 Jahre, Bevölkerung 18 bis 24 Jahre, Bevölkerung 25 bis 44 Jahre, Bevölkerung 45 bis 64 Jahre, Bevölkerung 65 Jahre und älter, Regierungsbezirke / Statistische Regionen, Jahr","_rn_":"176"},{"1":"99910RJE02","2":"Durchschnittsalter der Bevölkerung, Durchschnittsalter der Mutter bei der Geburt des 1. Kindes, Einbürgerungsquote, Regierungsbezirke / Statistische Regionen, Jahr","_rn_":"196"},{"1":"99910ZAB01","2":"Durchschnittsalter Gesamtbevölkerung, Durchschnittsalter weibliche Bevölkerung, Durchschnittsalter männliche Bevölkerung, Anteil Personen mit MHG an der Gesamtbevölkerung, Anteil Personen mit MHG 0 bis 19 Jahre, Anteil Personen mit MHG 20 bis 59 Jahre, Anteil Personen mit MHG 60 Jahre und älter, Deutschland, Stichtag","_rn_":"197"},{"1":"99910ZAK01","2":"Durchschnittsalter Gesamtbevölkerung, Durchschnittsalter weibliche Bevölkerung, Durchschnittsalter männliche Bevölkerung, Anteil Personen mit MHG an der Gesamtbevölkerung, Anteil Personen mit MHG 0 bis 19 Jahre, Anteil Personen mit MHG 20 bis 59 Jahre, Anteil Personen mit MHG 60 Jahre und älter, Kreise und kreisfreie Städte, Stichtag","_rn_":"200"},{"1":"99910ZAL01","2":"Durchschnittsalter Gesamtbevölkerung, Durchschnittsalter weibliche Bevölkerung, Durchschnittsalter männliche Bevölkerung, Anteil Personen mit MHG an der Gesamtbevölkerung, Anteil Personen mit MHG 0 bis 19 Jahre, Anteil Personen mit MHG 20 bis 59 Jahre, Anteil Personen mit MHG 60 Jahre und älter, Bundesländer, Stichtag","_rn_":"203"},{"1":"99910ZAR01","2":"Durchschnittsalter Gesamtbevölkerung, Durchschnittsalter weibliche Bevölkerung, Durchschnittsalter männliche Bevölkerung, Anteil Personen mit MHG an der Gesamtbevölkerung, Anteil Personen mit MHG 0 bis 19 Jahre, Anteil Personen mit MHG 20 bis 59 Jahre, Anteil Personen mit MHG 60 Jahre und älter, Regierungsbezirke / Statistische Regionen, Stichtag","_rn_":"206"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
@@ -576,84 +608,104 @@ F-statistic:   254 on 5 and 394 DF,  p-value: &lt; 2.2e-16</code></pre>
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>wahl_lohn <span class="ot">&lt;-</span> wahl_lohn <span class="sc">%&gt;%</span></span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(pop_data, <span class="at">by =</span> <span class="st">"kreis"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<!-- somehow changes the model... 
+
+
+::: {.cell}
+
+```{.r .cell-code}
+model_foreign <- lm(
+    afd_prozent ~ lohn_prozent + ost+ arbeitslosenquote + log(gdp)+ age , 
+    data = wahl_lohn
+  )
+summary(model_foreign)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+
+Call:
+lm(formula = afd_prozent ~ lohn_prozent + ost + arbeitslosenquote + 
+    log(gdp) + age, data = wahl_lohn)
+
+Residuals:
+      Min        1Q    Median        3Q       Max 
+-0.072729 -0.019526 -0.002674  0.017335  0.097038 
+
+Coefficients:
+                   Estimate Std. Error t value Pr(>|t|)    
+(Intercept)       -0.331786   0.091478  -3.627 0.000324 ***
+lohn_prozent       0.226691   0.044195   5.129 4.57e-07 ***
+ost                0.081481   0.006302  12.929  < 2e-16 ***
+arbeitslosenquote -0.243973   0.069766  -3.497 0.000524 ***
+log(gdp)           0.010820   0.005614   1.927 0.054652 .  
+age                0.006261   0.001104   5.672 2.74e-08 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.0286 on 394 degrees of freedom
+Multiple R-squared:  0.7632,    Adjusted R-squared:  0.7602 
+F-statistic:   254 on 5 and 394 DF,  p-value: < 2.2e-16
+```
+
+
+:::
+:::
+
+-->
 <div class="cell">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>model_foreign <span class="ot">&lt;-</span> <span class="fu">lm</span>(</span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>    afd_prozent <span class="sc">~</span> lohn_prozent <span class="sc">+</span> ost<span class="sc">+</span> arbeitslosenquote <span class="sc">+</span> <span class="fu">log</span>(gdp)<span class="sc">+</span> age <span class="sc">+</span> foreigners, </span>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>model_pop <span class="ot">&lt;-</span> <span class="fu">lm</span>(</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>    afd_prozent <span class="sc">~</span> lohn_prozent <span class="sc">+</span> ost<span class="sc">+</span> arbeitslosenquote <span class="sc">+</span> <span class="fu">log</span>(gdp) <span class="sc">+</span>age <span class="sc">+</span> <span class="fu">log</span>(pop), </span>
 <span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> wahl_lohn</span>
 <span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model_foreign)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model_pop)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
 lm(formula = afd_prozent ~ lohn_prozent + ost + arbeitslosenquote + 
-    log(gdp) + age + foreigners, data = wahl_lohn)
+    log(gdp) + age + log(pop), data = wahl_lohn)
 
 Residuals:
       Min        1Q    Median        3Q       Max 
--0.072754 -0.018360 -0.003139  0.016387  0.097194 
+-0.070578 -0.018897 -0.002703  0.017855  0.098898 
 
 Coefficients:
                    Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept)       -0.351037   0.090127  -3.895 0.000115 ***
-lohn_prozent       0.222177   0.043488   5.109 5.07e-07 ***
-ost                0.087728   0.006417  13.671  &lt; 2e-16 ***
-arbeitslosenquote -0.383119   0.077922  -4.917 1.30e-06 ***
-log(gdp)           0.002054   0.005991   0.343 0.731874    
-age                0.008441   0.001230   6.861 2.67e-11 ***
-foreigners         0.174508   0.046293   3.770 0.000189 ***
+(Intercept)       -0.315423   0.092243  -3.419 0.000693 ***
+lohn_prozent       0.219617   0.044483   4.937 1.17e-06 ***
+ost                0.081794   0.006301  12.981  &lt; 2e-16 ***
+arbeitslosenquote -0.162693   0.093287  -1.744 0.081941 .  
+log(gdp)           0.013461   0.005959   2.259 0.024447 *  
+age                0.005591   0.001216   4.600 5.71e-06 ***
+log(pop)          -0.002990   0.002281  -1.311 0.190642    
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
-Residual standard error: 0.02814 on 393 degrees of freedom
-Multiple R-squared:  0.7715,    Adjusted R-squared:  0.768 
-F-statistic: 221.1 on 6 and 393 DF,  p-value: &lt; 2.2e-16</code></pre>
+Residual standard error: 0.02858 on 393 degrees of freedom
+Multiple R-squared:  0.7642,    Adjusted R-squared:  0.7606 
+F-statistic: 212.3 on 6 and 393 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 </div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>model_pop <span class="ot">&lt;-</span> <span class="fu">lm</span>(</span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>    afd_prozent <span class="sc">~</span> lohn_prozent <span class="sc">+</span> ost<span class="sc">+</span> arbeitslosenquote <span class="sc">+</span> <span class="fu">log</span>(gdp) <span class="sc">+</span>age<span class="sc">+</span> foreigners <span class="sc">+</span> <span class="fu">log</span>(pop), </span>
-<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> wahl_lohn</span>
-<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model_pop)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-Call:
-lm(formula = afd_prozent ~ lohn_prozent + ost + arbeitslosenquote + 
-    log(gdp) + age + foreigners + log(pop), data = wahl_lohn)
+<!--
 
-Residuals:
-      Min        1Q    Median        3Q       Max 
--0.070922 -0.016447 -0.001968  0.016569  0.102181 
+## Dropping Variables
 
-Coefficients:
-                   Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept)       -0.315239   0.089739  -3.513 0.000495 ***
-lohn_prozent       0.201673   0.043435   4.643 4.69e-06 ***
-ost                0.091001   0.006421  14.173  &lt; 2e-16 ***
-arbeitslosenquote -0.222325   0.091593  -2.427 0.015661 *  
-log(gdp)           0.005618   0.006022   0.933 0.351384    
-age                0.007520   0.001248   6.024 3.93e-09 ***
-foreigners         0.242821   0.050365   4.821 2.04e-06 ***
-log(pop)          -0.007919   0.002443  -3.241 0.001291 ** 
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
-Residual standard error: 0.0278 on 392 degrees of freedom
-Multiple R-squared:  0.7774,    Adjusted R-squared:  0.7735 
-F-statistic: 195.6 on 7 and 392 DF,  p-value: &lt; 2.2e-16</code></pre>
-</div>
-</div>
-</section>
-<section id="dropping-variables" class="level2">
-<h2 class="anchored" data-anchor-id="dropping-variables">Dropping Variables</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>model_drop <span class="ot">&lt;-</span> <span class="fu">lm</span>(</span>
-<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>  afd_prozent <span class="sc">~</span> ost<span class="sc">+</span> arbeitslosenquote <span class="sc">+</span> <span class="fu">log</span>(gdp) <span class="sc">+</span>age<span class="sc">+</span> foreigners <span class="sc">+</span> <span class="fu">log</span>(pop),</span>
-<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> wahl_lohn</span>
-<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model_drop)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
+::: {.cell}
+
+```{.r .cell-code}
+model_drop <- lm(
+  afd_prozent ~ ost+ arbeitslosenquote + log(gdp) +age+ foreigners + log(pop),
+  data = wahl_lohn
+)
+summary(model_drop)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+
 Call:
 lm(formula = afd_prozent ~ ost + arbeitslosenquote + log(gdp) + 
     age + foreigners + log(pop), data = wahl_lohn)
@@ -663,9 +715,9 @@ Residuals:
 -0.08646 -0.01658 -0.00134  0.01649  0.10471 
 
 Coefficients:
-                    Estimate Std. Error t value Pr(&gt;|t|)    
+                    Estimate Std. Error t value Pr(>|t|)    
 (Intercept)       -0.2690156  0.0914878  -2.940 0.003471 ** 
-ost                0.1104950  0.0049832  22.173  &lt; 2e-16 ***
+ost                0.1104950  0.0049832  22.173  < 2e-16 ***
 arbeitslosenquote -0.1337595  0.0918983  -1.456 0.146324    
 log(gdp)          -0.0009708  0.0060031  -0.162 0.871612    
 age                0.0088695  0.0012454   7.122 5.10e-12 ***
@@ -676,17 +728,24 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 Residual standard error: 0.02852 on 393 degrees of freedom
 Multiple R-squared:  0.7652,    Adjusted R-squared:  0.7616 
-F-statistic: 213.5 on 6 and 393 DF,  p-value: &lt; 2.2e-16</code></pre>
-</div>
-</div>
-<p>hust, lets just ignore that…:)</p>
+F-statistic: 213.5 on 6 and 393 DF,  p-value: < 2.2e-16
+```
+
+
+:::
+:::
+
+
+hust, lets just ignore that...:)
+
+-->
 </section>
 <section id="choosing-the-best-model" class="level2">
 <h2 class="anchored" data-anchor-id="choosing-the-best-model">Choosing the best Model</h2>
 <p>via Stepwise Regression, explained <a href="https://www.statology.org/stepwise-regression-r/">here</a></p>
 <p>not well regarded in Econometrics, because it is prone to overfitting! just for self reference, that lohn_prozent is chosen and therefore valid</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">step</span>(model_basic, <span class="at">direction =</span> <span class="st">"both"</span>, <span class="at">scope =</span> <span class="sc">~</span> lohn_prozent <span class="sc">+</span> ost <span class="sc">+</span> foreigners<span class="sc">+</span> arbeitslosenquote <span class="sc">+</span> <span class="fu">log</span>(gdp) <span class="sc">+</span> age, <span class="at">trace=</span><span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">step</span>(model_basic, <span class="at">direction =</span> <span class="st">"both"</span>, <span class="at">scope =</span> <span class="sc">~</span> lohn_prozent <span class="sc">+</span> ost <span class="sc">+</span> foreigners<span class="sc">+</span> arbeitslosenquote <span class="sc">+</span> <span class="fu">log</span>(gdp) <span class="sc">+</span> age, <span class="at">trace=</span><span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
@@ -705,31 +764,44 @@ arbeitslosenquote         foreigners
 <section id="interlude-linke" class="level2">
 <h2 class="anchored" data-anchor-id="interlude-linke">Interlude: Linke</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>model_linke <span class="ot">&lt;-</span> <span class="fu">lm</span>(</span>
-<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>    linke_prozent <span class="sc">~</span> lohn_prozent, </span>
-<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> wahl_lohn</span>
-<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model_linke)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>model_linke <span class="ot">&lt;-</span> <span class="fu">lm</span>(</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>    linke_prozent <span class="sc">~</span> lohn_prozent,</span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> wahl_lohn</span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a>model_linke_2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(</span>
+<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a>    linke_prozent <span class="sc">~</span> lohn_prozent <span class="sc">+</span> ost,</span>
+<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> wahl_lohn</span>
+<span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb42-10"><a href="#cb42-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-11"><a href="#cb42-11" aria-hidden="true" tabindex="-1"></a>model_linke_3 <span class="ot">&lt;-</span> <span class="fu">lm</span>(</span>
+<span id="cb42-12"><a href="#cb42-12" aria-hidden="true" tabindex="-1"></a>    linke_prozent <span class="sc">~</span> lohn_prozent <span class="sc">+</span> ost <span class="sc">+</span> <span class="fu">log</span>(gdp),</span>
+<span id="cb42-13"><a href="#cb42-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> wahl_lohn</span>
+<span id="cb42-14"><a href="#cb42-14" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb42-15"><a href="#cb42-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-16"><a href="#cb42-16" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model_linke_3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
-lm(formula = linke_prozent ~ lohn_prozent, data = wahl_lohn)
+lm(formula = linke_prozent ~ lohn_prozent + ost + log(gdp), data = wahl_lohn)
 
 Residuals:
       Min        1Q    Median        3Q       Max 
--0.043286 -0.013494 -0.004788  0.007903  0.121442 
+-0.035639 -0.008126 -0.001951  0.005206  0.052785 
 
 Coefficients:
               Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept)  -0.012598   0.003522  -3.577 0.000391 ***
-lohn_prozent  0.298288   0.017207  17.335  &lt; 2e-16 ***
+(Intercept)  -0.117659   0.027711  -4.246 2.72e-05 ***
+lohn_prozent -0.002847   0.020338  -0.140    0.889    
+ost           0.068507   0.003049  22.471  &lt; 2e-16 ***
+log(gdp)      0.014297   0.002457   5.819 1.23e-08 ***
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
-Residual standard error: 0.022 on 397 degrees of freedom
+Residual standard error: 0.01385 on 395 degrees of freedom
   (1 observation deleted due to missingness)
-Multiple R-squared:  0.4308,    Adjusted R-squared:  0.4294 
-F-statistic: 300.5 on 1 and 397 DF,  p-value: &lt; 2.2e-16</code></pre>
+Multiple R-squared:  0.7754,    Adjusted R-squared:  0.7737 
+F-statistic: 454.6 on 3 and 395 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 </div>
 <p>=&gt; not significant in all variants, low R2 in basic variant</p>
@@ -737,19 +809,18 @@ F-statistic: 300.5 on 1 and 397 DF,  p-value: &lt; 2.2e-16</code></pre>
 <section id="save-data" class="level2">
 <h2 class="anchored" data-anchor-id="save-data">Save Data</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="co">#save all Models</span></span>
-<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(</span>
-<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>  model_basic,</span>
-<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>  model_ost,</span>
-<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a>  model_arbeit, </span>
-<span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a>  model_gdp, </span>
-<span id="cb48-7"><a href="#cb48-7" aria-hidden="true" tabindex="-1"></a>  model_age,</span>
-<span id="cb48-8"><a href="#cb48-8" aria-hidden="true" tabindex="-1"></a>  model_pop, </span>
-<span id="cb48-9"><a href="#cb48-9" aria-hidden="true" tabindex="-1"></a>  model_foreign, </span>
-<span id="cb48-10"><a href="#cb48-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">file =</span> <span class="st">"data/models.RData"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co">#save all Models</span></span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(</span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>  model_basic,</span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>  model_ost,</span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a>  model_arbeit, </span>
+<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a>  model_gdp, </span>
+<span id="cb44-7"><a href="#cb44-7" aria-hidden="true" tabindex="-1"></a>  model_age,</span>
+<span id="cb44-8"><a href="#cb44-8" aria-hidden="true" tabindex="-1"></a>  model_pop, </span>
+<span id="cb44-9"><a href="#cb44-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">file =</span> <span class="st">"data/models.RData"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(wahl_lohn, <span class="st">"data/wahl_lohn_mod.RDS"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(wahl_lohn, <span class="st">"data/wahl_lohn_mod.RDS"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 
@@ -836,10 +907,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -849,8 +919,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -863,6 +942,125 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -906,6 +1104,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -931,6 +1130,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -991,6 +1216,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+
 
 
 

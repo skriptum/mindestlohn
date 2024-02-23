@@ -1,11 +1,10 @@
 ---
-editor: 
-  markdown: 
-    wrap: 72
 bibliography: references.bib
 ---
 
 # Notes
+
+Scratch Notes for the Seminar Paper
 
 ## Sonneberg
 
@@ -371,11 +370,6 @@ inflation [@toberHaushaltspezifischeTeuerungsraten2022]
 -   especially rural regions with high share of car dependency
 
 
-### future Research
-
--   characteristics of MW jobs
--   panel data set with more than one point in time
-
 ## Narrative Case Example: Sonneberg
 
 ## Conclusion
@@ -385,5 +379,9 @@ not stop from higher MW!
 Policy
 
 -   union bargaining incerase for higher wages
--   european "richtlinie" 80%
 -   increase social mobility + decrease east west inequality
+
+### future Research
+
+-   characteristics of MW jobs
+-   panel data set with more than one point in time
