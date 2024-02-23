@@ -231,7 +231,7 @@ window.Quarto = {
   <li><a href="#appendix" id="toc-appendix" class="nav-link" data-scroll-target="#appendix">Appendix</a></li>
   <li><a href="#affidavit" id="toc-affidavit" class="nav-link" data-scroll-target="#affidavit">Affidavit</a></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="index.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="MW-Paper.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content page-columns page-full" id="quarto-document-content">
@@ -336,17 +336,98 @@ Pusch, Toralf, and Eric Seils. 2022. <span>“<span>Mindestlohn 12 Euro - Auswir
 Table&nbsp;1: Summary Statistics
 </figcaption>
 <div aria-describedby="tbl-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
 <!-- edited the tex table (remove table env and change names of columns) -->
-<!--
 
 
-```{=html}
-{{ include images/summary_table.html }}
-```
+<table data-quarto-postprocess="true" class="table">
+<tbody>
+<tr class="odd">
+<td colspan="6" style="border-bottom: 1px solid black"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Statistic</td>
+<td>N</td>
+<td>Mean</td>
+<td>St. Dev.</td>
+<td>Min</td>
+<td>Max</td>
+</tr>
+<tr class="odd">
+<td colspan="6" style="border-bottom: 1px solid black"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">afd_prozent</td>
+<td>400</td>
+<td>0.113</td>
+<td>0.058</td>
+<td>0.029</td>
+<td>0.321</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">lohn_prozent</td>
+<td>400</td>
+<td>0.194</td>
+<td>0.064</td>
+<td>0.079</td>
+<td>0.440</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">linke_prozent</td>
+<td>399</td>
+<td>0.045</td>
+<td>0.029</td>
+<td>0.015</td>
+<td>0.155</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ost</td>
+<td>400</td>
+<td>0.190</td>
+<td>0.393</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">arbeitslosenquote</td>
+<td>400</td>
+<td>0.052</td>
+<td>0.022</td>
+<td>0.019</td>
+<td>0.148</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">gdp</td>
+<td>400</td>
+<td>40,329.500</td>
+<td>16,743.150</td>
+<td>17,553</td>
+<td>158,749</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">age</td>
+<td>400</td>
+<td>45.277</td>
+<td>2.008</td>
+<td>40.700</td>
+<td>51.000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">pop</td>
+<td>400</td>
+<td>536.540</td>
+<td>708.669</td>
+<td>35.300</td>
+<td>4,788.200</td>
+</tr>
+<tr class="even">
+<td colspan="6" style="border-bottom: 1px solid black"></td>
+</tr>
+</tbody>
+</table>
 
 
-change include shortcode back into functioning code with adding of <...>
--->
+</div>
 </div>
 </figure>
 </div>
@@ -354,17 +435,17 @@ change include shortcode back into functioning code with adding of <...>
 <section id="results" class="level2">
 <h2 class="anchored" data-anchor-id="results">Results</h2>
 <p>In this section, I present the results of the regression analysis examining the relationship between minimum wage recipients and the vote share of the Alternative für Deutschland (AfD). Through rigorous econometric modeling, the influence of minimum wage policies and various socio-economic factors on AfD’s electoral performance is explored.</p>
-<div id="fig-2" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-pos="H">
+<p><a href="#fig-2" class="quarto-xref">Figure&nbsp;1</a> illustrates the relationship, where each point on the scatter plot represents an electoral district with its position determined by the respective values of minimum wage share and AfD vote share. The x-axis represents the minimum wage share, while the y-axis represents the AfD vote share. Additionally, a linear regression line is superimposed on the scatter plot, providing a visual representation of the overall trend in the data. The shaded area around the regression line denotes the standard error of the estimate.</p>
+<div id="fig-2" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-pos="ht">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/plot_basic.png" class="img-fluid figure-img" data-fig-pos="H">
+<img src="images/plot_basic.png" class="img-fluid figure-img" data-fig-pos="ht">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1: Visualization of Regression Results
 </figcaption>
 </figure>
 </div>
-<p><a href="#fig-2" class="quarto-xref">Figure&nbsp;1</a> illustrates the relationship, where each point on the scatter plot represents an electoral district with its position determined by the respective values of minimum wage share and AfD vote share. The x-axis represents the minimum wage share, while the y-axis represents the AfD vote share. Additionally, a linear regression line is superimposed on the scatter plot, providing a visual representation of the overall trend in the data. The shaded area around the regression line denotes the standard error of the estimate.</p>
 <p>The figure depicts a clear positive correlation between the variables across electoral districts. This suggests that areas with higher proportions of minimum wage earners tend to exhibit greater support for the AfD.</p>
 <p>Building upon the visual depiction of the correlation between minimum wage recipients and AfD vote share illustrated in the preceding figure, the subsequent <a href="#tbl-results" class="quarto-xref">Table&nbsp;2</a> delves into a more granular analysis of this relationship. Through a series of regression models, I explore the nuanced interplay between minimum wage rates and various socio-economic factors in influencing political preferences at the district level. Each regression model introduces additional control variables, allowing for a comprehensive examination of the impact of economic, demographic, and regional characteristics on AfD’s electoral performance.</p>
 <div id="tbl-results" class="quarto-float anchored">
@@ -373,17 +454,271 @@ Figure&nbsp;1: Visualization of Regression Results
 Table&nbsp;2: Regression Results
 </figcaption>
 <div aria-describedby="tbl-results-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
 <!-- removed the table environemnt -->
-<!--
 
 
-```{=html}
-{{ include images/table.html }}
-```
+<table data-quarto-postprocess="true" class="table">
+<caption><strong>Effect of Minimum Wage Recipients on AfD Vote Share</strong></caption>
+<tbody>
+<tr class="odd">
+<td colspan="7" style="border-bottom: 1px solid black"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td colspan="6"><em>Dependent variable:</em></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td colspan="6" style="border-bottom: 1px solid black"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td colspan="6">AfD Vote Share</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td>(1)</td>
+<td>(2)</td>
+<td>(3)</td>
+<td>(4)</td>
+<td>(5)</td>
+<td>(6)</td>
+</tr>
+<tr class="even">
+<td colspan="7" style="border-bottom: 1px solid black"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Minimum Wage Rate</td>
+<td>0.714<sup>***</sup></td>
+<td>0.291<sup>***</sup></td>
+<td>0.308<sup>***</sup></td>
+<td>0.301<sup>***</sup></td>
+<td>0.227<sup>***</sup></td>
+<td>0.220<sup>***</sup></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td>(0.028)</td>
+<td>(0.039)</td>
+<td>(0.039)</td>
+<td>(0.044)</td>
+<td>(0.044)</td>
+<td>(0.044)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">East Germany</td>
+<td></td>
+<td>0.086<sup>***</sup></td>
+<td>0.088<sup>***</sup></td>
+<td>0.088<sup>***</sup></td>
+<td>0.081<sup>***</sup></td>
+<td>0.082<sup>***</sup></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td></td>
+<td>(0.006)</td>
+<td>(0.006)</td>
+<td>(0.006)</td>
+<td>(0.006)</td>
+<td>(0.006)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Unemployment Rate</td>
+<td></td>
+<td></td>
+<td>-0.279<sup>***</sup></td>
+<td>-0.275<sup>***</sup></td>
+<td>-0.244<sup>***</sup></td>
+<td>-0.163<sup>*</sup></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td></td>
+<td></td>
+<td>(0.071)</td>
+<td>(0.072)</td>
+<td>(0.070)</td>
+<td>(0.093)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Log GDP p. C.</td>
+<td></td>
+<td></td>
+<td></td>
+<td>-0.002</td>
+<td>0.011<sup>*</sup></td>
+<td>0.013<sup>**</sup></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td></td>
+<td></td>
+<td></td>
+<td>(0.005)</td>
+<td>(0.006)</td>
+<td>(0.006)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Avg. Age</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>0.006<sup>***</sup></td>
+<td>0.006<sup>***</sup></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>(0.001)</td>
+<td>(0.001)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Log Pop. Density</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>-0.003</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>(0.002)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Constant</td>
+<td>-0.026<sup>***</sup></td>
+<td>0.040<sup>***</sup></td>
+<td>0.051<sup>***</sup></td>
+<td>0.071</td>
+<td>-0.332<sup>***</sup></td>
+<td>-0.315<sup>***</sup></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td>(0.006)</td>
+<td>(0.007)</td>
+<td>(0.007)</td>
+<td>(0.060)</td>
+<td>(0.091)</td>
+<td>(0.092)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td colspan="7" style="border-bottom: 1px solid black"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Observations</td>
+<td>400</td>
+<td>400</td>
+<td>400</td>
+<td>400</td>
+<td>400</td>
+<td>400</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Adjusted R<sup>2</sup></td>
+<td>0.612</td>
+<td>0.732</td>
+<td>0.742</td>
+<td>0.741</td>
+<td>0.760</td>
+<td>0.761</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Residual Std. Error</td>
+<td>0.036</td>
+<td>0.030</td>
+<td>0.030</td>
+<td>0.030</td>
+<td>0.029</td>
+<td>0.029</td>
+</tr>
+<tr class="even">
+<td colspan="7" style="border-bottom: 1px solid black"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><em>Note:</em></td>
+<td colspan="6" style="text-align: right;"><sup>*</sup>p&lt;0.1; <sup>**</sup>p&lt;0.05; <sup>***</sup>p&lt;0.01</td>
+</tr>
+</tbody>
+</table>
 
 
-change into function include by adding <...>
--->
+</div>
 </div>
 </figure>
 </div>
