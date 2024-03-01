@@ -347,11 +347,11 @@ graph LR
 
 A([Financial Crisis]) & B([Austerity]) & C([Trade exposure]) --> MW((Mininum Wage))
 
-A & B & C -.- O[... other Channels]
+
 
 MW --- D[Lack of mobility] & E[Status Discordance] & F[Positional Deprivation]
 --> AfD((Populist voting))
-O -.-> AfD
+
 ```
 
 
@@ -385,3 +385,30 @@ Policy
 
 -   characteristics of MW jobs
 -   panel data set with more than one point in time
+
+## To Do
+
+- MW earners still rely on government support! (e.g Wohngeld)
+    => nicht weiter ausgeführt
+- [ ] controls for Bundesland FE
+    => auch nicht
+- Absatz zu Arbeitslosenrate und Zusammenhang
+- l.116 Reformulate last sentence
+    > würd ich etwas vorsichtiger ausdrücken, à la: eine kausale Interpretation (“influence”) ist möglich, falls wir alle relevanten controls inkludiert haben, was wir hoffen, aber nicht wissen. Außerdem guckst du dir nicht wirklich den influence von mw policies an, sondern vom Anteil an mw Empfängern, das ein Unterschied. 
+- [x] MW wage **rate** umbennen in share ! (auch in Tabelle)
+    => done
+- l183 weiter ausformuleiren (Model 2)
+    - > Das könnte man etwas genauer ausdrücken und vielleicht noch knowledge flexen: The coefficient on the share of minimum wage recipients substantially drops. This suggests that there is a positive correlation between a district being in East Germany and its minimum wage share. Model 3-1 thus suffered from a strong omitted variable bias: The positive coefficient on the “East” dummy and the positive correlation between “East Germany” and “minimum wage share” bias the coefficient on “minimum wage share” upwards in model 3-1.
+- LINKE results in Appendix
+    => done
+- Ende Politik weniger
+    - > Persönliche Präferenz, aber ich würde solche normativen calls etwas vorsichtiger ausdrücken: If the policy maker is interested in xy, he should consider doing z.
+    => done, but could be better
+
+Endogeineity Concerns adressen:
+
+> Die ganze Discussion suggeriert etwas, was auch noch ausgeprochen werden muss: mw share hat vielleicht keinen kausalen Einfluss, sondern sowohl AfD als auch mw share sind Folgen eines third drivers, und dieser Driver kann sein: trade exposure, lack of upward mobility etc. Das acknowledgen! à la: Möglicherweise haben wir hier einen third driver (elaborieren), but to explore this is beyond the scope of this paper. Kandidaten für diesen third driver sind: GFC, Austerity, Trade, Lack of mobility, positional deprivation. 
+
+> Ich sehe eigentlich den einzigen kausalen Effekt, der wirklich von mw share zu populist voting läuft in status discordance oder Stigmatisierung. Bei den anderen musst du dir nochmal überlegen, ob sowas wie lack of mobility wirklich eine Folge von mw share ist (wie im Bild suggeriert).
+
+> Ok du schließt reverse causality aus aber es gibt noch andere Arten von Endogenität und die müssen dir hier Sorgen machen: Nämlich das, was auf deinem Bild die “other channels sind”. Wenn Ich Y auf X regresse, aber Y und X beide von Z getrieben werden, dann ist mein estimate bei der Y~X Regression falsch. Hier ist Z zb die GFC oder Austerity. Also lieber sagen: Reverse causality ist ausgeschlossen, aber endogeneity kann ein Problem sein.

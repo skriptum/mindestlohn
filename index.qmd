@@ -2,7 +2,7 @@
 title: "Paycheck Politics"
 subtitle: "Minimum Wage Dynamics and the Populist Vote"
 abstract: |
-    Sonneberg was the first district in Germany to elect a commissioner from the right-wing populist AfD – it was also the district with the highest share of minimum wage receivers in Germany. Using Data from the WSI and election results from the federal election in 2021, I research the relationship between minimum wage recipiency and voting for the populist right. The results show a statistically significant correlation between these variables, which adds to the existing research on the economic drivers of populism.
+    Sonneberg was the first district in Germany to elect a commissioner from the right-wing populist AfD - it was also the district with the highest share of minimum wage recipients in Germany. Using data from the WSI and election results from the 2021 federal election, I examine the relationship between minimum wage recipients and voting for the populist right. The results show a statistically significant correlation between these variables, which adds to the existing research on the economic drivers of populism.
 author: Marten W.
 
 toc: true
@@ -14,16 +14,19 @@ format:
     citation-location: margin
   pdf:
     fontsize: "12pt"
+    documentclass: article
+    mainfont: "Times New Roman"
     papersize: a4
-    fontfamily: newtxtext
     number-sections: false
     output-file: "MW-Paper"  
-  #   linestretch: 1.5
-  #   geometry: 
-  #     - top=20mm
-  #     - bottom=20mm
-  #     - right=30mm
-  #     - left=20mm
+    indent: true
+
+    linestretch: 1.6
+    geometry: 
+      - top=20mm
+      - bottom=20mm
+      - right=30mm
+      - left=20mm
 
 bibliography: references.bib
 link-citations: true
@@ -35,11 +38,13 @@ link-citations: true
 
 ## Introduction
 
-Nestled in the heart of Thuringia, the German district of Sonneberg made headlines with a historic moment – it became the first constituency to elect a district administrator from the right wing Alternative for Germany (AfD) party. In an unexpected turn, Robert Sesselmann of the AfD won a closely contested run-off election against the conservative Christian Democratic Union (CDU), securing 52.8% of the votes. The results not only marked a seismic shift in local politics but sent shockwaves through the established political order [@schuetzeFirstGermanyFar2023].
+Nestled in the heart of Thuringia, the German district of Sonneberg made headlines with a historic moment – it became the first constituency to elect a district administrator from the right wing Alternative for Germany (AfD) party. In an unexpected turn, Robert Sesselmann of the AfD won a closely contested run-off election against the conservative Christian Democratic Union (CDU), securing 52.8% of the votes. The results not only marked a seismic shift in local politics but sent shockwaves through the established political order [@schuetzeFirstGermanyFar2023]. It exemplifies the growing right-wing populism which has been spreading in Germany and elsewhere over the last few decades.
 
-Intriguingly, Sonneberg also holds the distinction of having the highest percentage of minimum wage workers in Germany – 44%. This paper aims to explore the connection between minimum wage recipiency and the support for right-wing populist movements, using Sonneberg as a focal point. Employing data from the WSI and the German Federal Election Officer in an Ordinary Least Squares (OLS) regression, the findings reveals a significant correlation between these variables, even when accounting for other relevant controls.
+Intriguingly, Sonneberg also holds the distinction of having the highest percentage of minimum wage workers in Germany – 44%. This paper aims to explore the connection between minimum wage recipiency and the support for right-wing populist movements, using Sonneberg as a focal point. 
 
-Initially, I will [review the existing literature](#lit) regarding the economic determinants of populism in both economic and political research. Following this is a concise overview of [the data](#data) utilized and the [regression methodology](#method) employed in the subsequent section. Subsequently, the [results](#results) will be presented, followed by a [discussion](#discussion) of these findings and their contextualization within existing research.
+The aim of this analysis is to contribute to a more comprehensive understanding of contemporary political dynamics in Germany and beyond by providing a deeper insight into the socio-economic factors that drive political preferences. Employing data from the WSI and the German Federal Election Officer in an Ordinary Least Squares (OLS) regression, the findings reveals a significant correlation between these variables, even when accounting for other relevant controls. These findings contribute to the existing large literature on the economic drivers of populism, which has grown rapidly in recent years.
+
+Initially, I will [review the related literature](#lit) regarding the  determinants of populism in both economic and political research. Following this is a concise overview of [the data](#data) utilized and the [regression methodology](#method) employed in the subsequent section. Subsequently, the [results](#results) will be presented, followed by a [discussion](#discussion) of these findings and their contextualization within existing research.
 
 ## Literature Review {#lit}
 
@@ -60,7 +65,11 @@ After this introduction into the existing literature, the remainder of the Paper
 
 ## Data {#data}
 
-The analysis is based on data compiled by @puschMindestlohn12Euro2022 at the Institute of Economic and Social Sciences (WSI). They provide an estimate of the share of workers in a given district who will be affected by the increase in the minimum wage to €12 in October 2022 (henceforth minimum wage workers). The data basis for the number of minimum wage earners comes from the German Socio-Economic Panel (SOEP) and is regionalised using data from the German Federal Employment Agency (BA) and projected to the first of October 2022.
+The analysis is based on data compiled by @puschMindestlohn12Euro2022 at the Institute of Economic and Social Sciences (WSI). They provide an estimate of the share of workers in a given district who will be affected by the increase in the minimum wage to €12 in October 2022 (henceforth minimum wage workers). 
+
+The authors used individual SOEP data on hourly wages and extrapolated the number of employees from the first half of 2019, which was not affected by the pandemic.  They projected these microdata analyses up to the implementation of the minimum wage increase, using quarterly data from the Federal Employment Agency.  They extrapolated hourly wages by considering sector-specific wage developments from March 2019 to June 2022, using the index of gross hourly earnings.  For wage increases between June and September 2022, they referenced the prior year's increases during the same period in 2021 to estimate seasonal wage influences. 
+
+The authors use a 'top-down' approach in their regionalization procedure to expand the national-level findings on the minimum wage described above to regional districts. Their method involves selecting a key variable that is closely linked to low wages and accurately reflects their geographical distribution. Although there are conceptual differences between the low-wage sector and the Federal Employment Agency's data on the 'lower wage range', the authors consider the agency's data on monthly gross earnings to be applicable. This dataset provides detailed regional breakdowns and wage classes, enabling a robust regionalization of the national results.
 
 @puschMindestlohn12Euro2022 acknowledge some limitations of their results. The underlying SOEP data underestimate the number of marginally employed (mini-jobs), which make up a higher proportion of the workforce in West Germany. The estimate of these groups of people, most of whom receive a minimum wage, is therefore considered to be conservative, especially in Western Germany.
 
@@ -78,7 +87,7 @@ $$
 \text{afd}_{i} = \beta_0 + \beta_1 \text{mw}_{i} + \sum_2^k\beta_k \text{controls}_{i,k} + \epsilon_{i}
 $$ {#eq-1}
 
-The @eq-1 describes the regression formula, where $afd_i$ represents the vote share of the AfD in a given district $i$ and $mw_i$ the share of minimum wage recipients in this district.The variable $controls_{i,k}$ comprise a number of different controls for the given district and $\epsilon_i$ a standard error term.
+The @eq-1 describes the regression formula, where $\text{afd}_i$ represents the vote share of the AfD in a given district $i$ and $\text{mw}_i$ the share of minimum wage recipients in this district.The variable $\text{controls}_{i,k}$ comprise a number of different controls for the given district and $\epsilon_i$ a standard error term.
 
 Drawing from the literature review, the controls include a dummy variable representing East Germany to capture regional differences in political and economic contexts. Additionally, I include the unemployment rate and log GDP per capita as economic indicators, recognizing their significance in shaping individuals' socio-economic outlook and political preferences. Sociodemographic factors are also accounted for, with variables such as average age, population density (logged), and the proportion of foreigners in the population. These sociodemographic controls are crucial for capturing nuances in local demographics and social dynamics, which may impact voting behavior independently of minimum wage recipiency.
 
@@ -112,20 +121,20 @@ Summary Statistics
 
 ## Results {#results}
 
-In this section, I present the results of the regression analysis examining the relationship between minimum wage recipients and the vote share of the Alternative für Deutschland (AfD). Through rigorous econometric modeling, the influence of minimum wage policies and various socio-economic factors on AfD's electoral performance is explored. 
+In this section, I present the results of the regression analysis examining the relationship between minimum wage recipients and the vote share of the Alternative für Deutschland (AfD). Through rigorous econometric modeling, the influence of minimum wage policies and various socio-economic factors on AfD's electoral performance is explored. It's important to note that while the term "influence" is used, I acknowledge that making causal interpretations is contingent upon including all relevant controls, which we endeavor to do but cannot confirm definitively
 
-@fig-2 illustrates the relationship, where each point on the scatter plot represents an electoral district with its position determined by the respective values of minimum wage share and AfD vote share. The x-axis represents the minimum wage share, while the y-axis represents the AfD vote share. Additionally, a linear regression line is superimposed on the scatter plot, providing a visual representation of the overall trend in the data. The shaded area around the regression line denotes the standard error of the estimate. 
+@fig-2 illustrates the relationship, where each point on the scatter plot represents an electoral district with its position determined by the respective values of minimum wage share and AfD vote share. The x-axis represents the minimum wage share, while the y-axis represents the AfD vote share. Additionally, a linear regression line is superimposed on the scatter plot, providing a visual representation of the overall trend in the data. The shaded area around the regression line denotes the 95% confidence interval. 
 
 ![Visualization of Regression Results](images/plot_basic.png){#fig-2 fig-pos="ht"}
 
 The figure depicts a clear positive correlation between the variables across electoral districts. This suggests that areas with higher proportions of minimum wage earners tend to exhibit greater support for the AfD.
 
-Building upon the visual depiction of the correlation between minimum wage recipients and AfD vote share illustrated in the preceding figure, the subsequent @tbl-results delves into a more granular analysis of this relationship. Through a series of regression models, I explore the nuanced interplay between minimum wage rates and various socio-economic factors in influencing political preferences at the district level. Each regression model introduces additional control variables, allowing for a comprehensive examination of the impact of economic, demographic, and regional characteristics on AfD's electoral performance.
+Building upon the visual depiction of the correlation between minimum wage recipients and AfD vote share illustrated in the preceding figure, the subsequent @tbl-results delves into a more granular analysis of this relationship. Through a series of regression models, I explore the nuanced interplay between minimum wage shares and various socio-economic factors in influencing political preferences at the district level. Each regression model introduces additional control variables, allowing for a comprehensive examination of the impact of economic, demographic, and regional characteristics on AfD's electoral performance.
+
 
 :::{#tbl-results}
 
 ```{=latex}
-\tiny
 \begin{tabular}{@{\extracolsep{5pt}}lcccccc} 
 \\[-1.8ex]\hline 
 \hline \\[-1.8ex] 
@@ -134,7 +143,7 @@ Building upon the visual depiction of the correlation between minimum wage recip
 \\[-1.8ex] & \multicolumn{6}{c}{AfD Vote Share} \\ 
 \\[-1.8ex] & (1) & (2) & (3) & (4) & (5) & (6)\\ 
 \hline \\[-1.8ex] 
- Minimum Wage Rate & 0.714$^{***}$ & 0.291$^{***}$ & 0.308$^{***}$ & 0.301$^{***}$ & 0.227$^{***}$ & 0.220$^{***}$ \\ 
+ Minimum Wage share & 0.714$^{***}$ & 0.291$^{***}$ & 0.308$^{***}$ & 0.301$^{***}$ & 0.227$^{***}$ & 0.220$^{***}$ \\ 
   & (0.028) & (0.039) & (0.039) & (0.044) & (0.044) & (0.044) \\ 
   & & & & & & \\ 
  East Germany &  & 0.086$^{***}$ & 0.088$^{***}$ & 0.088$^{***}$ & 0.081$^{***}$ & 0.082$^{***}$ \\ 
@@ -174,19 +183,29 @@ Residual Std. Error & 0.036 & 0.030 & 0.030 & 0.030 & 0.029 & 0.029 \\
 ```
 change into function include by adding <...>
 -->
-Regression Results
+AfD Regression Results
 
 :::
 
-In the regression analysis, I observe consistent patterns across various models. Model 1, focusing solely on the Minimum Wage Rate, reveals a significant and positive association (β = 0.714, p < 0.01) between an increase in the minimum wage rate and a higher AfD vote share, indicating that areas with a greater proportion of minimum wage recipients tend to exhibit stronger support for the AfD. A 1% increase in the share of people receiving minimum wage increases the AfD results by 0.714%.
 
-Expanding the analysis in Model 2 to include a Dummy for Eastern Germany alongside the Minimum Wage Rate reaffirms the robustness of the relationship observed in Model 1. Both variables retain their significance, altough the estimate for the minimum wage coefficient drops, suggesting that regional disparities do not substantially alter the association, but have an impact. Moreover, the slight increase in the Adjusted $R^2$ value indicates improved model fit, reflecting the added explanatory power of the East Germany indicator in capturing variation in AfD support across electoral districts.
 
-In subsequent models (Models 3-6), the inclusion of additional control variables such as the Unemployment Rate, Log GDP per Capita, Average Age, and Log Population Density provides further insights into the socio-economic context influencing AfD vote share. Notably, while some of these variables exhibit significant associations with AfD support, the Minimum Wage Rate consistently retains its significance across all models. This persistence highlights the independent impact of minimum wage policies on shaping political preferences, independent of other economic and demographic factors.
+In the regression analysis, I observe consistent patterns across various models. Model 1, focusing solely on the minimum wage share, reveals a significant and positive association (β = 0.714, p < 0.01) between an increase in the minimum wage share and a higher AfD vote share, indicating that areas with a greater proportion of minimum wage recipients tend to exhibit stronger support for the AfD. A 1 percentage point increase in the share of people receiving minimum wage increases the conditional expectation of AfD results by 0.714 percentage points.
 
-Additionally, the vote results of the party DIE LINKE, a left populist german party, are tested against the minimum wage share. The results show that there is a similar relationship, with the $R^2$ value lower than in the AfD regression. However, the coefficient estimates are not statistically significant in all model definitions, suggesting that the relationship between minimum wage recipiency and left-populist vote share is less definitive.
+Expanding the analysis in Model 2 to include a Dummy for Eastern Germany alongside the Minimum Wage share reaffirms the robustness of the relationship observed in Model 1. 
+The coefficient on the share of minimum wage recipients substantially drops. This suggests that there is a positive correlation between a district being in East Germany and its minimum wage share. Model 1 thus suffered from a strong omitted variable bias: The positive coefficient on the “East” dummy and the positive correlation between “East Germany” and “minimum wage share” bias the coefficient on “minimum wage share” upwards in model 1. 
+Moreover, the slight increase in the Adjusted $R^2$ value indicates improved model fit, reflecting the added explanatory power of the East Germany indicator in capturing variation in AfD support across electoral districts.
 
-Overall, the results underscore the complex interplay between socio-economic factors and political preferences in contemporary German politics. The significant and consistent association between minimum wage recipients and AfD vote share across various models supports my approach. In the subsequent Section, I discuss these results and situate them in the existing research.
+In subsequent models (Models 3-6), the inclusion of additional control variables such as the Unemployment share, Log GDP per Capita, Average Age, and Log Population Density provides further insights into the socio-economic context influencing AfD vote share. Notably, while some of these variables exhibit significant associations with AfD support, the Minimum Wage share consistently retains its significance across all models. This persistence highlights the independent impact of minimum wage share on shaping political preferences, independent of other economic and demographic factors.
+
+The unemployment rate is included to differentiate minimum wage recipiency from other economic hardships, such as being unemployed. By accounting for variations in unemployment rates across different districts, I can more accurately assess the unique impact of minimum wage recipiency, following the distinction made by @berghExplainingRisePopulism2022. The unemployment rate seems to be negatively correlated with AfD vote, but this relationship is not significant in all models.
+
+GDP per Capita is an additional factor to control for the general economic situation in the district, given its relevance as a measure of overall economic prosperity and development. It does not show a statistically significant relationship with the outcome variable.
+
+Demographic factors such as the average age and population density of the district are included as control variables to ensure that potential variations in voting patterns due to differences in age demographics and population density between districts are accounted for. While population density is not statistically significant, the estimate for the age coefficient is close to zero, indicating that neither has much explanatory power for the AfD vote.
+
+Additionally, the vote results of the party DIE LINKE, a left populist german party, are tested against the minimum wage share in @tbl-linke (Appendix). The results show that there is a similar relationship, with the $R^2$ value lower than in the AfD regression. However, the coefficient estimates are not statistically significant in all model definitions. Especially the introduction of the East Germany Dummy seems to absorb most of the explaining power of the minimum wage share. This suggests that the relationship between minimum wage recipiency and left-populist vote share is less definitive.
+
+Overall, the results underscore the complex interplay between socio-economic factors and political preferences in contemporary German politics. The significant and consistent association between minimum wage recipients and AfD vote share across various models supports my approach. In the subsequent section, I discuss these results and situate them in the existing research.
 
 ## Discussion {#discussion}
 
@@ -198,9 +217,9 @@ Fundamentally, the argument contends that a complex interplay of economic phenom
 
 ![Factors leading to populist vote](images/theory.jpg)
 
-Drawing from the insights provided by @nauIncomePrecarityFinancial2019, the financial crisis emerges as a pivotal factor contributing to the formation of income precarity among the working class in the US. These effects reach far into middle class families, which have a higher risk of income loss due to the 2008 crisis. The macro-leven instability translates itself into micro-level income losses, which reach groups not touched by this risk before.
+Drawing from the insights provided by @nauIncomePrecarityFinancial2019, the financial crisis emerges as a pivotal factor contributing to the formation of income precarity among the working class in the US. These effects reach far into middle class families, which have a higher risk of income loss due to the 2008 crisis. The macro-level instability translates itself into micro-level income losses, which reach groups not touched by this risk before.
 
-Austerity, especially the post crisis austerity in Europe, also had an imopact on the low wage sector. As shown by @cunninghamTrendsCollectiveBargaining2020 and @buschEuroCrisisAusterity2013, policies implemented in austere times had averse effects on the wage growth, especially due to the obstruction of collective bargaining. This had the effect of inflating the low wage sector and increasing inequality.
+Austerity, especially the post crisis austerity in Europe, also had an impact on the low wage sector. As shown by @cunninghamTrendsCollectiveBargaining2020 and @buschEuroCrisisAusterity2013, policies implemented in austere times had averse effects on the wage growth, especially due to the obstruction of collective bargaining. This had the effect of inflating the low wage sector and increasing inequality.
 
 These effects complement the existing effect of exposure to international trade with low income countries. @utarWorkersFloodgatesLowWage2018 explores the impact of these imports in high-wage Denmark and finds significant negative effects on earnings and employment trajectories. A large share of affected manufacturing workers move into the service sector, which is associated with job insecurity and lower wages and many cant recuperate lost income.
 
@@ -222,15 +241,15 @@ Moreover, the current economic context, characterized by a significant inflation
 
 Combined with a higher social acceptance of the AfD and its positions in society, this could explain more of the recent rise. Following the concept of Exit and Voice by @hirschmanExitVoiceLoyalty1972, where before disappointment with politics was followed by vote abstention (Exit), now it is transformed into votes for the populist right (Voice).
 
-Another question that arises is why minimum wage workers vote right rather than left, the traditional political base of low-income groups. Part of this is explained by @berghExplainingRisePopulism2022, who show that only unemployment is correlated with voting left, and precarious jobs with voting right. This could be due to the changing nature of left-wing parties in Western democracies, which are gradually becoming home to more educated voters and losing their traditional electoral base. As @pikettyBrahminLeftVs argues, this rise of the "globalist (high income, high education)" left explains the rise of populism and inequality in Europe and beyond.
+Another question that arises is why minimum wage workers vote right rather than left, the traditional political base of low-income groups which has fared bad in recent elections. Part of this is explained by @berghExplainingRisePopulism2022, who show that only unemployment is correlated with voting left, and precarious jobs with voting right. This could be due to the changing nature of left-wing parties in Western democracies, which are gradually becoming home to more educated voters and losing their traditional electoral base. As @pikettyBrahminLeftVs argues, this rise of the "globalist (high income, high education)" left explains the rise of populism and inequality in Europe and beyond.
 
-Concerns regarding endogeneity, specifically the notion that the AfD's rise may have influenced increases in the low wage sector, can be effectively addressed. The AfD's limited political presence, confined primarily to Sonneberg and a few small districts, undermines the suggestion of a causal relationship between the party's ascent and subsequent minimum wage sector expansion. Moreover, increases occurred before the AfD assumed power in these regions, suggesting that other factors drove these adjustments. Additionally, the relatively brief duration of the AfD's tenure in power and the lack of significant changes in economic structure further challenge the idea of endogeneity between AfD governance and minimum wage changes.
+Concerns regarding endogeneity, specifically the reverse causality that the AfD's rise may have influenced increases in the low wage sector, can be effectively addressed. The AfD's limited political presence, confined primarily to Sonneberg and a few small districts, undermines the suggestion of a causal relationship between the party's ascent and subsequent minimum wage sector expansion. Moreover, increases occurred before the AfD assumed power in these regions, suggesting that other factors drove these adjustments. Additionally, the relatively brief duration of the AfD's tenure in power and the lack of significant changes in economic structure further challenge the idea of reverse causality between AfD governance and minimum wage changes. Other types of endogeneity, such as a third driver pushing both, are conceivable but beyond the scope of this paper to explore.
 
-The relevance of the statistically significant dummy for eastern Germany can be explained by cultural as well as economic factors. The incoherent integration of the East German labour market after reunification [@snowerCaringHandThat2006] prolonged economic hardship in this region and affected the level of trust in the political system. There are still differences between the different parts of Germany, whether political, economic or cultural, as @mauLuettenKleinLeben2019  extensive sociological study of the transformation highlights.
+The relevance of the statistically significant dummy for eastern Germany can be explained by cultural as well as economic factors. The incoherent integration of the East German labour market after reunification [@snowerCaringHandThat2006] prolonged economic hardship in this region and affected the level of trust in the political system. There are still differences between the different parts of Germany, whether political, economic or cultural, as @beckerSeparationReunificationGermany2020 highlight in their analysis.
 
 In conclusion, the results fit the existing research on the economic drivers of populism and could enhance our knowledge of the translation of abstract crisis into individual decisions of populist voting. The differentiated results based on the inclusion of different controls can be explained by the distinct characteristics of the current economic and political situation. 
 
-In summary, the results of this study align with existing research on the economic drivers of populism and contribute to our understanding of how abstract crises manifest in individual decisions to support populist movements. By delving into the intricate interplay between economic factors and political behavior, this research provides valuable insights into the mechanisms through which socio-economic challenges influence voting patterns. The results suggest that minimum wage recipiency leads to a higher vote share for the populist right in Germany. Thus, this study not only confirms existing theories but also enriches the comprehension of the multifaceted dynamics driving populist voting behavior.
+In summary, the results of this study align with existing research on the economic drivers of populism and contribute to our understanding of how abstract crises manifest in individual decisions to support populist movements. By delving into the intricate interplay between economic factors and political behavior, this research provides valuable insights into the mechanisms through which socio-economic challenges influence voting patterns. The findings indicate a potential association between minimum wage recipiency and increased support for the populist right in Germany. Thus, this study not only confirms existing theories but also enriches the comprehension of the multifaceted dynamics driving populist voting behavior.
 
 ## Conclusion
 
@@ -238,7 +257,7 @@ Sonneberg will not be the last district to elect the AfD as an district administ
 
 Looking ahead, future research should extend this analysis to more European countries and more points in time in order to consolidate the findings. It should also focus more on the characteristics of minimum wage jobs, an area that is currently underrepresented in labour economics. Another avenue for the future could be to directly analyse the political affiliation and voting behaviour of minimum wage earners, for example using SOEP panel data or the WSI Survey of Income and Expenditure.
 
-In conclusion, while the analysis reveals a correlation between minimum wage labor share and AfD vote share, policymakers should interpret these findings judiciously. Instead of dissuading minimum wage increases based solely on this correlation, emphasis should be placed on enhancing collective bargaining mechanisms. Strengthening union bargaining for higher wages not only promotes fairer wage distribution but also fosters greater social mobility and reduces regional inequalities between East and West Germany. Therefore, policymakers should prioritize collective bargaining as a comprehensive approach to address socio-economic grievances and mitigate the appeal of populist ideologies.
+In conclusion, while the analysis reveals a correlation between minimum wage labor share and AfD vote share, policymakers should interpret these findings judiciously. Instead of dissuading minimum wage increases based solely on this correlation, other policy tools should be used to adress these inequalities. If the policymaker wishes to adress these issues, he should consider enhancing collective bargaining mechanisms, which have the positive effect of shifting the wage distirbution upward.
 
 `\pagebreak`{=latex}
 
@@ -252,6 +271,55 @@ In conclusion, while the analysis reveals a correlation between minimum wage lab
 ## Appendix {-}
 
 An online Appendix with Code and Results is available at [GitHub](https://skriptum.github.io/mindestlohn/)
+
+:::{#tbl-linke}
+
+```{=latex}
+\begin{tabular}{@{\extracolsep{5pt}}lcccccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{6}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-7} 
+\\[-1.8ex] & \multicolumn{6}{c}{Linke Vote Share} \\ 
+\\[-1.8ex] & (1) & (2) & (3) & (4) & (5) & (6)\\ 
+\hline \\[-1.8ex] 
+ Minimum Wage Share & 0.298$^{***}$ & $-$0.054$^{***}$ & $-$0.077$^{***}$ & $-$0.038$^{**}$ & $-$0.011 & 0.002 \\ 
+  & (0.017) & (0.019) & (0.017) & (0.019) & (0.019) & (0.018) \\ 
+  & & & & & & \\ 
+ East Germany &  & 0.072$^{***}$ & 0.070$^{***}$ & 0.068$^{***}$ & 0.071$^{***}$ & 0.070$^{***}$ \\ 
+  &  & (0.003) & (0.003) & (0.003) & (0.003) & (0.003) \\ 
+  & & & & & & \\ 
+ Unemployment Rate &  &  & 0.325$^{***}$ & 0.300$^{***}$ & 0.290$^{***}$ & 0.134$^{***}$ \\ 
+  &  &  & (0.031) & (0.030) & (0.030) & (0.038) \\ 
+  & & & & & & \\ 
+ Log GDP p. C. &  &  &  & 0.010$^{***}$ & 0.006$^{**}$ & 0.0005 \\ 
+  &  &  &  & (0.002) & (0.002) & (0.002) \\ 
+  & & & & & & \\ 
+ Avg. Age &  &  &  &  & $-$0.002$^{***}$ & $-$0.001$^{**}$ \\ 
+  &  &  &  &  & (0.0005) & (0.0005) \\ 
+  & & & & & & \\ 
+ Log Pop. Density &  &  &  &  &  & 0.006$^{***}$ \\ 
+  &  &  &  &  &  & (0.001) \\ 
+  & & & & & & \\ 
+ Constant & $-$0.013$^{***}$ & 0.043$^{***}$ & 0.030$^{***}$ & $-$0.086$^{***}$ & 0.067$^{*}$ & 0.036 \\ 
+  & (0.004) & (0.003) & (0.003) & (0.025) & (0.039) & (0.037) \\ 
+  & & & & & & \\ 
+\hline \\[-1.8ex] 
+Observations & 399 & 399 & 399 & 399 & 399 & 399 \\ 
+Adjusted R$^{2}$ & 0.429 & 0.755 & 0.809 & 0.818 & 0.829 & 0.844 \\ 
+Residual Std. Error & 0.022 & 0.014 & 0.013 & 0.012 & 0.012 & 0.012 \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{6}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+```
+
+LINKE Regression Results
+
+:::
+
+`\pagebreak`{=latex}
+`\pagenumbering{gobble}`{=latex}
 
 ## Affidavit {-}
 

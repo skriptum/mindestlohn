@@ -229,7 +229,7 @@ stargazer(models,
           title = "Effect of Minimum Wage Recipients on AfD Vote Share",
           dep.var.labels = "AfD Vote Share",
           covariate.labels = c(
-            "Minimum Wage Rate", 
+            "Minimum Wage share", 
             "East Germany",
             "Unemployment Rate", 
             "Log GDP p. C.", 
@@ -261,3 +261,41 @@ stargazer(models,
 
 Rewrite this code with table package gt
 
+Table for Linke Models
+
+```{r}
+load("data/models_linke.RData")
+models_linke <- list(
+  model_linke,
+  model_linke_2,
+  model_linke_3,
+  model_linke_4,
+  model_linke_5,
+  model_linke_6
+)
+```
+
+```{r}
+#| output: asis
+
+stargazer(models_linke, 
+          type = "latex", #change to text for coding,
+          out= "images/table_linke.tex",
+          title = "Effect of Minimum Wage Recipients on Linke Vote Share",
+          dep.var.labels = "Linke Vote Share",
+          covariate.labels = c(
+            "Minimum Wage Share", 
+            "East Germany",
+            "Unemployment Rate", 
+            "Log GDP p. C.", 
+            "Avg. Age", 
+            "Log Pop. Density"
+            ),
+          df = F,
+          omit.stat = c("rsq", "f")
+          )
+```
+
+
+
+```

@@ -283,11 +283,26 @@ model_linke_2 <- lm(
   )
 
 model_linke_3 <- lm(
-    linke_prozent ~ lohn_prozent + ost + log(gdp),
+    linke_prozent ~ lohn_prozent + ost + arbeitslosenquote,
     data = wahl_lohn
   )
 
-summary(model_linke_3)
+model_linke_4 <- lm(
+  linke_prozent ~ lohn_prozent + ost + arbeitslosenquote + log(gdp),
+    data = wahl_lohn
+)
+
+model_linke_5 <- lm(
+  linke_prozent ~ lohn_prozent + ost + arbeitslosenquote + log(gdp) +  age,
+    data = wahl_lohn
+)
+
+model_linke_6 <- lm(
+  linke_prozent ~ lohn_prozent + ost + arbeitslosenquote + log(gdp) +  age + log(pop),
+    data = wahl_lohn
+)
+
+summary(model_linke_6)
 ```
 
 =\> not significant in all variants, low R2 in basic variant
@@ -304,6 +319,17 @@ save(
   model_age,
   model_pop, 
   file = "data/models.RData")
+
+save(
+  model_linke,
+  model_linke_2,
+  model_linke_3,
+  model_linke_4,
+  model_linke_5,
+  model_linke_6,
+  file = "data/models_linke.RData"
+  )
+
 ```
 
 ```{r}
